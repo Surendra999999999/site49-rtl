@@ -9,13 +9,13 @@ const menu = [
   { id: 5, name: "Cold Drink", price: 50, category: "drinks", img: "../images/drinks.jpeg" },
   { id: 6, name: "Mutton Biryani", price: 400, category: "biryani", img: "../images/mutton-biryani.jpeg" },
   { id: 7, name: "Chicken Biryani", price: 250, category: "biryani", img: "../images/download (1).jpeg" },
-  { id: 8, name: "Margherita Pizza", price: 300, category: "pizza", img: "../images/Pizza.jpeg" },
+  { id: 8, name: "Margherita Pizza", price: 300, category: "pizza", img: "../images/pizza.jpeg" },
   { id: 9, name: "Cheese Burger", price: 150, category: "burger", img: "../images/crack burgers -.jpeg" },
   { id: 10, name: "Cold Drink", price: 50, category: "drinks", img: "../images/drinks.jpeg" },
   { id: 11, name: "Cheese Burger", price: 200, category: "burger", img: "../images/crack burgers -.jpeg" },
   { id: 12, name: "Cheese Burger", price: 100, category: "burger", img: "../images/crack burgers -.jpeg" },
-  { id: 13, name: "Margherita Pizza", price: 2500, category: "pizza", img: "../images/Pizza.jpeg" },
-  { id: 14, name: "Margherita Pizza", price: 150, category: "pizza", img: "../images/Pizza.jpeg" },
+  { id: 13, name: "Margherita Pizza", price: 2500, category: "pizza", img: "../images/pizza.jpeg" },
+  { id: 14, name: "Margherita Pizza", price: 150, category: "pizza", img: "../images/pizza.jpeg" },
 ];
 
 const menuGrid = document.getElementById("menuGrid");
