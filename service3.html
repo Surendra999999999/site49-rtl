@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title data-i18n="title">Stackly Food</title>
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/service1.css" />
+  <link rel="stylesheet" href="css/service2.css" />
+  <script src="js/header.js" defer></script>
+  <script src="js/dark_toogle.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <header>
+  <div class="logo">
+    <a href="index.html"><img src="images/logo.png" alt="Logo" data-i18n-attr="alt" data-i18n="logo_alt"></a>
+  </div>
+
+  <div class="header-right">
+    <nav>
+      <ul class="nav-links">
+        <li class="dropdown">
+          <a href="index.html" data-i18n="nav_home">Home ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="index.html" data-i18n="nav_home1">Home 1</a></li>
+            <li><a href="home2.html" data-i18n="nav_home2">Home 2</a></li>
+          </ul>
+        </li>
+        <li><a href="about.html" data-i18n="nav_about">About</a></li>
+        <li><a href="blog.html" data-i18n="nav_blog">Blog</a></li>
+        <li class="dropdown">
+          <a href="services.html" data-i18n="nav_services">Services ▾</a>
+          <ul class="dropdown-menu">
+            <li class="mobile-only"><a href="services.html" data-i18n="nav_all_services">All Services</a></li>
+            <li><a href="service1.html" data-i18n="nav_service1">Food Delivery</a></li>
+            <li><a href="service2.html" data-i18n="nav_service2">Table Booking</a></li>
+            <li><a href="service3.html" data-i18n="nav_service3">Catering</a></li>
+            <li><a href="service4.html" data-i18n="nav_service4">Personal Chef</a></li>
+            <li><a href="service5.html" data-i18n="nav_service5">Event Dining</a></li>
+            <li><a href="service6.html" data-i18n="nav_service6">Cooking Classes</a></li>
+          </ul>
+        </li>
+        <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Language selector -->
+    <select id="language-selector" aria-label="Language selector">
+      <option value="en">English</option>
+      <option value="ar">العربية</option>
+      <option value="he">עברית</option>
+    </select>
+
+    <div class="profile-container">
+      <div class="profile" id="profile-dropdown-toggle">
+        <span id="profile-initials"></span>
+      </div>
+      <ul class="profile-dropdown" id="profile-dropdown">
+        <li><a href="#" id="logout-btn" data-i18n="logout">Logout</a></li>
+      </ul>
+    </div>
+
+    <button id="toggle-dark">🌙</button>
+    <button id="mobile-menu-toggle" class="hamburger">☰</button>
+  </div>
+</header>
+
+<section class="hero">
+  <!-- Background Video -->
+  <video class="hero-video" autoplay muted loop playsinline>
+    <source src="videos/home1-hero.mp4" type="video/mp4">
+    <!-- fallback image if video not available -->
+  </video>
+  <div class="hero-overlay"></div>
+
+  <!-- Content -->
+  <div class="hero-content">
+    <h1 data-i18n="hero_title">Catering Services</h1>
+    <p data-i18n="hero_desc">Delight your guests with our customized catering options, perfect for weddings, parties, and corporate events.</p>
+    <div class="hero-buttons">
+      <a href="contact.html" class="btn" data-i18n="btn_book">Book Catering</a>
+      <a href="services.html" class="btn-outline" data-i18n="btn_back">Back to Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- Orbit Section -->
+<section class="booking-orbit" id="catering-orbit">
+  <h2 class="section-title" data-i18n="orbit_title">How Catering Works</h2>
+
+  <div class="circle-container">
+    <!-- Center -->
+    <div class="circle-center">
+      <h3 data-i18n="orbit_center">Catering</h3>
+    </div>
+
+    <!-- Items -->
+    <div class="circle-item item1">
+      <div class="circle-icon">
+        <img src="images/inquiry.jpeg" alt="Inquiry" data-i18n-attr="alt" data-i18n="orbit_inquiry_img">
+      </div>
+      <p data-i18n="orbit_inquiry">Inquiry</p>
+    </div>
+
+    <div class="circle-item item2">
+      <div class="circle-icon">
+        <img src="images/menu.jpeg" alt="Menu Planning" data-i18n-attr="alt" data-i18n="orbit_menu_img">
+      </div>
+      <p data-i18n="orbit_menu">Menu Planning</p>
+    </div>
+
+    <div class="circle-item item3">
+      <div class="circle-icon">
+        <img src="images/preparation.jpeg" alt="Preparation" data-i18n-attr="alt" data-i18n="orbit_preparation_img">
+      </div>
+      <p data-i18n="orbit_preparation">Preparation</p>
+    </div>
+
+    <div class="circle-item item4">
+      <div class="circle-icon">
+        <img src="images/event_service.jpeg" alt="Event Service" data-i18n-attr="alt" data-i18n="orbit_service_img">
+      </div>
+      <p data-i18n="orbit_service">Event Service</p>
+    </div>
+  </div>
+
+  <!-- Step Texts -->
+  <div class="orbit-steps">
+    <div class="step">
+      <h4><img src="images/inquiry.jpeg" alt="Inquiry" width="22" data-i18n-attr="alt" data-i18n="step1_img" /> <span data-i18n="step1_title">Send Inquiry</span></h4>
+      <p data-i18n="step1_text">Contact us with your event details — date, venue, and guest count.</p>
+    </div>
+    <div class="step">
+      <h4><img src="images/menu.jpeg" alt="Menu Planning" width="22" data-i18n-attr="alt" data-i18n="step2_img" /> <span data-i18n="step2_title">Menu Planning</span></h4>
+      <p data-i18n="step2_text">Choose from our curated menus or customize dishes for your event.</p>
+    </div>
+    <div class="step">
+      <h4><img src="images/preparation.jpeg" alt="Preparation" width="22" data-i18n-attr="alt" data-i18n="step3_img" /> <span data-i18n="step3_title">Preparation</span></h4>
+      <p data-i18n="step3_text">Our chefs craft fresh, delicious dishes tailored to your event.</p>
+    </div>
+    <div class="step">
+      <h4><img src="images/event_service.jpeg" alt="Event Service" width="22" data-i18n-attr="alt" data-i18n="step4_img" /> <span data-i18n="step4_title">Event Service</span></h4>
+      <p data-i18n="step4_text">We deliver, set up, and serve — enjoy stress-free hosting.</p>
+    </div>
+  </div>
+</section>
+
+<section class="table-showcase">
+  <h2 class="section-title" data-i18n="showcase_title">Our Catering Services</h2>
+  <p class="section-subtitle" data-i18n="showcase_subtitle">From intimate gatherings to grand celebrations, we bring gourmet dining to your event.</p>
+
+  <div class="table-slider">
+    <div class="slide active">
+      <img src="images/wedding.jpeg" alt="Wedding Catering" data-i18n-attr="alt" data-i18n="slide_wedding_img">
+      <h3 data-i18n="slide_wedding">Elegant Wedding Catering</h3>
+    </div>
+    <div class="slide">
+      <img src="images/corporate.jpeg" alt="Corporate Catering" data-i18n-attr="alt" data-i18n="slide_corporate_img">
+      <h3 data-i18n="slide_corporate">Corporate Events</h3>
+    </div>
+    <div class="slide">
+      <img src="images/birthday.jpeg" alt="Birthday Catering" data-i18n-attr="alt" data-i18n="slide_birthday_img">
+      <h3 data-i18n="slide_birthday">Birthday Celebrations</h3>
+    </div>
+    <div class="slide">
+      <img src="images/private.jpeg" alt="Private Party Catering" data-i18n-attr="alt" data-i18n="slide_private_img">
+      <h3 data-i18n="slide_private">Private Parties & Gatherings</h3>
+    </div>
+  </div>
+
+  <!-- Slider Controls -->
+  <div class="slider-nav">
+    <button class="prev" aria-label="previous">⟨</button>
+    <button class="next" aria-label="next">⟩</button>
+  </div>
+</section>
+
+<!-- =======================
+   Catering Section
+======================= -->
+<section class="table-booking" id="catering">
+  <h2 class="section-title" data-i18n="booking_title">Catering Services</h2>
+  <p class="section-subtitle" data-i18n="booking_subtitle">Delicious food and seamless service for weddings, parties, and corporate events</p>
+
+  <div class="booking-wrapper">
+    <!-- Left: Catering Slider -->
+    <div class="booking-slider">
+      <div class="booking-card active" data-index="0">
+        <div class="booking-content">
+          <h3 data-i18n="booking_card1_title">Wedding Catering</h3>
+          <p data-i18n="booking_card1_text">Elegant multi-course meals and buffets to make your big day unforgettable.</p>
+          <a href="contact.html"><button class="btn-book" data-i18n="booking_btn">Book Catering</button></a>
+        </div>
+      </div>
+
+      <div class="booking-card" data-index="1">
+        <div class="booking-content">
+          <h3 data-i18n="booking_card2_title">Corporate Events</h3>
+          <p data-i18n="booking_card2_text">Professional catering for meetings, conferences, and office parties.</p>
+          <a href="contact.html"><button class="btn-book" data-i18n="booking_btn">Book Catering</button></a>
+        </div>
+      </div>
+
+      <div class="booking-card" data-index="2">
+        <div class="booking-content">
+          <h3 data-i18n="booking_card3_title">Private Parties</h3>
+          <p data-i18n="booking_card3_text">Celebrate birthdays, anniversaries, or casual gatherings with tailored menus.</p>
+          <a href="contact.html"><button class="btn-book" data-i18n="booking_btn">Book Catering</button></a>
+        </div>
+      </div>
+
+      <!-- Navigation Arrows -->
+      <div class="slider-controls">
+        <button class="arrow prev" aria-label="previous">⬅</button>
+        <button class="arrow next" aria-label="next">➡</button>
+      </div>
+    </div>
+
+    <!-- Right: Highlights -->
+    <div class="booking-highlights">
+      <h3 data-i18n="booking_highlights_title">Highlights</h3>
+      <ul id="booking-highlight-list">
+        <!-- Will change dynamically -->
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="booking-tracking">
+  <h2 class="section-title" data-i18n="tracking_title">Catering Order Progress</h2>
+  <p class="section-subtitle" data-i18n="tracking_subtitle">Track your catering request from start to finish</p>
+
+  <div class="progress-container">
+    <div class="progress-bar"></div>
+
+    <div class="progress-step active">
+      <p data-i18n="tracking_step1">Requested</p>
+    </div>
+
+    <div class="progress-step">
+      <p data-i18n="tracking_step2">Confirmed</p>
+    </div>
+
+    <div class="progress-step">
+      <p data-i18n="tracking_step3">Prepared</p>
+    </div>
+
+    <div class="progress-step">
+      <p data-i18n="tracking_step4">Delivered & Served</p>
+    </div>
+  </div>
+</section>
+
+<!-- =======================
+   Customer Reviews Section
+======================= -->
+<section class="customer-reviews">
+  <h2 class="section-title" data-i18n="reviews_title">Customer Reviews</h2>
+  <p class="section-subtitle" data-i18n="reviews_sub">See what our happy customers are saying about their food delivery experience.</p>
+
+  <div class="reviews-grid">
+    <!-- Review 1 -->
+    <div class="review-card">
+      <img src="images/ser2_t1.jpeg" alt="Priya S." class="review-img" data-i18n-attr="alt" data-i18n="review1_img_alt">
+      <p class="review-text" data-i18n="review1_text">"Amazing service and delicious food!"</p>
+      <h4 class="review-name" data-i18n="review1_name">Priya S.</h4>
+    </div>
+
+    <!-- Review 2 -->
+    <div class="review-card">
+      <img src="images/ser4_t3.jpeg" alt="Rahul M." class="review-img" data-i18n-attr="alt" data-i18n="review2_img_alt">
+      <p class="review-text" data-i18n="review2_text">"Amazing service and delicious food!"</p>
+      <h4 class="review-name" data-i18n="review2_name">Rahul M.</h4>
+    </div>
+
+    <!-- Review 3 -->
+    <div class="review-card">
+      <img src="images/ser4_t2.jpeg" alt="Anjali T." class="review-img" data-i18n-attr="alt" data-i18n="review3_img_alt">
+      <p class="review-text" data-i18n="review3_text">"Amazing service and delicious food!"</p>
+      <h4 class="review-name" data-i18n="review3_name">Anjali T.</h4>
+    </div>
+
+    <!-- Review 4 -->
+    <div class="review-card">
+      <img src="images/1.jpg" alt="Arjun D." class="review-img" data-i18n-attr="alt" data-i18n="review4_img_alt">
+      <p class="review-text" data-i18n="review4_text">"Amazing service and delicious food!"</p>
+      <h4 class="review-name" data-i18n="review4_name">Arjun D.</h4>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section">
+  <div class="cta-content">
+    <h2 data-i18n="cta_title">Ready to Plan Your Event?</h2>
+    <p data-i18n="cta_text">Let us handle the food while you focus on making memories.</p>
+    <a href="contact.html" class="cta-btn" data-i18n="cta_btn">Book Catering Now</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-container">
+    <!-- Column 1: Logo + Description -->
+    <div class="footer-col">
+      <a href="index.html"><img src="images/logo.png" alt="Stackly Logo" class="footer-logo" data-i18n-attr="alt" data-i18n="footer_logo_alt"></a>
+      <p data-i18n-html="true" data-i18n="footer_text">Delicious food delivered to your door.<br>Experience the best of restaurant and food delivery services with us!</p>
+      <div class="social-icons">
+        <a href="https://www.facebook.com" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.twitter.com" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+
+    <!-- Column 2: Quick Links -->
+    <div class="footer-col">
+      <h4 data-i18n="footer_quick">Quick Links</h4>
+      <ul>
+        <li><a href="index.html" data-i18n="footer_home1">Home 1</a></li>
+        <li><a href="home2.html" data-i18n="footer_home2">Home 2</a></li>
+        <li><a href="about.html" data-i18n="footer_about">About Us</a></li>
+        <li><a href="services.html" data-i18n="footer_services">Services</a></li>
+        <li><a href="blog.html" data-i18n="footer_blog">Blog</a></li>
+        <li><a href="contact.html" data-i18n="footer_contact">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <!-- Column 3: Services -->
+    <div class="footer-col">
+      <h4 data-i18n="footer_services_title">Services</h4>
+      <ul>
+        <li><a href="service1.html" data-i18n="nav_service1">Food Delivery</a></li>
+        <li><a href="service2.html" data-i18n="nav_service2">Table Booking</a></li>
+        <li><a href="service3.html" data-i18n="nav_service3">Catering</a></li>
+        <li><a href="service4.html" data-i18n="nav_service4">Personal Chef</a></li>
+        <li><a href="service5.html" data-i18n="nav_service5">Event Dining</a></li>
+        <li><a href="service6.html" data-i18n="nav_service6">Cooking Classes</a></li>
+      </ul>
+    </div>
+
+    <!-- Column 4: Contact -->
+    <div class="footer-col">
+      <h4 data-i18n="footer_contact_title">Contact Us</h4>
+      <p><i class="fas fa-map-marker-alt"></i> <span data-i18n="footer_address">123 Main St, Food City</span></p>
+      <p><i class="fas fa-phone"></i> <span data-i18n="footer_phone">+1 234 567 890</span></p>
+      <p><i class="fas fa-envelope"></i> <span data-i18n="footer_email">info@restaurant.com</span></p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p data-i18n="footer_rights">© 2025 Restaurant. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- Consolidated script:
+     - translations (en/ar/he)
+     - DOM initialization: apply translations, set lang/dir
+     - all UI behaviors (orbit observer, booking slider + highlights populated from translations,
+       progress observer, table showcase slider) preserved.
+-->
+<script>
+(function(){
+  const translations = {
+    en: {
+      title: "Stackly Food",
+      logo_alt: "Logo",
+      nav_home: "Home ▾",
+      nav_home1: "Home 1",
+      nav_home2: "Home 2",
+      nav_about: "About",
+      nav_blog: "Blog",
+      nav_services: "Services ▾",
+      nav_all_services: "All Services",
+      nav_service1: "Food Delivery",
+      nav_service2: "Table Booking",
+      nav_service3: "Catering",
+      nav_service4: "Personal Chef",
+      nav_service5: "Event Dining",
+      nav_service6: "Cooking Classes",
+      nav_contact: "Contact",
+      logout: "Logout",
+
+      hero_title: "Catering Services",
+      hero_desc: "Delight your guests with our customized catering options, perfect for weddings, parties, and corporate events.",
+      btn_book: "Book Catering",
+      btn_back: "Back to Services",
+
+      orbit_title: "How Catering Works",
+      orbit_center: "Catering",
+      orbit_inquiry: "Inquiry",
+      orbit_menu: "Menu Planning",
+      orbit_preparation: "Preparation",
+      orbit_service: "Event Service",
+      orbit_inquiry_img: "Inquiry",
+      orbit_menu_img: "Menu Planning",
+      orbit_preparation_img: "Preparation",
+      orbit_service_img: "Event Service",
+
+      step1_title: "Send Inquiry",
+      step1_text: "Contact us with your event details — date, venue, and guest count.",
+      step2_title: "Menu Planning",
+      step2_text: "Choose from our curated menus or customize dishes for your event.",
+      step3_title: "Preparation",
+      step3_text: "Our chefs craft fresh, delicious dishes tailored to your event.",
+      step4_title: "Event Service",
+      step4_text: "We deliver, set up, and serve — enjoy stress-free hosting.",
+      step1_img: "Inquiry",
+      step2_img: "Menu Planning",
+      step3_img: "Preparation",
+      step4_img: "Event Service",
+
+      showcase_title: "Our Catering Services",
+      showcase_subtitle: "From intimate gatherings to grand celebrations, we bring gourmet dining to your event.",
+      slide_wedding: "Elegant Wedding Catering",
+      slide_corporate: "Corporate Events",
+      slide_birthday: "Birthday Celebrations",
+      slide_private: "Private Parties & Gatherings",
+      slide_wedding_img: "Wedding Catering",
+      slide_corporate_img: "Corporate Catering",
+      slide_birthday_img: "Birthday Catering",
+      slide_private_img: "Private Party Catering",
+
+      booking_title: "Catering Services",
+      booking_subtitle: "Delicious food and seamless service for weddings, parties, and corporate events",
+      booking_card1_title: "Wedding Catering",
+      booking_card1_text: "Elegant multi-course meals and buffets to make your big day unforgettable.",
+      booking_card2_title: "Corporate Events",
+      booking_card2_text: "Professional catering for meetings, conferences, and office parties.",
+      booking_card3_title: "Private Parties",
+      booking_card3_text: "Celebrate birthdays, anniversaries, or casual gatherings with tailored menus.",
+      booking_btn: "Book Catering",
+      booking_highlights_title: "Highlights",
+
+      // highlights arrays per booking card (3 arrays)
+      booking_highlights: [
+        [
+          "Customized catering menus for any occasion",
+          "Professional staff & service team",
+          "Elegant buffet or plated setup options"
+        ],
+        [
+          "Freshly prepared dishes delivered & served on-site",
+          "Flexible indoor and outdoor catering solutions",
+          "Seamless coordination for a stress-free event"
+        ],
+        [
+          "Scalable service for small to large gatherings",
+          "Special menus for kids, vegetarians & dietary needs",
+          "Perfect for weddings, corporate events & parties"
+        ]
+      ],
+
+      tracking_title: "Catering Order Progress",
+      tracking_subtitle: "Track your catering request from start to finish",
+      tracking_step1: "Requested",
+      tracking_step2: "Confirmed",
+      tracking_step3: "Prepared",
+      tracking_step4: "Delivered & Served",
+
+      reviews_title: "Customer Reviews",
+      reviews_sub: "See what our happy customers are saying about their food delivery experience.",
+      review1_img_alt: "Priya S.",
+      review1_text: "\"Amazing service and delicious food!\"",
+      review1_name: "Priya S.",
+      review2_img_alt: "Rahul M.",
+      review2_text: "\"Amazing service and delicious food!\"",
+      review2_name: "Rahul M.",
+      review3_img_alt: "Anjali T.",
+      review3_text: "\"Amazing service and delicious food!\"",
+      review3_name: "Anjali T.",
+      review4_img_alt: "Arjun D.",
+      review4_text: "\"Amazing service and delicious food!\"",
+      review4_name: "Arjun D.",
+
+      cta_title: "Ready to Plan Your Event?",
+      cta_text: "Let us handle the food while you focus on making memories.",
+      cta_btn: "Book Catering Now",
+
+      footer_logo_alt: "Stackly Logo",
+      footer_text: "Delicious food delivered to your door.<br>Experience the best of restaurant and food delivery services with us!",
+      footer_quick: "Quick Links",
+      footer_home1: "Home 1",
+      footer_home2: "Home 2",
+      footer_about: "About Us",
+      footer_services: "Services",
+      footer_blog: "Blog",
+      footer_contact: "Contact Us",
+      footer_services_title: "Services",
+      footer_contact_title: "Contact Us",
+      footer_address: "123 Main St, Food City",
+      footer_phone: "+1 234 567 890",
+      footer_email: "info@restaurant.com",
+      footer_rights: "© 2025 Restaurant. All rights reserved."
+    },
+
+    ar: {
+      title: "ستاكلي فود",
+      logo_alt: "الشعار",
+      nav_home: "الرئيسية ▾",
+      nav_home1: "الصفحة الرئيسية 1",
+      nav_home2: "الصفحة الرئيسية 2",
+      nav_about: "معلومات عنا",
+      nav_blog: "مدونة",
+      nav_services: "الخدمات ▾",
+      nav_all_services: "كل الخدمات",
+      nav_service1: "توصيل الطعام",
+      nav_service2: "حجز الطاولة",
+      nav_service3: "التموين",
+      nav_service4: "شيف شخصي",
+      nav_service5: "الطعام للمناسبات",
+      nav_service6: "دروس الطبخ",
+      nav_contact: "اتصل بنا",
+      logout: "تسجيل الخروج",
+
+      hero_title: "خدمات التموين",
+      hero_desc: "أسعد ضيوفك بباقة خدمات تموين مخصصة — مناسبة لحفلات الزفاف، الحفلات، والفعاليات الشركات.",
+      btn_book: "احجز التموين",
+      btn_back: "العودة إلى الخدمات",
+
+      orbit_title: "كيف يعمل التموين",
+      orbit_center: "التموين",
+      orbit_inquiry: "الاستفسار",
+      orbit_menu: "تخطيط القائمة",
+      orbit_preparation: "التحضير",
+      orbit_service: "خدمة الفعالية",
+      orbit_inquiry_img: "الاستفسار",
+      orbit_menu_img: "تخطيط القائمة",
+      orbit_preparation_img: "التحضير",
+      orbit_service_img: "خدمة الفعالية",
+
+      step1_title: "إرسال استفسار",
+      step1_text: "تواصل معنا بتفاصيل حدثك — التاريخ، المكان، وعدد الضيوف.",
+      step2_title: "تخطيط القائمة",
+      step2_text: "اختر من قوائمنا المُعدة أو خصص أطباقًا لحدثك.",
+      step3_title: "التحضير",
+      step3_text: "يعد طهاتنا أطباقًا طازجة ولذيذة حسب متطلبات الحدث.",
+      step4_title: "خدمة الفعالية",
+      step4_text: "نقوم بالتوصيل، الإعداد، والتقديم — استمتع باستضافة بلا توتر.",
+      step1_img: "الاستفسار",
+      step2_img: "تخطيط القائمة",
+      step3_img: "التحضير",
+      step4_img: "خدمة الفعالية",
+
+      showcase_title: "خدمات التموين لدينا",
+      showcase_subtitle: "من اللقاءات الحميمة إلى الاحتفالات الكبرى — نأتي بالطعام الراقي إلى فعاليةك.",
+      slide_wedding: "تموين حفلات الزفاف الأنيق",
+      slide_corporate: "فعاليات الشركات",
+      slide_birthday: "احتفالات أعياد الميلاد",
+      slide_private: "حفلات خاصة وتجميعات",
+      slide_wedding_img: "تموين زفاف",
+      slide_corporate_img: "تموين شركات",
+      slide_birthday_img: "تموين أعياد الميلاد",
+      slide_private_img: "تموين حفلات خاصة",
+
+      booking_title: "خدمات التموين",
+      booking_subtitle: "طعام لذيذ وخدمة سلسة لحفلات الزفاف والحفلات وفعاليات الشركات",
+      booking_card1_title: "تموين حفلات الزفاف",
+      booking_card1_text: "قوائم متعددة الدورات وبوفيهات فاخرة لجعل يومك الكبير لا يُنسى.",
+      booking_card2_title: "فعاليات الشركات",
+      booking_card2_text: "تموين احترافي للاجتماعات والمؤتمرات وحفلات المكاتب.",
+      booking_card3_title: "حفلات خاصة",
+      booking_card3_text: "احتفل بعيد ميلاد أو ذكرى مع قوائم مُخصصة.",
+      booking_btn: "احجز التموين",
+      booking_highlights_title: "أبرز المزايا",
+
+      booking_highlights: [
+        [
+          "قوائم تموين مخصصة لأي مناسبة",
+          "طاقم خدمة محترف",
+          "خيارات بوفيه أو تقديم راقية"
+        ],
+        [
+          "أطباق معدة طازجة وتقدم في الموقع",
+          "حلول تموين داخلية وخارجية مرنة",
+          "تنسيق سلس لفعالية بلا توتر"
+        ],
+        [
+          "خدمة قابلة للتوسيع للمناسبات الصغيرة والكبيرة",
+          "قوائم خاصة للأطفال والنباتيين واحتياجات غذائية",
+          "مثالية لحفلات الزفاف وفعاليات الشركات والحفلات"
+        ]
+      ],
+
+      tracking_title: "تقدم طلب التموين",
+      tracking_subtitle: "تابع طلب التموين من البداية حتى النهاية",
+      tracking_step1: "طلب",
+      tracking_step2: "مؤكد",
+      tracking_step3: "قيد التحضير",
+      tracking_step4: "تم التوصيل والتقديم",
+
+      reviews_title: "آراء العملاء",
+      reviews_sub: "اطلع على آراء عملائنا السعداء حول تجربة التموين لدينا.",
+      review1_img_alt: "بريا س.",
+      review1_text: "\"خدمة رائعة وطعام لذيذ!\"",
+      review1_name: "بريا س.",
+      review2_img_alt: "راهول م.",
+      review2_text: "\"خدمة رائعة وطعام لذيذ!\"",
+      review2_name: "راهول م.",
+      review3_img_alt: "أنجالي ت.",
+      review3_text: "\"خدمة رائعة وطعام لذيذ!\"",
+      review3_name: "أنجالي ت.",
+      review4_img_alt: "أرجون د.",
+      review4_text: "\"خدمة رائعة وطعام لذيذ!\"",
+      review4_name: "أرجون د.",
+
+      cta_title: "هل أنت جاهز لتخطيط فعالية؟",
+      cta_text: "دعنا نتولى إعداد الطعام بينما تركز أنت على صنع الذكريات.",
+      cta_btn: "احجز التموين الآن",
+
+      footer_logo_alt: "شعار ستاكلي",
+      footer_text: "طعام لذيذ يصل إلى بابك.<br>اختبر أفضل خدمات المطاعم وتوصيل الطعام معنا!",
+      footer_quick: "روابط سريعة",
+      footer_home1: "الصفحة الرئيسية 1",
+      footer_home2: "الصفحة الرئيسية 2",
+      footer_about: "معلومات عنا",
+      footer_services: "الخدمات",
+      footer_blog: "المدونة",
+      footer_contact: "اتصل بنا",
+      footer_services_title: "الخدمات",
+      footer_contact_title: "اتصل بنا",
+      footer_address: "123 شارع الرئيسي، مدينة الطعام",
+      footer_phone: "+1 234 567 890",
+      footer_email: "info@restaurant.com",
+      footer_rights: "© 2025 المطعم. جميع الحقوق محفوظة."
+    },
+
+    he: {
+      title: "סטאקלי פוד",
+      logo_alt: "לוגו",
+      nav_home: "בית ▾",
+      nav_home1: "בית 1",
+      nav_home2: "בית 2",
+      nav_about: "אודות",
+      nav_blog: "בלוג",
+      nav_services: "שירותים ▾",
+      nav_all_services: "כל השירותים",
+      nav_service1: "משלוח אוכל",
+      nav_service2: "הזמנת שולחן",
+      nav_service3: "קייטרינג",
+      nav_service4: "שף פרטי",
+      nav_service5: "ארוחות לאירועים",
+      nav_service6: "שיעורי בישול",
+      nav_contact: "צור קשר",
+      logout: "התנתק",
+
+      hero_title: "שירותי קייטרינג",
+      hero_desc: "פתיעו את האורחים עם אפשרויות קייטרינג מותאמות — מושלם לחתונות, מסיבות ואירועי חברה.",
+      btn_book: "הזמן קייטרינג",
+      btn_back: "חזור לשירותים",
+
+      orbit_title: "איך עובד הקייטרינג",
+      orbit_center: "קייטרינג",
+      orbit_inquiry: "פנייה",
+      orbit_menu: "תכנון תפריט",
+      orbit_preparation: "הכנה",
+      orbit_service: "שירות לאירוע",
+      orbit_inquiry_img: "פנייה",
+      orbit_menu_img: "תכנון תפריט",
+      orbit_preparation_img: "הכנה",
+      orbit_service_img: "שירות לאירוע",
+
+      step1_title: "שלח פנייה",
+      step1_text: "צרו קשר עם פרטי האירוע — תאריך, מיקום ומספר מוזמנים.",
+      step2_title: "תכנון תפריט",
+      step2_text: "בחרו מתפריטים מוכנים או התאימו מנות לאירוע שלכם.",
+      step3_title: "הכנה",
+      step3_text: "השפים שלנו מכינים מנות טריות וטעימות בהתאמה לאירוע.",
+      step4_title: "שירות לאירוע",
+      step4_text: "אנו מספקים, מקימים ומגישים — אירוח בלי דאגות.",
+      step1_img: "פנייה",
+      step2_img: "תכנון תפריט",
+      step3_img: "הכנה",
+      step4_img: "שירות לאירוע",
+
+      showcase_title: "שירותי הקייטרינג שלנו",
+      showcase_subtitle: "ממפגשים אינטימיים ועד לחגיגות גדולות — אנחנו מביאים מטבח גורמה לאירוע שלכם.",
+      slide_wedding: "קייטרינג חתונות אלגנטי",
+      slide_corporate: "אירועי חברה",
+      slide_birthday: "חגיגות יום הולדת",
+      slide_private: "מסיבות פרטיות ואירועים",
+      slide_wedding_img: "קייטרינג חתונה",
+      slide_corporate_img: "קייטרינג חברות",
+      slide_birthday_img: "קייטרינג יום הולדת",
+      slide_private_img: "קייטרינג מסיבות פרטיות",
+
+      booking_title: "שירותי קייטרינג",
+      booking_subtitle: "מזון טעים ושירות חלק לחתונות, מסיבות ואירועי חברה",
+      booking_card1_title: "קייטרינג חתונות",
+      booking_card1_text: "תפריטים מרובי מנות ובופטים מפנקים לדגש על יום מיוחד בלתי נשכח.",
+      booking_card2_title: "אירועי חברה",
+      booking_card2_text: "קייטרינג מקצועי לפגישות, כנסים וחגיגות משרדיות.",
+      booking_card3_title: "מסיבות פרטיות",
+      booking_card3_text: "חוגגים ימי הולדת או אירועים פרטיים עם תפריטים מותאמים.",
+      booking_btn: "הזמן קייטרינג",
+      booking_highlights_title: "הדגשים",
+
+      booking_highlights: [
+        [
+          "תפריטי קייטרינג מותאמים לכל אירוע",
+          "צוות שירות מקצועי",
+          "אפשרויות בופה או הגשה אלגנטיות"
+        ],
+        [
+          "מנות טריות המוגשות באתר",
+          "פתרונות קייטרינג פנימיים וחיצוניים גמישים",
+          "תיאום חלק לאירוע נטול דאגות"
+        ],
+        [
+          "שירות הניתן להרחבה לאירועים קטנים עד גדולים",
+          "תפריטים מיוחדים לילדים וצמחונים",
+          "מושלם לחתונות ואירועי חברה"
+        ]
+      ],
+
+      tracking_title: "התקדמות בקשת הקייטרינג",
+      tracking_subtitle: "עקבו אחרי בקשת הקייטרינג מההתחלה ועד הסוף",
+      tracking_step1: "נדרש",
+      tracking_step2: "מאושר",
+      tracking_step3: "בהכנה",
+      tracking_step4: "נמסר ומוגש",
+
+      reviews_title: "ביקורות לקוחות",
+      reviews_sub: "ראו מה הלקוחות המאושרים שלנו אומרים על חוויית הקייטרינג.",
+      review1_img_alt: "פריה ס.",
+      review1_text: "\"שירות מדהים ואוכל טעים!\"",
+      review1_name: "פריה ס.",
+      review2_img_alt: "רהול מ.",
+      review2_text: "\"שירות מדהים ואוכל טעים!\"",
+      review2_name: "רהול מ.",
+      review3_img_alt: "אנג'לי ת.",
+      review3_text: "\"שירות מדהים ואוכל טעים!\"",
+      review3_name: "אנג'לי ת.",
+      review4_img_alt: "ארג'ון ד.",
+      review4_text: "\"שירות מדהים ואוכל טעים!\"",
+      review4_name: "ארג'ון ד.",
+
+      cta_title: "מוכנים לתכנן את האירוע שלכם?",
+      cta_text: "תנו לנו לטפל באוכל ואתם תתמקדו ביצירת זכרונות.",
+      cta_btn: "הזמן קייטרינג עכשיו",
+
+      footer_logo_alt: "לוגו סטאקלי",
+      footer_text: "אוכל טעים עד לפתח הבית.<br>חוו את מיטב שירותי המסעדות והמשלוחים איתנו!",
+      footer_quick: "קישורים מהירים",
+      footer_home1: "בית 1",
+      footer_home2: "בית 2",
+      footer_about: "אודות",
+      footer_services: "שירותים",
+      footer_blog: "בלוג",
+      footer_contact: "צור קשר",
+      footer_services_title: "שירותים",
+      footer_contact_title: "צור קשר",
+      footer_address: "123 רח' הראשי, עיר האוכל",
+      footer_phone: "+1 234 567 890",
+      footer_email: "info@restaurant.com",
+      footer_rights: "© 2025 מסעדה. כל הזכויות שמורות."
+    }
+  };
+
+  // Helper: determine initial language
+  function getInitialLang(){
+    const saved = localStorage.getItem('lang');
+    if(saved && ['en','ar','he'].includes(saved)) return saved;
+    const nav = (navigator.language || navigator.userLanguage || 'en').slice(0,2);
+    if(['en','ar','he'].includes(nav)) return nav;
+    return 'en';
+  }
+
+  let currentLang = getInitialLang();
+
+  function applyTranslations(lang){
+    const map = translations[lang] || translations.en;
+
+    // set html lang & dir
+    document.documentElement.lang = lang;
+    document.documentElement.dir = (lang === 'ar' || lang === 'he') ? 'rtl' : 'ltr';
+
+    // data-i18n-attr (alt,...)
+    document.querySelectorAll('[data-i18n-attr]').forEach(el=>{
+      const key = el.getAttribute('data-i18n');
+      const attrs = el.getAttribute('data-i18n-attr').split(',').map(s=>s.trim());
+      attrs.forEach(attr=>{
+        if(map[key] !== undefined) el.setAttribute(attr, map[key]);
+      });
+    });
+
+    // data-i18n-html (innerHTML)
+    document.querySelectorAll('[data-i18n-html]').forEach(el=>{
+      const key = el.getAttribute('data-i18n');
+      if(map[key] !== undefined) el.innerHTML = map[key];
+    });
+
+    // data-i18n (textContent)
+    document.querySelectorAll('[data-i18n]').forEach(el=>{
+      // skip those handled via data-i18n-attr/html (they may also have data-i18n)
+      if(el.hasAttribute('data-i18n-attr') || el.hasAttribute('data-i18n-html')) return;
+      const key = el.getAttribute('data-i18n');
+      if(map[key] !== undefined) el.textContent = map[key];
+    });
+
+    // <title>
+    const titleEl = document.querySelector('title[data-i18n]');
+    if(titleEl){
+      const k = titleEl.getAttribute('data-i18n');
+      if(map[k] !== undefined) titleEl.textContent = map[k];
+    } else if(map.title !== undefined){
+      document.title = map.title;
+    }
+
+    // persist
+    localStorage.setItem('lang', lang);
+    currentLang = lang;
+  }
+
+  // Init all behaviors and translations after DOM ready
+  document.addEventListener('DOMContentLoaded', () => {
+    const sel = document.getElementById('language-selector');
+    if(sel){
+      sel.value = currentLang;
+      sel.addEventListener('change', (e) => {
+        applyTranslations(e.target.value);
+        // update highlights immediately if visible
+        updateBookingHighlights();
+      });
+    }
+
+    // apply initially
+    applyTranslations(currentLang);
+
+    // ---- UI behaviors (from your page), adapted to use translations for dynamic highlights ----
+
+    // Orbit: pause animation when in view
+    (function initOrbit(){
+      const orbit = document.querySelector(".circle-container");
+      if (!orbit) return;
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) orbit.classList.add("paused");
+          else orbit.classList.remove("paused");
+        });
+      }, { threshold: 0.6 });
+      observer.observe(orbit);
+    })();
+
+    // Booking slider + Highlights
+    (function initBookingSlider(){
+      const cards = document.querySelectorAll(".booking-card");
+      const prevBtn = document.querySelector(".arrow.prev");
+      const nextBtn = document.querySelector(".arrow.next");
+      const highlightsList = document.getElementById("booking-highlight-list");
+      let currentIndex = 0;
+
+      function showCard(index){
+        cards.forEach((card,i)=> card.classList.toggle('active', i===index));
+        updateBookingHighlights(index);
+      }
+
+      function updateBookingHighlights(index = currentIndex){
+        // Get highlights from translations for currentLang
+        const map = translations[currentLang] || translations.en;
+        const arr = map.booking_highlights || [[],[],[]];
+        highlightsList.innerHTML = '';
+        const list = arr[index] || [];
+        list.forEach(item => {
+          const li = document.createElement('li');
+          li.textContent = item;
+          highlightsList.appendChild(li);
+        });
+      }
+
+      if(nextBtn) nextBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % cards.length;
+        showCard(currentIndex);
+      });
+
+      if(prevBtn) prevBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+        showCard(currentIndex);
+      });
+
+      // init
+      showCard(currentIndex);
+      // expose updater to outer scope for language changes
+      window.updateBookingHighlights = updateBookingHighlights;
+    })();
+
+    // Booking progress animation using IntersectionObserver
+    (function initBookingProgress(){
+      const progressBar = document.querySelector(".progress-bar");
+      const steps = document.querySelectorAll(".progress-step");
+
+      if(!progressBar || steps.length === 0) return;
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if(entry.isIntersecting){
+            // Animate
+            steps.forEach((step, index) => {
+              setTimeout(() => {
+                step.classList.add('active');
+                const percent = (index / (steps.length-1)) * 100;
+                // set width on the progress bar element directly
+                progressBar.style.width = percent + '%';
+              }, index * 800);
+            });
+          } else {
+            // Reset
+            steps.forEach(step => step.classList.remove('active'));
+            progressBar.style.width = '0%';
+          }
+        });
+      }, { threshold: 0.5 });
+
+      const toObserve = document.querySelector(".booking-tracking");
+      if(toObserve) observer.observe(toObserve);
+    })();
+
+    // Table showcase slider
+    (function initTableShowcase(){
+      const slides = document.querySelectorAll(".table-slider .slide");
+      const prevBtn = document.querySelector(".table-showcase .prev") || document.querySelector(".table-slider .prev");
+      const nextBtn = document.querySelector(".table-showcase .next") || document.querySelector(".table-slider .next");
+      let currentSlide = 0;
+      if(!slides || slides.length === 0) return;
+
+      function showSlide(index){
+        slides.forEach((s,i)=> s.classList.toggle('active', i===index));
+      }
+
+      if(nextBtn) nextBtn.addEventListener('click', () => {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+      });
+      if(prevBtn) prevBtn.addEventListener('click', () => {
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        showSlide(currentSlide);
+      });
+
+      setInterval(() => {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+      }, 5000);
+    })();
+
+    // Restaurant/booking slider navs (the small ones)
+    (function initSmallSliders(){
+      // If you have multiple slider controls with class .prev/.next, we already wired the booking and table sliders.
+      // This placeholder keeps compatibility if other sliders are added.
+    })();
+
+    // Ensure highlights update on language change (if selector changed programmatically)
+    // (window.updateBookingHighlights is set above)
+  });
+})();
+</script>
+
+</body>
+</html>

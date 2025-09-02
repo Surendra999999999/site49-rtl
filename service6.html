@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title data-i18n="title">Stackly Food</title>
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/service1.css" />
+  <link rel="stylesheet" href="css/service2.css" />
+  <script src="js/header.js" defer></script>
+  <script src="js/dark_toogle.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <a href="index.html"><img src="images/logo.png" alt="Logo" data-i18n-attr="alt" data-i18n="logo_alt"></a>
+    </div>
+
+    <div class="header-right">
+      <nav>
+        <ul class="nav-links">
+          <li class="dropdown">
+            <a href="index.html" data-i18n="nav_home">Home ▾</a>
+            <ul class="dropdown-menu">
+              <li><a href="index.html" data-i18n="nav_home1">Home 1</a></li>
+              <li><a href="home2.html" data-i18n="nav_home2">Home 2</a></li>
+            </ul>
+          </li>
+          <li><a href="about.html" data-i18n="nav_about">About</a></li>
+          <li><a href="blog.html" data-i18n="nav_blog">Blog</a></li>
+          <li class="dropdown">
+            <a href="services.html" data-i18n="nav_services">Services ▾</a>
+            <ul class="dropdown-menu">
+              <li class="mobile-only"><a href="services.html" data-i18n="nav_all_services">All Services</a></li>
+              <li><a href="service1.html" data-i18n="nav_service1">Food Delivery</a></li>
+              <li><a href="service2.html" data-i18n="nav_service2">Table Booking</a></li>
+              <li><a href="service3.html" data-i18n="nav_service3">Catering</a></li>
+              <li><a href="service4.html" data-i18n="nav_service4">Personal Chef</a></li>
+              <li><a href="service5.html" data-i18n="nav_service5">Event Dining</a></li>
+              <li><a href="service6.html" data-i18n="nav_service6">Cooking Classes</a></li>
+            </ul>
+          </li>
+          <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Language selector -->
+      <select id="language-selector" aria-label="Language selector">
+        <option value="en">English</option>
+        <option value="ar">العربية</option>
+        <option value="he">עברית</option>
+      </select>
+
+      <div class="profile-container">
+        <div class="profile" id="profile-dropdown-toggle">
+          <span id="profile-initials"></span>
+        </div>
+        <ul class="profile-dropdown" id="profile-dropdown">
+          <li><a href="#" id="logout-btn" data-i18n="logout">Logout</a></li>
+        </ul>
+      </div>
+
+      <button id="toggle-dark">🌙</button>
+      <button id="mobile-menu-toggle" class="hamburger">☰</button>
+    </div>
+  </header>
+
+<section class="hero">
+  <!-- Background Video -->
+  <video class="hero-video" autoplay muted loop playsinline>
+    <source src="videos/cookingclasses.mp4" type="video/mp4">
+    <!-- fallback image if video not available -->
+  </video>
+  <div class="hero-overlay"></div>
+
+  <!-- Content -->
+  <div class="hero-content">
+    <h1 data-i18n="hero_title">Cooking Classes</h1>
+    <p data-i18n="hero_desc">Learn hands-on from expert chefs and master the art of cooking with fun, interactive sessions tailored to all skill levels.</p>
+    <div class="hero-buttons">
+      <a href="cooking-classes-booking.html" class="btn" data-i18n="hero_btn_join">Join a Class</a>
+      <a href="services.html" class="btn-outline" data-i18n="hero_btn_back">Back to Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- Orbit Section -->
+<section class="booking-orbit" id="cooking-orbit">
+  <h2 class="section-title" data-i18n="orbit_title">How Cooking Classes Work</h2>
+
+  <div class="circle-container">
+    <!-- Center -->
+    <div class="circle-center">
+      <h3 data-i18n="orbit_center">Cooking Classes</h3>
+    </div>
+
+    <!-- Items -->
+    <div class="circle-item item1">
+      <div class="circle-icon">
+        <img src="images/Sign up.jpeg" alt="Sign Up" data-i18n-attr="alt" data-i18n="orbit_item1_img"/>
+      </div>
+      <p data-i18n="orbit_item1">Sign Up</p>
+    </div>
+
+    <div class="circle-item item2">
+      <div class="circle-icon">
+        <img src="images/preparation.jpeg" alt="Learn from Chef" data-i18n-attr="alt" data-i18n="orbit_item2_img"/>
+      </div>
+      <p data-i18n="orbit_item2">Learn from Chef</p>
+    </div>
+
+    <div class="circle-item item3">
+      <div class="circle-icon">
+        <img src="images/chef.jpeg" alt="Hands-On Practice" data-i18n-attr="alt" data-i18n="orbit_item3_img"/>
+      </div>
+      <p data-i18n="orbit_item3">Hands-On Practice</p>
+    </div>
+
+    <div class="circle-item item4">
+      <div class="circle-icon">
+        <img src="images/delicious.jpeg" alt="Master Dishes" data-i18n-attr="alt" data-i18n="orbit_item4_img"/>
+      </div>
+      <p data-i18n="orbit_item4">Master Dishes</p>
+    </div>
+  </div>
+
+  <!-- Step Texts -->
+  <div class="orbit-steps">
+    <div class="step">
+      <h4><img src="images/Sign up.jpeg" alt="Sign Up" width="22" data-i18n-attr="alt" data-i18n="step1_img" /> <span data-i18n="step1_title">Sign Up</span></h4>
+      <p data-i18n="step1_text">Choose your class based on cuisine, skill level, or cooking style.</p>
+    </div>
+    <div class="step">
+      <h4><img src="images/preparation.jpeg" alt="Learn from Chef" width="22" data-i18n-attr="alt" data-i18n="step2_img" /> <span data-i18n="step2_title">Learn from Chef</span></h4>
+      <p data-i18n="step2_text">Our expert chefs guide you through step-by-step demonstrations.</p>
+    </div>
+    <div class="step">
+      <h4><img src="images/chef.jpeg" alt="Hands-On Practice" width="22" data-i18n-attr="alt" data-i18n="step3_img" /> <span data-i18n="step3_title">Hands-On Practice</span></h4>
+      <p data-i18n="step3_text">Cook alongside the chef with personalized tips and techniques.</p>
+    </div>
+    <div class="step">
+      <h4><img src="images/delicious.jpeg" alt="Master Dishes" width="22" data-i18n-attr="alt" data-i18n="step4_img" /> <span data-i18n="step4_title">Master Dishes</span></h4>
+      <p data-i18n="step4_text">Finish the class by perfecting your dishes and enjoying your creations.</p>
+    </div>
+  </div>
+</section>
+
+<section class="table-showcase">
+  <h2 class="section-title" data-i18n="showcase_title">Cooking Class Experiences</h2>
+  <p class="section-subtitle" data-i18n="showcase_sub">Learn, cook, and enjoy! Our expert chefs guide you through hands-on culinary adventures.</p>
+
+  <div class="table-slider">
+    <div class="slide active">
+      <img src="images/cook-1.jpeg" alt="Baking Class" data-i18n-attr="alt" data-i18n="slide_baking_img">
+      <h3 data-i18n="slide_baking">Art of Baking</h3>
+    </div>
+    <div class="slide">
+      <img src="images/cook-2.jpeg" alt="Pasta Making" data-i18n-attr="alt" data-i18n="slide_pasta_img">
+      <h3 data-i18n="slide_pasta">Fresh Pasta Making</h3>
+    </div>
+    <div class="slide">
+      <img src="images/cook-3.jpeg" alt="Sushi Rolling" data-i18n-attr="alt" data-i18n="slide_sushi_img">
+      <h3 data-i18n="slide_sushi">Sushi Rolling Workshops</h3>
+    </div>
+    <div class="slide">
+      <img src="images/cook-1.jpeg" alt="Kids Cooking Class" data-i18n-attr="alt" data-i18n="slide_kids_img">
+      <h3 data-i18n="slide_kids">Kids & Family Cooking</h3>
+    </div>
+  </div>
+
+  <!-- Slider Controls -->
+  <div class="slider-nav">
+    <button class="prev" aria-label="previous">⟨</button>
+    <button class="next" aria-label="next">⟩</button>
+  </div>
+</section>
+
+<!-- =======================
+   Cooking Classes Section
+======================= -->
+<section class="table-booking" id="cooking-classes">
+  <h2 class="section-title" data-i18n="booking_title">Cooking Classes</h2>
+  <p class="section-subtitle" data-i18n="booking_sub">Learn from professional chefs with fun, hands-on classes designed for all skill levels</p>
+
+  <div class="booking-wrapper">
+    <!-- Left: Class Slider -->
+    <div class="booking-slider">
+      <div class="booking-card active" data-index="0">
+        <div class="booking-content">
+          <h3 data-i18n="card1_title">Beginner Classes</h3>
+          <p data-i18n="card1_text">Start your cooking journey with basic techniques and simple recipes to build confidence in the kitchen.</p>
+          <a href="contact.html"><button class="btn-book" data-i18n="card_btn">Join Class</button></a>
+        </div>
+      </div>
+
+      <div class="booking-card" data-index="1">
+        <div class="booking-content">
+          <h3 data-i18n="card2_title">International Cuisines</h3>
+          <p data-i18n="card2_text">Explore global flavors and learn authentic recipes from Italian pasta to Asian street food.</p>
+          <a href="class-booking.html"><button class="btn-book" data-i18n="card_btn">Join Class</button></a>
+        </div>
+      </div>
+
+      <div class="booking-card" data-index="2">
+        <div class="booking-content">
+          <h3 data-i18n="card3_title">Masterclasses</h3>
+          <p data-i18n="card3_text">Take your skills to the next level with advanced techniques and signature dishes guided by expert chefs.</p>
+          <a href="class-booking.html"><button class="btn-book" data-i18n="card_btn">Join Class</button></a>
+        </div>
+      </div>
+
+      <!-- Navigation Arrows -->
+      <div class="slider-controls">
+        <button class="arrow prev" aria-label="previous">⬅</button>
+        <button class="arrow next" aria-label="next">➡</button>
+      </div>
+    </div>
+
+    <!-- Right: Highlights -->
+    <div class="booking-highlights">
+      <h3 data-i18n="highlights_title">What You’ll Learn</h3>
+      <ul id="booking-highlight-list">
+        <!-- Will change dynamically -->
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="booking-tracking">
+  <h2 class="section-title" data-i18n="tracking_title">Cooking Classes Progress</h2>
+  <p class="section-subtitle" data-i18n="tracking_sub">Follow the journey of your cooking class from enrollment to mastery</p>
+
+  <div class="progress-container">
+    <div class="progress-bar"></div>
+
+    <div class="progress-step active">
+      <p data-i18n="tracking_step1">Enrolled</p>
+    </div>
+
+    <div class="progress-step">
+      <p data-i18n="tracking_step2">Class Scheduled</p>
+    </div>
+
+    <div class="progress-step">
+      <p data-i18n="tracking_step3">Hands-On Cooking</p>
+    </div>
+
+    <div class="progress-step">
+      <p data-i18n="tracking_step4">Taste & Certificate</p>
+    </div>
+  </div>
+</section>
+
+<!-- =======================
+   Customer Reviews Section
+======================= -->
+<section class="customer-reviews">
+  <h2 class="section-title" data-i18n="reviews_title">Customer Reviews</h2>
+  <p class="section-subtitle" data-i18n="reviews_sub">See what our happy customers are saying about their food delivery experience.</p>
+
+  <div class="reviews-grid">
+    <!-- Review 1 -->
+    <div class="review-card">
+      <img src="images/ser2_t1.jpeg" alt="Priya S." class="review-img" data-i18n-attr="alt" data-i18n="review1_img_alt">
+      <p class="review-text" data-i18n="review1_text">"Amazing service and delicious food!"</p>
+      <h4 class="review-name" data-i18n="review1_name">Priya S.</h4>
+    </div>
+
+    <!-- Review 2 -->
+    <div class="review-card">
+      <img src="images/ser4_t3.jpeg" alt="Rahul M." class="review-img" data-i18n-attr="alt" data-i18n="review2_img_alt">
+      <p class="review-text" data-i18n="review2_text">"Amazing service and delicious food!"</p>
+      <h4 class="review-name" data-i18n="review2_name">Rahul M.</h4>
+    </div>
+
+    <!-- Review 3 -->
+    <div class="review-card">
+      <img src="images/ser4_t2.jpeg" alt="Anjali T." class="review-img" data-i18n-attr="alt" data-i18n="review3_img_alt">
+      <p class="review-text" data-i18n="review3_text">"Amazing service and delicious food!"</p>
+      <h4 class="review-name" data-i18n="review3_name">Anjali T.</h4>
+    </div>
+
+    <!-- Review 4 -->
+    <div class="review-card">
+      <img src="images/1.jpg" alt="Arjun D." class="review-img" data-i18n-attr="alt" data-i18n="review4_img_alt">
+      <p class="review-text" data-i18n="review4_text">"Amazing service and delicious food!"</p>
+      <h4 class="review-name" data-i18n="review4_name">Arjun D.</h4>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section">
+  <div class="cta-content">
+    <h2 data-i18n="cta_title">Ready to Sharpen Your Culinary Skills?</h2>
+    <p data-i18n="cta_text">Join our hands-on cooking classes and master the art of creating gourmet dishes.</p>
+    <a href="cooking-classes.html" class="cta-btn" data-i18n="cta_btn">Join a Class Today</a>
+  </div>
+</section>
+
+  <footer class="footer">
+  <div class="footer-container">
+
+    <!-- Column 1: Logo + Description -->
+    <div class="footer-col">
+      <a href="index.html"><img src="images/logo.png" alt="Stackly Logo" class="footer-logo" data-i18n-attr="alt" data-i18n="footer_logo_alt"></a>
+      <p data-i18n-html="true" data-i18n="footer_text">Delicious food delivered to your door.<br>
+        Experience the best of restaurant and food delivery services with us!</p>
+      <div class="social-icons">
+        <a href="https://www.facebook.com" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.twitter.com" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+
+    <!-- Column 2: Quick Links -->
+    <div class="footer-col">
+      <h4 data-i18n="footer_quick">Quick Links</h4>
+      <ul>
+        <li><a href="index.html" data-i18n="footer_home1">Home 1</a></li>
+        <li><a href="home2.html" data-i18n="footer_home2">Home 2</a></li>
+        <li><a href="about.html" data-i18n="footer_about">About Us</a></li>
+        <li><a href="services.html" data-i18n="footer_services">Services</a></li>
+        <li><a href="blog.html" data-i18n="footer_blog">Blog</a></li>
+        <li><a href="contact.html" data-i18n="footer_contact">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <!-- Column 3: Services -->
+    <div class="footer-col">
+      <h4 data-i18n="footer_services_title">Services</h4>
+      <ul>
+         <li><a href="service1.html" data-i18n="nav_service1">Food Delivery</a></li>
+        <li><a href="service2.html" data-i18n="nav_service2">Table Booking</a></li>
+        <li><a href="service3.html" data-i18n="nav_service3">Catering</a></li>
+        <li><a href="service4.html" data-i18n="nav_service4">Personal Chef</a></li>
+        <li><a href="service5.html" data-i18n="nav_service5">Event Dining</a></li>
+        <li><a href="service6.html" data-i18n="nav_service6">Cooking Classes</a></li>
+      </ul>
+    </div>
+
+    <!-- Column 4: Contact -->
+    <div class="footer-col">
+      <h4 data-i18n="footer_contact_title">Contact Us</h4>
+      <p><i class="fas fa-map-marker-alt"></i> <span data-i18n="footer_address">123 Main St, Food City</span></p>
+      <p><i class="fas fa-phone"></i> <span data-i18n="footer_phone">+1 234 567 890</span></p>
+      <p><i class="fas fa-envelope"></i> <span data-i18n="footer_email">info@restaurant.com</span></p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p data-i18n="footer_rights">© 2025 Restaurant. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const orbit = document.querySelector(".circle-container");
+
+  if (orbit) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Stop + Reset
+          orbit.classList.add("paused");
+        } else {
+          // Resume animation
+          orbit.classList.remove("paused");
+        }
+      });
+    }, { threshold: 0.6 }); // 60% visible
+
+    observer.observe(orbit); // observe orbit only
+  }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll(".booking-card");
+  const prevBtn = document.querySelector(".arrow.prev");
+  const nextBtn = document.querySelector(".arrow.next");
+  const highlightsList = document.getElementById("booking-highlight-list");
+
+  // Highlights per card (default English; will be overridden by translations if available)
+  const highlights = [
+    ["Hands-on learning with professional chefs",
+    "Step-by-step guidance for all skill levels",
+    "Interactive cooking experience"
+    ],
+    [
+     "Group-friendly sessions with friends or family",
+    "Fun activities for celebrations & team events",
+
+    "Kid-friendly cooking options available"
+    ],
+    [
+      "Cook in a relaxed and inspiring environment",
+    "Seasonal and theme-based cooking classes",
+    "Take-home recipes to recreate dishes"
+  
+    ]
+  ];
+
+  let currentIndex = 0;
+
+  // Function to show card
+  function showCard(index) {
+    cards.forEach((card, i) => {
+      card.classList.toggle("active", i === index);
+    });
+
+    // Update highlights
+    highlightsList.innerHTML = "";
+    const lang = window.currentLang || 'en';
+    const t = (window.translations && window.translations[lang] && window.translations[lang].booking_highlights) ? window.translations[lang].booking_highlights : highlights;
+    (t[index] || []).forEach(item => {
+      const li = document.createElement("li");
+      li.textContent = item;
+      highlightsList.appendChild(li);
+    });
+  }
+
+  // Navigation
+  nextBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % cards.length;
+    showCard(currentIndex);
+  });
+
+  prevBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+    showCard(currentIndex);
+  });
+
+  // Initialize
+  showCard(currentIndex);
+
+  // Expose re-render for i18n changes
+  window.updateClassHighlights = () => showCard(currentIndex);
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const progressBar = document.querySelector(".progress-bar");
+  const steps = document.querySelectorAll(".progress-step");
+
+  if (progressBar && steps.length > 0) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Animate progress step by step
+            steps.forEach((step, index) => {
+              setTimeout(() => {
+                step.classList.add("active");
+                const progressPercent =
+                  ((index) / (steps.length - 1)) * 100;
+                progressBar.style.width = progressPercent + "%";
+              }, index * 800); // delay between steps
+            });
+          } else {
+            // Reset when scrolled out
+            steps.forEach((step) => step.classList.remove("active"));
+            progressBar.style.width = "0%";
+          }
+        });
+      },
+      { threshold: 0.5 } // 50% visible
+    );
+
+    observer.observe(document.querySelector(".booking-tracking"));
+  }
+});
+// Table Showcase Slider
+document.addEventListener("DOMContentLoaded", () => {
+  const slides = document.querySelectorAll(".table-slider .slide");
+  const prevBtn = document.querySelector(".table-showcase .prev");
+  const nextBtn = document.querySelector(".table-showcase .next");
+  let currentSlide = 0;
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle("active", i === index);
+    });
+  }
+
+  nextBtn.addEventListener("click", () => {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+    if (window.updateClassHighlights) window.updateClassHighlights();
+  });
+
+  prevBtn.addEventListener("click", () => {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+    if (window.updateClassHighlights) window.updateClassHighlights();
+  });
+
+  // Auto-slide every 5 sec
+  setInterval(() => {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  }, 5000);
+});
+</script>
+
+<!-- Consolidated script for translations + UI behaviors -->
+<script>
+(function(){
+  const translations = {
+    en: {
+      title: "Stackly Food",
+      logo_alt: "Stackly Logo",
+      nav_home: "Home ▾",
+      nav_home1: "Home 1",
+      nav_home2: "Home 2",
+      nav_about: "About",
+      nav_blog: "Blog",
+      nav_services: "Services ▾",
+      nav_all_services: "All Services",
+      nav_service1: "Food Delivery",
+      nav_service2: "Table Booking",
+      nav_service3: "Catering",
+      nav_service4: "Personal Chef",
+      nav_service5: "Event Dining",
+      nav_service6: "Cooking Classes",
+      nav_contact: "Contact",
+      logout: "Logout",
+
+      hero_title: "Cooking Classes",
+      hero_desc: "Learn hands-on from expert chefs and master the art of cooking with fun, interactive sessions tailored to all skill levels.",
+      hero_btn_join: "Join a Class",
+      hero_btn_back: "Back to Services",
+
+      orbit_title: "How Cooking Classes Work",
+      orbit_center: "Cooking Classes",
+      orbit_item1: "Sign Up",
+      orbit_item2: "Learn from Chef",
+      orbit_item3: "Hands-On Practice",
+      orbit_item4: "Master Dishes",
+      orbit_item1_img: "Sign Up",
+      orbit_item2_img: "Learn from Chef",
+      orbit_item3_img: "Hands-On Practice",
+      orbit_item4_img: "Master Dishes",
+
+      step1_title: "Sign Up",
+      step1_text: "Choose your class based on cuisine, skill level, or cooking style.",
+      step2_title: "Learn from Chef",
+      step2_text: "Our expert chefs guide you through step-by-step demonstrations.",
+      step3_title: "Hands-On Practice",
+      step3_text: "Cook alongside the chef with personalized tips and techniques.",
+      step4_title: "Master Dishes",
+      step4_text: "Finish the class by perfecting your dishes and enjoying your creations.",
+      step1_img: "Sign Up",
+      step2_img: "Learn from Chef",
+      step3_img: "Hands-On Practice",
+      step4_img: "Master Dishes",
+
+      showcase_title: "Cooking Class Experiences",
+      showcase_sub: "Learn, cook, and enjoy! Our expert chefs guide you through hands-on culinary adventures.",
+      slide_baking: "Art of Baking",
+      slide_pasta: "Fresh Pasta Making",
+      slide_sushi: "Sushi Rolling Workshops",
+      slide_kids: "Kids & Family Cooking",
+      slide_baking_img: "Baking Class",
+      slide_pasta_img: "Pasta Making",
+      slide_sushi_img: "Sushi Rolling",
+      slide_kids_img: "Kids Cooking Class",
+
+      booking_title: "Cooking Classes",
+      booking_sub: "Learn from professional chefs with fun, hands-on classes designed for all skill levels",
+      card1_title: "Beginner Classes",
+      card1_text: "Start your cooking journey with basic techniques and simple recipes to build confidence in the kitchen.",
+      card2_title: "International Cuisines",
+      card2_text: "Explore global flavors and learn authentic recipes from Italian pasta to Asian street food.",
+      card3_title: "Masterclasses",
+      card3_text: "Take your skills to the next level with advanced techniques and signature dishes guided by expert chefs.",
+      card_btn: "Join Class",
+      highlights_title: "What You’ll Learn",
+
+      booking_highlights: [
+        [
+          "Hands-on learning with professional chefs",
+          "Step-by-step guidance for all skill levels",
+          "Interactive cooking experience"
+        ],
+        [
+          "Group-friendly sessions with friends or family",
+          "Fun activities for celebrations & team events",
+          "Kid-friendly cooking options available"
+        ],
+        [
+          "Cook in a relaxed and inspiring environment",
+          "Seasonal and theme-based cooking classes",
+          "Take-home recipes to recreate dishes"
+        ]
+      ],
+
+      tracking_title: "Cooking Classes Progress",
+      tracking_sub: "Follow the journey of your cooking class from enrollment to mastery",
+      tracking_step1: "Enrolled",
+      tracking_step2: "Class Scheduled",
+      tracking_step3: "Hands-On Cooking",
+      tracking_step4: "Taste & Certificate",
+
+      reviews_title: "Customer Reviews",
+      reviews_sub: "See what our happy customers are saying about their food delivery experience.",
+      review1_img_alt: "Priya S.",
+      review1_text: "\"Amazing service and delicious food!\"",
+      review1_name: "Priya S.",
+      review2_img_alt: "Rahul M.",
+      review2_text: "\"Amazing service and delicious food!\"",
+      review2_name: "Rahul M.",
+      review3_img_alt: "Anjali T.",
+      review3_text: "\"Amazing service and delicious food!\"",
+      review3_name: "Anjali T.",
+      review4_img_alt: "Arjun D.",
+      review4_text: "\"Amazing service and delicious food!\"",
+      review4_name: "Arjun D.",
+
+      cta_title: "Ready to Sharpen Your Culinary Skills?",
+      cta_text: "Join our hands-on cooking classes and master the art of creating gourmet dishes.",
+      cta_btn: "Join a Class Today",
+
+      footer_logo_alt: "Stackly Logo",
+      footer_text: "Delicious food delivered to your door.<br>Experience the best of restaurant and food delivery services with us!",
+      footer_quick: "Quick Links",
+      footer_home1: "Home 1",
+      footer_home2: "Home 2",
+      footer_about: "About Us",
+      footer_services: "Services",
+      footer_blog: "Blog",
+      footer_contact: "Contact Us",
+      footer_services_title: "Services",
+      footer_contact_title: "Contact Us",
+      footer_address: "123 Main St, Food City",
+      footer_phone: "+1 234 567 890",
+      footer_email: "info@restaurant.com",
+      footer_rights: "© 2025 Restaurant. All rights reserved."
+    },
+
+    ar: {
+      title: "ستاكلي فود",
+      logo_alt: "شعار ستاكلي",
+      nav_home: "الرئيسية ▾",
+      nav_home1: "الصفحة الرئيسية 1",
+      nav_home2: "الصفحة الرئيسية 2",
+      nav_about: "من نحن",
+      nav_blog: "المدونة",
+      nav_services: "الخدمات ▾",
+      nav_all_services: "كل الخدمات",
+      nav_service1: "توصيل الطعام",
+      nav_service2: "حجز الطاولة",
+      nav_service3: "التموين",
+      nav_service4: "شيف شخصي",
+      nav_service5: "عشاء المناسبات",
+      nav_service6: "دروس الطبخ",
+      nav_contact: "اتصل بنا",
+      logout: "تسجيل الخروج",
+
+      hero_title: "دروس الطبخ",
+      hero_desc: "تعلّم عمليًا مع طهاة محترفين وأتقن فنون الطهي بجلسات ممتعة وتفاعلية مناسبة لجميع المستويات.",
+      hero_btn_join: "انضم إلى درس",
+      hero_btn_back: "العودة إلى الخدمات",
+
+      orbit_title: "كيف تعمل دروس الطبخ",
+      orbit_center: "دروس الطبخ",
+      orbit_item1: "التسجيل",
+      orbit_item2: "التعلم مع الشيف",
+      orbit_item3: "تطبيق عملي",
+      orbit_item4: "إتقان الأطباق",
+      orbit_item1_img: "التسجيل",
+      orbit_item2_img: "التعلم مع الشيف",
+      orbit_item3_img: "تطبيق عملي",
+      orbit_item4_img: "إتقان الأطباق",
+
+      step1_title: "التسجيل",
+      step1_text: "اختر الدرس بحسب المطبخ أو المستوى أو أسلوب الطهي.",
+      step2_title: "التعلم مع الشيف",
+      step2_text: "يرشدك طهاتنا خطوة بخطوة عبر الشرح والتطبيق.",
+      step3_title: "تطبيق عملي",
+      step3_text: "اطهُ مع الشيف وتلقَّ نصائح وتقنيات مخصصة.",
+      step4_title: "إتقان الأطباق",
+      step4_text: "اختم الدرس بإتقان أطباقك والاستمتاع بها.",
+
+      showcase_title: "تجارب دروس الطبخ",
+      showcase_sub: "تعلّم واطهُ واستمتع! يرشدك طهاتنا عبر مغامرات طهي عملية.",
+      slide_baking: "فن الخَبز",
+      slide_pasta: "تحضير باستا طازجة",
+      slide_sushi: "ورش لفّ السوشي",
+      slide_kids: "طبخ للعائلات والأطفال",
+      slide_baking_img: "درس خَبز",
+      slide_pasta_img: "تحضير باستا",
+      slide_sushi_img: "لفّ السوشي",
+      slide_kids_img: "طبخ للأطفال",
+
+      booking_title: "دروس الطبخ",
+      booking_sub: "تعلّم مع طهاة محترفين بدروس عملية ممتعة تناسب جميع المستويات",
+      card1_title: "مبتدئون",
+      card1_text: "ابدأ رحلتك في الطهي بتقنيات أساسية ووصفات بسيطة لبناء الثقة.",
+      card2_title: "مطابخ عالمية",
+      card2_text: "استكشف النكهات العالمية وتعرّف وصفات أصلية من الباستا الإيطالية إلى أكلات الشارع الآسيوية.",
+      card3_title: "دروس متقدمة",
+      card3_text: "ارتقِ بمهاراتك بتقنيات متقدمة وأطباق مميزة بإرشاد خبراء.",
+      card_btn: "انضم إلى الدرس",
+      highlights_title: "ماذا ستتعلم",
+
+      booking_highlights: [
+        [
+          "تعلّم عملي مع طهاة محترفين",
+          "إرشاد خطوة بخطوة لكل المستويات",
+          "تجربة طهي تفاعلية"
+        ],
+        [
+          "حصص مناسبة للمجموعات والأصدقاء",
+          "أنشطة ممتعة للاحتفالات وفرق العمل",
+          "خيارات مناسبة للأطفال"
+        ],
+        [
+          "بيئة مريحة وملهمة للطهي",
+          "دروس موسمية وذات موضوع",
+          "وصفات لتطبيقها في المنزل"
+        ]
+      ],
+
+      tracking_title: "تقدّم دروس الطبخ",
+      tracking_sub: "اتبع رحلتك من التسجيل حتى الإتقان",
+      tracking_step1: "تم التسجيل",
+      tracking_step2: "تم تحديد الموعد",
+      tracking_step3: "طهي عملي",
+      tracking_step4: "تذوق وشهادة",
+
+      reviews_title: "آراء العملاء",
+      reviews_sub: "اطّلع على ما يقوله عملاؤنا عن تجربة توصيل الطعام.",
+      review1_img_alt: "بريا س.",
+      review1_text: "\"خدمة رائعة وطعام لذيذ!\"",
+      review1_name: "بريا س.",
+      review2_img_alt: "راهول م.",
+      review2_text: "\"خدمة رائعة وطعام لذيذ!\"",
+      review2_name: "راهول م.",
+      review3_img_alt: "أنجالي ت.",
+      review3_text: "\"خدمة رائعة وطعام لذيذ!\"",
+      review3_name: "أنجالي ت.",
+      review4_img_alt: "أرجون د.",
+      review4_text: "\"خدمة رائعة وطعام لذيذ!\"",
+      review4_name: "أرجون د.",
+
+      cta_title: "جاهز لتطوير مهاراتك في الطهي؟",
+      cta_text: "انضم إلى دروسنا العملية وأتقن إعداد أطباق راقية.",
+      cta_btn: "انضم اليوم",
+
+      footer_logo_alt: "شعار ستاكلي",
+      footer_text: "طعام لذيذ يصل إلى بابك.<br>اختبر أفضل خدمات المطاعم وتوصيل الطعام معنا!",
+      footer_quick: "روابط سريعة",
+      footer_home1: "الصفحة الرئيسية 1",
+      footer_home2: "الصفحة الرئيسية 2",
+      footer_about: "معلومات عنا",
+      footer_services: "الخدمات",
+      footer_blog: "المدونة",
+      footer_contact: "اتصل بنا",
+      footer_services_title: "الخدمات",
+      footer_contact_title: "اتصل بنا",
+      footer_address: "123 شارع الرئيسي، مدينة الطعام",
+      footer_phone: "+1 234 567 890",
+      footer_email: "info@restaurant.com",
+      footer_rights: "© 2025 المطعم. جميع الحقوق محفوظة."
+    },
+
+    he: {
+      title: "סטאקלי פוד",
+      logo_alt: "לוגו סטאקלי",
+      nav_home: "בית ▾",
+      nav_home1: "בית 1",
+      nav_home2: "בית 2",
+      nav_about: "אודות",
+      nav_blog: "בלוג",
+      nav_services: "שירותים ▾",
+      nav_all_services: "כל השירותים",
+      nav_service1: "משלוח אוכל",
+      nav_service2: "הזמנת שולחן",
+      nav_service3: "קייטרינג",
+      nav_service4: "שף פרטי",
+      nav_service5: "ארוחות לאירועים",
+      nav_service6: "שיעורי בישול",
+      nav_contact: "צור קשר",
+      logout: "התנתק",
+
+      hero_title: "שיעורי בישול",
+      hero_desc: "לימוד מעשי עם שפים מומחים וחוויה כיפית ותכליתית לכל הרמות.",
+      hero_btn_join: "הצטרף לשיעור",
+      hero_btn_back: "חזרה לשירותים",
+
+      orbit_title: "איך שיעורי הבישול עובדים",
+      orbit_center: "שיעורי בישול",
+      orbit_item1: "הרשמה",
+      orbit_item2: "לומדים עם השף",
+      orbit_item3: "תרגול מעשי",
+      orbit_item4: "שולטים במנות",
+      orbit_item1_img: "הרשמה",
+      orbit_item2_img: "לומדים עם השף",
+      orbit_item3_img: "תרגול מעשי",
+      orbit_item4_img: "שולטים במנות",
+
+      step1_title: "הרשמה",
+      step1_text: "בחרו שיעור לפי מטבח, רמה או סגנון.",
+      step2_title: "לומדים עם השף",
+      step2_text: "השפים מדריכים אתכם שלב־אחר־שלב.",
+      step3_title: "תרגול מעשי",
+      step3_text: "מבשים לצד השף עם טיפים אישיים.",
+      step4_title: "שולטים במנות",
+      step4_text: "מסיימים את השיעור בהשלמת המנות וטעימתן.",
+
+      showcase_title: "חוויות שיעורי בישול",
+      showcase_sub: "לומדים, מבשלים, ונהנים! השפים שלנו מובילים אתכם בהרפתקאות קולינריות מעשיות.",
+      slide_baking: "אמנות האפייה",
+      slide_pasta: "הכנת פסטה טרייה",
+      slide_sushi: "סדנאות גלגול סושי",
+      slide_kids: "בישול לילדים ומשפחות",
+      slide_baking_img: "שיעור אפייה",
+      slide_pasta_img: "הכנת פסטה",
+      slide_sushi_img: "גלגול סושי",
+      slide_kids_img: "שיעור לילדים",
+
+      booking_title: "שיעורי בישול",
+      booking_sub: "לימוד עם שפים מקצועיים בשיעורים מעשיים ומהנים לכל הרמות",
+      card1_title: "מתחילים",
+      card1_text: "התחילו בטכניקות בסיסיות ומתכונים פשוטים לבניית ביטחון במטבח.",
+      card2_title: "מטבחים בינלאומיים",
+      card2_text: "גלו טעמים מרחבי העולם ולמדו מתכונים אותנטיים מפסטה איטלקית ועד אוכל רחוב אסייתי.",
+      card3_title: "מאסטר קלאס",
+      card3_text: "קחו את המיומנויות צעד קדימה עם טכניקות מתקדמות ומנות חתימה בהדרכת מומחים.",
+      card_btn: "הצטרפו לשיעור",
+      highlights_title: "מה תלמדו",
+
+      booking_highlights: [
+        [
+          "לימוד מעשי עם שפים מקצועיים",
+          "הדרכה שלב־אחר־שלב לכל הרמות",
+          "חויית בישול אינטראקטיבית"
+        ],
+        [
+          "מתאים לקבוצות חברים/משפחה",
+          "פעילויות מהנות לאירועים וצוותים",
+          "אפשרויות ידידותיות לילדים"
+        ],
+        [
+          "סביבה נעימה ומעוררת השראה",
+          "שיעורים עונתיים ובנושא",
+          "מתכונים לקחת הביתה"
+        ]
+      ],
+
+      tracking_title: "התקדמות השיעור",
+      tracking_sub: "עקבו אחר המסע מהרשמה ועד שליטה",
+      tracking_step1: "נרשמתם",
+      tracking_step2: "נקבע מועד",
+      tracking_step3: "בישול מעשי",
+      tracking_step4: "טעימות ותעודה",
+
+      reviews_title: "ביקורות לקוחות",
+      reviews_sub: "ראו מה הלקוחות מספרים על חוויית משלוח האוכל.",
+      review1_img_alt: "פריה ס.",
+      review1_text: "\"שירות מעולה ואוכל טעים!\"",
+      review1_name: "פריה ס.",
+      review2_img_alt: "רהול מ.",
+      review2_text: "\"שירות מעולה ואוכל טעים!\"",
+      review2_name: "רהול מ.",
+      review3_img_alt: "אנג'לי ת.",
+      review3_text: "\"שירות מעולה ואוכל טעים!\"",
+      review3_name: "אנג'לי ת.",
+      review4_img_alt: "ארג'ון ד.",
+      review4_text: "\"שירות מעולה ואוכל טעים!\"",
+      review4_name: "ארג'ון ד.",
+
+      cta_title: "מוכנים לשדרג את כישורי הבישול?",
+      cta_text: "הצטרפו לשיעורים מעשיים ושלטו בהכנת מנות גורמה.",
+      cta_btn: "הצטרפו היום",
+
+      footer_logo_alt: "לוגו סטאקלי",
+      footer_text: "אוכל טעים עד לפתח הבית.<br>חוו את מיטב שירותי המסעדות והמשלוחים איתנו!",
+      footer_quick: "קישורים מהירים",
+      footer_home1: "בית 1",
+      footer_home2: "בית 2",
+      footer_about: "אודות",
+      footer_services: "שירותים",
+      footer_blog: "בלוג",
+      footer_contact: "צור קשר",
+      footer_services_title: "שירותים",
+      footer_contact_title: "צור קשר",
+      footer_address: "123 רח' הראשי, עיר האוכל",
+      footer_phone: "+1 234 567 890",
+      footer_email: "info@restaurant.com",
+      footer_rights: "© 2025 מסעדה. כל הזכויות שמורות."
+    }
+  };
+
+  // Determine initial language
+  function getInitialLang(){
+    const saved = localStorage.getItem('lang');
+    if(saved && ['en','ar','he'].includes(saved)) return saved;
+    const nav = (navigator.language || navigator.userLanguage || 'en').slice(0,2);
+    if(['en','ar','he'].includes(nav)) return nav;
+    return 'en';
+  }
+
+  // expose for other scripts
+  window.translations = translations;
+  window.currentLang = getInitialLang();
+
+  function applyTranslations(lang){
+    const map = translations[lang] || translations.en;
+
+    // html lang + dir
+    document.documentElement.lang = lang;
+    document.documentElement.dir = (lang === 'ar' || lang === 'he') ? 'rtl' : 'ltr';
+
+    // data-i18n-attr (attributes e.g., alt)
+    document.querySelectorAll('[data-i18n-attr]').forEach(el=>{
+      const key = el.getAttribute('data-i18n');
+      const attrNames = el.getAttribute('data-i18n-attr').split(',').map(s=>s.trim());
+      attrNames.forEach(attr=>{
+        if(map[key] !== undefined) el.setAttribute(attr, map[key]);
+      });
+    });
+
+    // data-i18n-html (innerHTML)
+    document.querySelectorAll('[data-i18n-html]').forEach(el=>{
+      const key = el.getAttribute('data-i18n');
+      if(map[key] !== undefined) el.innerHTML = map[key];
+    });
+
+    // data-i18n textContent (skip those handled above)
+    document.querySelectorAll('[data-i18n]').forEach(el=>{
+      if(el.hasAttribute('data-i18n-attr') || el.hasAttribute('data-i18n-html')) return;
+      const key = el.getAttribute('data-i18n');
+      if(map[key] !== undefined) el.textContent = map[key];
+    });
+
+    // title
+    const titleEl = document.querySelector('title[data-i18n]');
+    if(titleEl){
+      const k = titleEl.getAttribute('data-i18n');
+      if(map[k] !== undefined) titleEl.textContent = map[k];
+    } else if(map.title !== undefined){
+      document.title = map.title;
+    }
+
+    localStorage.setItem('lang', lang);
+    window.currentLang = lang;
+
+    // Re-render highlights for current card (non-invasive)
+    if (window.updateClassHighlights) window.updateClassHighlights();
+  }
+
+  // init UI after DOM loaded
+  document.addEventListener('DOMContentLoaded', () => {
+    // language selector
+    const sel = document.getElementById('language-selector');
+    if(sel){
+      sel.value = window.currentLang;
+      sel.addEventListener('change', (e) => {
+        applyTranslations(e.target.value);
+      });
+    }
+    // apply initial translations
+    applyTranslations(window.currentLang);
+  });
+})();
+</script>
+
+</body>
+</html>

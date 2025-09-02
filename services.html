@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title data-i18n="title">Stackly Food</title>
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/services.css" />
+  <script src="js/header.js" defer></script>
+  <script src="js/dark_toogle.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <header>
+  <div class="logo">
+    <a href="index.html">
+      <img src="images/logo.png" alt="Logo"
+           data-i18n-attr="alt"
+           data-i18n="logo_alt">
+    </a>
+  </div>
+
+  <div class="header-right">
+    <nav>
+      <ul class="nav-links">
+        <li class="dropdown">
+          <a href="index.html" data-i18n="nav_home">Home ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="index.html" data-i18n="nav_home1">Home 1</a></li>
+            <li><a href="home2.html" data-i18n="nav_home2">Home 2</a></li>
+          </ul>
+        </li>
+        <li><a href="about.html" data-i18n="nav_about">About</a></li>
+        <li><a href="blog.html" data-i18n="nav_blog">Blog</a></li>
+        <li class="dropdown">
+          <a href="services.html" data-i18n="nav_services">Services ▾</a>
+          <ul class="dropdown-menu">
+            <li class="mobile-only"><a href="services.html" data-i18n="nav_all_services">All Services</a></li>
+            <li><a href="service1.html" data-i18n="nav_service1">Food Delivery</a></li>
+            <li><a href="service2.html" data-i18n="nav_service2">Table Booking</a></li>
+            <li><a href="service3.html" data-i18n="nav_service3">Catering</a></li>
+            <li><a href="service4.html" data-i18n="nav_service4">Personal Chef</a></li>
+            <li><a href="service5.html" data-i18n="nav_service5">Event Dining</a></li>
+            <li><a href="service6.html" data-i18n="nav_service6">Cooking Classes</a></li>
+          </ul>
+        </li>
+        <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Language selector -->
+    <select id="language-selector" aria-label="Language selector">
+      <option value="en">English</option>
+      <option value="ar">العربية</option>
+      <option value="he">עברית</option>
+    </select>
+
+    <div class="profile-container">
+      <div class="profile" id="profile-dropdown-toggle">
+        <span id="profile-initials"></span>
+      </div>
+      <ul class="profile-dropdown" id="profile-dropdown">
+        <li><a href="#" id="logout-btn" data-i18n="logout">Logout</a></li>
+      </ul>
+    </div>
+
+    <button id="toggle-dark">🌙</button>
+    <button id="mobile-menu-toggle" class="hamburger">☰</button>
+  </div>
+</header>
+
+
+<section class="hero">
+  <!-- Background Video -->
+  <video class="hero-video" autoplay muted loop playsinline>
+    <source src="videos/services.mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay"></div>
+
+  <!-- Content -->
+  <div class="hero-content">
+    <h1 data-i18n="hero_title">Our Services</h1>
+    <p data-i18n="hero_sub">From private dining to catering and event hosting — we bring flavors and experiences to every occasion.</p>
+    <div class="hero-buttons">
+      <a href="#services" class="btn" data-i18n="explore_services">Explore Services</a>
+      <a href="reservation.html" class="btn-outline" data-i18n="book_now">Book Now</a>
+    </div>
+  </div>
+
+  <!-- Hero Image -->
+  <div class="hero-image">
+    <img src="images/services-over.jpeg" alt="Our Services"
+         data-i18n-attr="alt"
+         data-i18n="hero_image_alt">
+  </div>
+</section>
+
+<!-- =======================
+   Order Online Section
+======================= -->
+<section class="order-online" aria-label="Order Online" data-i18n-attr="aria-label" data-i18n="aria_order_online">
+  <!-- Scrolling text (marquee) -->
+  <div class="order-online-marquee" aria-hidden="true">
+    <div class="marquee-group">
+      <span data-i18n="marquee1">Fresh meals delivered to your door</span>
+      <span data-i18n="marquee2">Order your favorites in one click</span>
+      <span data-i18n="marquee3">Delicious food, faster than ever</span>
+      <span data-i18n="marquee4">Hot & tasty, straight from our kitchen</span>
+      <span data-i18n="marquee5">Your cravings, just a tap away</span>
+    </div>
+    <!-- duplicate group for seamless loop -->
+    <div class="marquee-group" aria-hidden="true">
+      <span data-i18n="marquee1">Fresh meals delivered to your door</span>
+      <span data-i18n="marquee2">Order your favorites in one click</span>
+      <span data-i18n="marquee3">Delicious food, faster than ever</span>
+      <span data-i18n="marquee4">Hot & tasty, straight from our kitchen</span>
+      <span data-i18n="marquee5">Your cravings, just a tap away</span>
+    </div>
+  </div>
+
+  <!-- Static centered button -->
+  <a href="orders.html" class="btn-bounce" role="button" data-i18n="order_now">Order Now</a>
+</section>
+
+
+<section class="services" id="services">
+  <h2 class="section-title" data-i18n="our_services">Our Services</h2>
+  <p class="section-subtitle" data-i18n="services_sub">Crafted experiences to delight every guest</p>
+
+  <div class="services-grid">
+    <!-- Service 1 -->
+    <div class="service-card">
+      <div class="service-icon">
+        <img src="images/food_delivery.jpeg" alt="Food Delivery"
+             data-i18n-attr="alt"
+             data-i18n="service1_img_alt">
+      </div>
+      <h3 data-i18n="service1">Food Delivery</h3>
+      <p data-i18n="service1_desc">Hot and fresh meals delivered right to your doorstep, hassle-free.</p>
+      <a href="service1.html" class="btn-service" data-i18n="explore">Explore</a>
+    </div>
+
+    <!-- Service 2 -->
+    <div class="service-card">
+      <div class="service-icon">
+        <img src="images/table-booking.jpeg" alt="Table Booking"
+             data-i18n-attr="alt"
+             data-i18n="service2_img_alt">
+      </div>
+      <h3 data-i18n="service2">Table Booking</h3>
+      <p data-i18n="service2_desc">Reserve your table instantly and skip the waiting time at restaurants.</p>
+      <a href="service2.html" class="btn-service" data-i18n="explore">Explore</a>
+    </div>
+
+    <!-- Service 3 -->
+    <div class="service-card">
+      <div class="service-icon">
+        <img src="images/catering.jpeg" alt="Catering"
+             data-i18n-attr="alt"
+             data-i18n="service3_img_alt">
+      </div>
+      <h3 data-i18n="service3">Catering</h3>
+      <p data-i18n="service3_desc">Delicious catering for all occasions, tailored to your needs.</p>
+      <a href="service3.html" class="btn-service" data-i18n="explore">Explore</a>
+    </div>
+
+    <!-- Service 4 -->
+    <div class="service-card">
+      <div class="service-icon">
+        <img src="images/personal-chef.jpeg" alt="Personal Chef"
+             data-i18n-attr="alt"
+             data-i18n="service4_img_alt">
+      </div>
+      <h3 data-i18n="service4">Personal Chef</h3>
+      <p data-i18n="service4_desc">Enjoy gourmet meals at home with our private chef service.</p>
+      <a href="service4.html" class="btn-service" data-i18n="explore">Explore</a>
+    </div>
+
+    <!-- Service 5 -->
+    <div class="service-card">
+      <div class="service-icon">
+        <img src="images/event_dining.jpeg" alt="Event Dining"
+             data-i18n-attr="alt"
+             data-i18n="service5_img_alt">
+      </div>
+      <h3 data-i18n="service5">Event Dining</h3>
+      <p data-i18n="service5_desc">Customized dining experiences for weddings, parties, and corporate events.</p>
+      <a href="service5.html" class="btn-service" data-i18n="explore">Explore</a>
+    </div>
+
+    <!-- Service 6 -->
+    <div class="service-card">
+      <div class="service-icon">
+        <img src="images/cooking-class.jpeg" alt="Cooking Classes"
+             data-i18n-attr="alt"
+             data-i18n="service6_img_alt">
+      </div>
+      <h3 data-i18n="service6">Cooking Classes</h3>
+      <p data-i18n="service6_desc">Learn the art of cooking with our expert chefs in interactive workshops.</p>
+      <a href="service6.html" class="btn-service" data-i18n="explore">Explore</a>
+    </div>
+  </div>
+</section>
+
+<section class="why-dine">
+  <div class="why-dine-container">
+    <!-- Left Content -->
+    <div class="why-dine-text">
+      <h2 class="section-title" data-i18n="why_title">Why Dine With Us?</h2>
+      <ul class="why-dine-list">
+        <li>
+          <span class="icon">🍴</span>
+          <span data-i18n="why_point1">Farm-fresh ingredients and authentic flavors</span>
+        </li>
+        <li>
+          <span class="icon">⭐</span>
+          <span data-i18n="why_point2">Award-winning chefs with culinary passion</span>
+        </li>
+        <li>
+          <span class="icon">🥂</span>
+          <span data-i18n="why_point3">Perfect ambiance for family & friends</span>
+        </li>
+        <li>
+          <span class="icon">🎉</span>
+          <span data-i18n="why_point4">Special menus for events & celebrations</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Right Image (Card Style) -->
+    <div class="why-dine-image">
+      <div class="image-card">
+        <img src="images/bg-img.jpeg" alt="Restaurant Interior"
+             data-i18n-attr="alt"
+             data-i18n="why_image_alt">
+      </div>
+    </div>
+  </div>
+</section>
+<!-- 🌿 Our Commitment Section -->
+<section class="commitment">
+  <div class="commitment-container">
+    
+    <!-- Left Image (Card Style) -->
+    <div class="commitment-image">
+      <div class="image-card">
+        <img src="images/healthy.jpeg" alt="Healthy Food"
+             data-i18n-attr="alt"
+             data-i18n="commitment_image_alt">
+      </div>
+    </div>
+
+    <!-- Right Content -->
+    <div class="commitment-text">
+      <h2 class="section-title" data-i18n="commitment_title">Our Commitment</h2>
+      <ul class="commitment-list">
+        <li>
+          <span class="icon">🌿</span>
+          <span data-i18n="commitment_point1">Sustainable sourcing and eco-friendly practices</span>
+        </li>
+        <li>
+          <span class="icon">🧼</span>
+          <span data-i18n="commitment_point2">Highest standards of hygiene & food safety</span>
+        </li>
+        <li>
+          <span class="icon">💖</span>
+          <span data-i18n="commitment_point3">Customer-first service with a personal touch</span>
+        </li>
+        <li>
+          <span class="icon">🔥</span>
+          <span data-i18n="commitment_point4">Freshly prepared meals, every single time</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+<!-- ================= TESTIMONIALS SECTION ================= -->
+<section class="testimonials" id="testimonials">
+  <h2 class="section-title" data-i18n="testimonials_title">What Our Customers Say</h2>
+
+  <div class="testimonials-grid">
+    <!-- Testimonial 1 -->
+    <div class="testimonial-card">
+      <div class="testimonial-img">
+        <img src="images/ser2_t1.jpeg" alt="Priya S."
+             data-i18n-attr="alt"
+             data-i18n="t1_img_alt">
+      </div>
+      <p class="testimonial-text" data-i18n="t1_text">
+        “The food delivery is always on time and the quality is top-notch.”
+      </p>
+      <h3 class="testimonial-name" data-i18n="t1_name">Priya S.</h3>
+      <span class="testimonial-role" data-i18n="t1_role">Foodie & Blogger</span>
+    </div>
+
+    <!-- Testimonial 2 -->
+    <div class="testimonial-card">
+      <div class="testimonial-img">
+        <img src="images/ser4_t3.jpeg" alt="Rahul M."
+             data-i18n-attr="alt"
+             data-i18n="t2_img_alt">
+      </div>
+      <p class="testimonial-text" data-i18n="t2_text">
+        “Booking a table is so easy now. The app is user-friendly and the staff is great!”
+      </p>
+      <h3 class="testimonial-name" data-i18n="t2_name">Rahul M.</h3>
+      <span class="testimonial-role" data-i18n="t2_role">Businessman</span>
+    </div>
+
+    <!-- Testimonial 3 -->
+    <div class="testimonial-card">
+      <div class="testimonial-img">
+        <img src="images/ser4_t2.jpeg" alt="Aisha K."
+             data-i18n-attr="alt"
+             data-i18n="t3_img_alt">
+      </div>
+      <p class="testimonial-text" data-i18n="t3_text">
+        “We ordered catering for our event and everyone loved the food. Will use again!”
+      </p>
+      <h3 class="testimonial-name" data-i18n="t3_name">Aisha K.</h3>
+      <span class="testimonial-role" data-i18n="t3_role">Event Planner</span>
+    </div>
+  </div>
+</section>
+
+<!-- 🌟 Final Call to Action Section -->
+<section class="final-cta">
+  <div class="cta-container">
+    <h2 class="cta-title" data-i18n="finalcta_title">Experience Flavors Like Never Before 🍴</h2>
+    <p class="cta-subtitle" data-i18n="finalcta_sub">Join us for handcrafted dishes made with love, fresh ingredients, and unforgettable taste.</p>
+    <a href="reservation.html" class="cta-btn" data-i18n="reserve_btn">Reserve Your Table</a>
+    <a href="contact.html" class="cta-btn" data-i18n="contact_btn">Contact Us</a>
+  </div>
+</section>
+
+
+  <footer class="footer">
+  <div class="footer-container">
+
+    <!-- Column 1: Logo + Description -->
+    <div class="footer-col">
+      <a href="index.html">
+        <img src="images/logo.png" alt="Stackly Logo" class="footer-logo"
+             data-i18n-attr="alt"
+             data-i18n="footer_logo_alt">
+      </a>
+      <p data-i18n-html="true" data-i18n="footer_text">Delicious food delivered to your door.<br>
+        Experience the best of restaurant and food delivery services with us!</p>
+      <div class="social-icons">
+        <a href="https://www.facebook.com" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.twitter.com" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+
+    <!-- Column 2: Quick Links -->
+    <div class="footer-col">
+      <h4 data-i18n="footer_quick">Quick Links</h4>
+      <ul>
+        <li><a href="index.html" data-i18n="nav_home1">Home 1</a></li>
+        <li><a href="home2.html" data-i18n="nav_home2">Home 2</a></li>
+        <li><a href="about.html" data-i18n="footer_about">About Us</a></li>
+        <li><a href="services.html" data-i18n="nav_services">Services</a></li>
+        <li><a href="blog.html" data-i18n="nav_blog">Blog</a></li>
+        <li><a href="contact.html" data-i18n="footer_contact">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <!-- Column 3: Services -->
+    <div class="footer-col">
+      <h4 data-i18n="footer_services_title">Services</h4>
+      <ul>
+         <li><a href="service1.html" data-i18n="nav_service1">Food Delivery</a></li>
+        <li><a href="service2.html" data-i18n="nav_service2">Table Booking</a></li>
+        <li><a href="service3.html" data-i18n="nav_service3">Catering</a></li>
+        <li><a href="service4.html" data-i18n="nav_service4">Personal Chef</a></li>
+        <li><a href="service5.html" data-i18n="nav_service5">Event Dining</a></li>
+        <li><a href="service6.html" data-i18n="nav_service6">Cooking Classes</a></li>
+      </ul>
+    </div>
+
+    <!-- Column 4: Contact -->
+    <div class="footer-col">
+      <h4 data-i18n="footer_contact_title">Contact Us</h4>
+      <p><i class="fas fa-map-marker-alt"></i> <span data-i18n="footer_address">123 Main St, Food City</span></p>
+      <p><i class="fas fa-phone"></i> <span data-i18n="footer_phone">+1 234 567 890</span></p>
+      <p><i class="fas fa-envelope"></i> <span data-i18n="footer_email">info@restaurant.com</span></p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p data-i18n="footer_rights">© 2025 Restaurant. All rights reserved.</p>
+  </div>
+</footer>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll(".service-card");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("reveal");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  cards.forEach(card => observer.observe(card));
+});
+</script>
+
+<!-- ================= TRANSLATIONS & APPLIER ================= -->
+<script>
+(function(){
+  const translations = {
+    en: {
+      // Header / Nav
+      title: "Stackly Food",
+      logo_alt: "Logo",
+      nav_home: "Home ▾",
+      nav_home1: "Home 1",
+      nav_home2: "Home 2",
+      nav_about: "About",
+      nav_blog: "Blog",
+      nav_services: "Services ▾",
+      nav_all_services: "All Services",
+      nav_service1: "Food Delivery",
+      nav_service2: "Table Booking",
+      nav_service3: "Catering",
+      nav_service4: "Personal Chef",
+      nav_service5: "Event Dining",
+      nav_service6: "Cooking Classes",
+      nav_contact: "Contact",
+      logout: "Logout",
+
+      // Hero
+      hero_title: "Our Services",
+      hero_sub: "From private dining to catering and event hosting — we bring flavors and experiences to every occasion.",
+      explore_services: "Explore Services",
+      book_now: "Book Now",
+      hero_image_alt: "Our Services",
+
+      // Order Online / Marquee
+      aria_order_online: "Order Online",
+      marquee1: "Fresh meals delivered to your door",
+      marquee2: "Order your favorites in one click",
+      marquee3: "Delicious food, faster than ever",
+      marquee4: "Hot & tasty, straight from our kitchen",
+      marquee5: "Your cravings, just a tap away",
+      order_now: "Order Now",
+
+      // Section titles
+      our_services: "Our Services",
+      services_sub: "Crafted experiences to delight every guest",
+
+      // Service items (titles, descs, image alts)
+      service1: "Food Delivery",
+      service1_desc: "Hot and fresh meals delivered right to your doorstep, hassle-free.",
+      service1_img_alt: "Food Delivery Icon",
+
+      service2: "Table Booking",
+      service2_desc: "Reserve your table instantly and skip the waiting time at restaurants.",
+      service2_img_alt: "Table Booking Icon",
+
+      service3: "Catering",
+      service3_desc: "Delicious catering for all occasions, tailored to your needs.",
+      service3_img_alt: "Catering Icon",
+
+      service4: "Personal Chef",
+      service4_desc: "Enjoy gourmet meals at home with our private chef service.",
+      service4_img_alt: "Personal Chef Icon",
+
+      service5: "Event Dining",
+      service5_desc: "Customized dining experiences for weddings, parties, and corporate events.",
+      service5_img_alt: "Event Dining Icon",
+
+      service6: "Cooking Classes",
+      service6_desc: "Learn the art of cooking with our expert chefs in interactive workshops.",
+      service6_img_alt: "Cooking Classes Icon",
+
+      explore: "Explore",
+
+      // Why Dine
+      why_title: "Why Dine With Us?",
+      why_point1: "Farm-fresh ingredients and authentic flavors",
+      why_point2: "Award-winning chefs with culinary passion",
+      why_point3: "Perfect ambiance for family & friends",
+      why_point4: "Special menus for events & celebrations",
+      why_image_alt: "Restaurant Interior",
+
+      // Commitment
+      commitment_title: "Our Commitment",
+      commitment_point1: "Sustainable sourcing and eco-friendly practices",
+      commitment_point2: "Highest standards of hygiene & food safety",
+      commitment_point3: "Customer-first service with a personal touch",
+      commitment_point4: "Freshly prepared meals, every single time",
+      commitment_image_alt: "Healthy Food",
+
+      // Testimonials
+      testimonials_title: "What Our Customers Say",
+      t1_img_alt: "Priya S.",
+      t1_text: "“The food delivery is always on time and the quality is top-notch.”",
+      t1_name: "Priya S.",
+      t1_role: "Foodie & Blogger",
+
+      t2_img_alt: "Rahul M.",
+      t2_text: "“Booking a table is so easy now. The app is user-friendly and the staff is great!”",
+      t2_name: "Rahul M.",
+      t2_role: "Businessman",
+
+      t3_img_alt: "Aisha K.",
+      t3_text: "“We ordered catering for our event and everyone loved the food. Will use again!”",
+      t3_name: "Aisha K.",
+      t3_role: "Event Planner",
+
+      // Final CTA
+      finalcta_title: "Experience Flavors Like Never Before 🍴",
+      finalcta_sub: "Join us for handcrafted dishes made with love, fresh ingredients, and unforgettable taste.",
+      reserve_btn: "Reserve Your Table",
+      contact_btn: "Contact Us",
+
+      // Footer
+      footer_logo_alt: "Stackly Logo",
+      footer_text: "Delicious food delivered to your door.<br>Experience the best of restaurant and food delivery services with us!",
+      footer_quick: "Quick Links",
+      footer_home1: "Home 1",
+      footer_home2: "Home 2",
+      footer_about: "About Us",
+      footer_services: "Services",
+      footer_blog: "Blog",
+      footer_contact: "Contact Us",
+      footer_services_title: "Services",
+      footer_contact_title: "Contact Us",
+      footer_address: "123 Main St, Food City",
+      footer_phone: "+1 234 567 890",
+      footer_email: "info@restaurant.com",
+      footer_rights: "© 2025 Restaurant. All rights reserved."
+    },
+
+    ar: {
+      // Header / Nav
+      title: "ستاكلي فود",
+      logo_alt: "الشعار",
+      nav_home: "الرئيسية ▾",
+      nav_home1: "الصفحة الرئيسية 1",
+      nav_home2: "الصفحة الرئيسية 2",
+      nav_about: "معلومات عنا",
+      nav_blog: "مدونة",
+      nav_services: "الخدمات ▾",
+      nav_all_services: "كل الخدمات",
+      nav_service1: "توصيل الطعام",
+      nav_service2: "حجز الطاولة",
+      nav_service3: "التموين",
+      nav_service4: "شيف شخصي",
+      nav_service5: "تناول الطعام في المناسبات",
+      nav_service6: "دروس الطبخ",
+      nav_contact: "اتصل بنا",
+      logout: "تسجيل الخروج",
+
+      // Hero
+      hero_title: "خدماتنا",
+      hero_sub: "من العشاء الخاص إلى خدمات التموين واستضافة الفعاليات — نقدم النكهات والتجارب لكل مناسبة.",
+      explore_services: "استعرض الخدمات",
+      book_now: "احجز الآن",
+      hero_image_alt: "خدماتنا",
+
+      // Order Online / Marquee
+      aria_order_online: "اطلب عبر الإنترنت",
+      marquee1: "وجبات طازجة تُسلم إلى باب منزلك",
+      marquee2: "اطلب مفضلاتك بنقرة واحدة",
+      marquee3: "طعام لذيذ، أسرع من أي وقت مضى",
+      marquee4: "ساخن ولذيذ، مباشرة من مطبخنا",
+      marquee5: "شهيتك على بُعد نقرة",
+      order_now: "اطلب الآن",
+
+      // Section titles
+      our_services: "خدماتنا",
+      services_sub: "تجارب مصممة لإسعاد كل ضيف",
+
+      // Service items
+      service1: "توصيل الطعام",
+      service1_desc: "وجبات ساخنة وطازجة تُسلم إلى باب منزلك بدون عناء.",
+      service1_img_alt: "أيقونة توصيل الطعام",
+
+      service2: "حجز الطاولة",
+      service2_desc: "احجز طاولتك فوراً وتجاوز أوقات الانتظار.",
+      service2_img_alt: "أيقونة حجز الطاولة",
+
+      service3: "التموين",
+      service3_desc: "تموين لذيذ لجميع المناسبات، مصمم وفق احتياجاتك.",
+      service3_img_alt: "أيقونة التموين",
+
+      service4: "شيف شخصي",
+      service4_desc: "استمتع بوجبات فاخرة في المنزل مع خدمة الشيف الخاص.",
+      service4_img_alt: "أيقونة الشيف الشخصي",
+
+      service5: "تناول الطعام في المناسبات",
+      service5_desc: "تجارب طعام مُخصصة لحفلات الزفاف والحفلات والفعاليات.",
+      service5_img_alt: "أيقونة فعاليات الطعام",
+
+      service6: "دروس الطبخ",
+      service6_desc: "تعلم فن الطهي مع طهاتنا الخبراء في ورش تفاعلية.",
+      service6_img_alt: "أيقونة دروس الطبخ",
+
+      explore: "استعرض",
+
+      // Why Dine
+      why_title: "لماذا تتناول الطعام معنا؟",
+      why_point1: "مكونات طازجة من المزارع ونكهات أصيلة",
+      why_point2: "شيفات حائزون على جوائز وشغوفون بالطهي",
+      why_point3: "أجواء مثالية للعائلة والأصدقاء",
+      why_point4: "قوائم خاصة للفعاليات والاحتفالات",
+      why_image_alt: "ديكور المطعم",
+
+      // Commitment
+      commitment_title: "التزامنا",
+      commitment_point1: "توريد مستدام وممارسات صديقة للبيئة",
+      commitment_point2: "أعلى معايير النظافة وسلامة الغذاء",
+      commitment_point3: "خدمة تضع العميل أولاً ولمسة شخصية",
+      commitment_point4: "وجبات مُعدة طازجة في كل مرة",
+      commitment_image_alt: "طعام صحي",
+
+      // Testimonials
+      testimonials_title: "ماذا يقول عملاؤنا",
+      t1_img_alt: "بريا س.",
+      t1_text: "“توصيل الطعام دائمًا في الوقت والجودة ممتازة.”",
+      t1_name: "بريا س.",
+      t1_role: "عاشقة طعام ومدونة",
+
+      t2_img_alt: "راهول م.",
+      t2_text: "“حجز الطاولة أصبح سهلاً الآن. التطبيق سهل الاستخدام والطاقم رائع!”",
+      t2_name: "راهول م.",
+      t2_role: "رجل أعمال",
+
+      t3_img_alt: "عائشة ك.",
+      t3_text: "“طلبنا التموين لحدثنا والجميع أحب الطعام. سنكرر التجربة!”",
+      t3_name: "عائشة ك.",
+      t3_role: "منظمة فعاليات",
+
+      // Final CTA
+      finalcta_title: "اختبر النكهات كما لم تفعل من قبل 🍴",
+      finalcta_sub: "انضم إلينا لتناول أطباق مصنوعة بحب ومكونات طازجة وطعم لا يُنسى.",
+      reserve_btn: "احجز طاولتك",
+      contact_btn: "اتصل بنا",
+
+      // Footer
+      footer_logo_alt: "شعار ستاكلي",
+      footer_text: "طعام لذيذ يصل إلى بابك.<br>اختبر أفضل خدمات المطاعم وتوصيل الطعام معنا!",
+      footer_quick: "روابط سريعة",
+      footer_home1: "الصفحة الرئيسية 1",
+      footer_home2: "الصفحة الرئيسية 2",
+      footer_about: "معلومات عنا",
+      footer_services: "الخدمات",
+      footer_blog: "المدونة",
+      footer_contact: "اتصل بنا",
+      footer_services_title: "الخدمات",
+      footer_contact_title: "اتصل بنا",
+      footer_address: "123 شارع الرئيسي، مدينة الطعام",
+      footer_phone: "+1 234 567 890",
+      footer_email: "info@restaurant.com",
+      footer_rights: "© 2025 المطعم. جميع الحقوق محفوظة."
+    },
+
+    he: {
+      // Header / Nav
+      title: "סטאקלי פוד",
+      logo_alt: "לוגו",
+      nav_home: "בית ▾",
+      nav_home1: "בית 1",
+      nav_home2: "בית 2",
+      nav_about: "אודות",
+      nav_blog: "בלוג",
+      nav_services: "שירותים ▾",
+      nav_all_services: "כל השירותים",
+      nav_service1: "משלוח אוכל",
+      nav_service2: "הזמנת שולחן",
+      nav_service3: "קייטרינג",
+      nav_service4: "שף פרטי",
+      nav_service5: "ארוחות לאירועים",
+      nav_service6: "שיעורי בישול",
+      nav_contact: "צור קשר",
+      logout: "התנתק",
+
+      // Hero
+      hero_title: "השירותים שלנו",
+      hero_sub: "מהארוחות הפרטיות ועד קייטרינג ואירוח אירועים — אנו מביאים טעמים וחוויות לכל אירוע.",
+      explore_services: "גלה שירותים",
+      book_now: "הזמן עכשיו",
+      hero_image_alt: "השירותים שלנו",
+
+      // Order Online / Marquee
+      aria_order_online: "הזמן ברשת",
+      marquee1: "ארוחות טריות שמגיעות עד לפתח ביתך",
+      marquee2: "הזמן את המועדפים בלחיצה אחת",
+      marquee3: "אוכל טעים, מהיר מאי פעם",
+      marquee4: "חם וטעים, ישר מהמטבח שלנו",
+      marquee5: "החשקים שלך בלחיצת כפתור",
+      order_now: "הזמן עכשיו",
+
+      // Sections
+      our_services: "השירותים שלנו",
+      services_sub: "חוויות מעוצבות לשביעות רצון כל אורח",
+
+      service1: "משלוח אוכל",
+      service1_desc: "ארוחות חמות וטריות שמגיעות עד לפתח ביתך, ללא טרחה.",
+      service1_img_alt: "אייקון משלוח אוכל",
+
+      service2: "הזמנת שולחן",
+      service2_desc: "הזמן את שולחנך מיד ודלג על זמני ההמתנה.",
+      service2_img_alt: "אייקון הזמנת שולחן",
+
+      service3: "קייטרינג",
+      service3_desc: "קייטרינג טעים לכל האירועים, מותאם לצרכיך.",
+      service3_img_alt: "אייקון קייטרינג",
+
+      service4: "שף פרטי",
+      service4_desc: "תהנה מארוחות גורמה בבית עם שירות השף הפרטי שלנו.",
+      service4_img_alt: "אייקון שף פרטי",
+
+      service5: "אירוח אירועים",
+      service5_desc: "חוויות אוכל מותאמות לחתונות, מסיבות ואירועים.",
+      service5_img_alt: "אייקון אירועים",
+
+      service6: "שיעורי בישול",
+      service6_desc: "למד את אומנות הבישול עם השפים המומחים שלנו בסדנאות אינטראקטיביות.",
+      service6_img_alt: "אייקון שיעורי בישול",
+
+      explore: "גלה",
+
+      // Why dine
+      why_title: "למה לאכול אצלנו?",
+      why_point1: "מרכיבים טריים מהחווה וטעמים אותנטיים",
+      why_point2: "שפים זוכי פרסים עם תשוקה קולינרית",
+      why_point3: "אווירה מושלמת למשפחה ולחברים",
+      why_point4: "תפריטים מיוחדים לאירועים וחגיגות",
+      why_image_alt: "עיצוב פנים המסעדה",
+
+      // Commitment
+      commitment_title: "המחויבות שלנו",
+      commitment_point1: "רכש בר-קיימא ונהלים ידידותיים לסביבה",
+      commitment_point2: "הסטנדרטים הגבוהים ביותר של היגיינה ובטיחות מזון",
+      commitment_point3: "שירות ממוקד לקוח עם נגיעה אישית",
+      commitment_point4: "מנות המוכנות טריות, בכל פעם",
+      commitment_image_alt: "אוכל בריא",
+
+      // Testimonials
+      testimonials_title: "מה הלקוחות שלנו אומרים",
+      t1_img_alt: "פריה ס.",
+      t1_text: "“משלוח האוכל תמיד בזמן והאיכות מצוינת.”",
+      t1_name: "Priya S.",
+      t1_role: "Foodie & Blogger",
+
+      t2_img_alt: "רהול מ.",
+      t2_text: "“הזמנת שולחן כל כך קלה עכשיו. האפליקציה ידידותית והצוות מעולה!”",
+      t2_name: "Rahul M.",
+      t2_role: "Businessman",
+
+      t3_img_alt: "אישה ק.",
+      t3_text: "“הזמנו קייטרינג לאירוע והכולם אהבו את האוכל. נשתמש שוב!”",
+      t3_name: "Aisha K.",
+      t3_role: "Event Planner",
+
+      // Final CTA
+      finalcta_title: "חווה טעמים כמו שלא חוויתם 🍴",
+      finalcta_sub: "הצטרפו אלינו למנות המוכנות באהבה, מרכיבים טריים וטעם בלתי נשכח.",
+      reserve_btn: "הזמן שולחן",
+      contact_btn: "צור קשר",
+
+      // Footer
+      footer_logo_alt: "לוגו סטאקלי",
+      footer_text: "אוכל טעים עד לפתח הבית.<br>חווה את מיטב שירותי המסעדות והמשלוחים איתנו!",
+      footer_quick: "קישורים מהירים",
+      footer_home1: "בית 1",
+      footer_home2: "בית 2",
+      footer_about: "אודות",
+      footer_services: "שירותים",
+      footer_blog: "בלוג",
+      footer_contact: "צור קשר",
+      footer_services_title: "שירותים",
+      footer_contact_title: "צור קשר",
+      footer_address: "123 רחוב ראשי, עיר האוכל",
+      footer_phone: "+1 234 567 890",
+      footer_email: "info@restaurant.com",
+      footer_rights: "© 2025 מסעדה. כל הזכויות שמורות."
+    }
+  };
+
+  // helper: initial lang
+  function getInitialLang(){
+    const saved = localStorage.getItem('lang');
+    if(saved && ['en','ar','he'].includes(saved)) return saved;
+    const nav = (navigator.language || navigator.userLanguage || 'en').slice(0,2);
+    if(['en','ar','he'].includes(nav)) return nav;
+    return 'en';
+  }
+
+  let currentLang = getInitialLang();
+
+  function applyTranslations(lang){
+    const map = translations[lang] || translations.en;
+
+    // set html lang and dir
+    document.documentElement.lang = lang;
+    document.documentElement.dir = (lang === 'ar' || lang === 'he') ? 'rtl' : 'ltr';
+
+    // data-i18n-attr (alt, aria-label, etc.)
+    document.querySelectorAll('[data-i18n-attr]').forEach(el=>{
+      const key = el.getAttribute('data-i18n');
+      const attrs = el.getAttribute('data-i18n-attr').split(',').map(s=>s.trim());
+      attrs.forEach(attr=>{
+        if(map[key] !== undefined) el.setAttribute(attr, map[key]);
+      });
+    });
+
+    // data-i18n-html (innerHTML)
+    document.querySelectorAll('[data-i18n-html]').forEach(el=>{
+      const key = el.getAttribute('data-i18n');
+      if(map[key] !== undefined) el.innerHTML = map[key];
+    });
+
+    // data-i18n (textContent)
+    document.querySelectorAll('[data-i18n]').forEach(el=>{
+      // skip if handled by data-i18n-attr or data-i18n-html
+      if(el.hasAttribute('data-i18n-attr') || el.hasAttribute('data-i18n-html')) return;
+      const key = el.getAttribute('data-i18n');
+      if(map[key] !== undefined) el.textContent = map[key];
+    });
+
+    // title element if has data-i18n
+    const titleEl = document.querySelector('title[data-i18n]');
+    if(titleEl){
+      const k = titleEl.getAttribute('data-i18n');
+      if(map[k] !== undefined) titleEl.textContent = map[k];
+    } else if(map.title !== undefined){
+      document.title = map.title;
+    }
+
+    // save
+    localStorage.setItem('lang', lang);
+    currentLang = lang;
+
+    // sync selector
+    const sel = document.getElementById('language-selector');
+    if(sel) sel.value = lang;
+  }
+
+  document.addEventListener('DOMContentLoaded', ()=>{
+    const sel = document.getElementById('language-selector');
+    if(sel){
+      sel.value = currentLang;
+      sel.addEventListener('change', (e) => {
+        applyTranslations(e.target.value);
+      });
+    }
+    applyTranslations(currentLang);
+  });
+})();
+</script>
+
+  <!-- Rest of page content -->
+</body>
+</html>

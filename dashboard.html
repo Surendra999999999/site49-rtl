@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="css/dashboard2.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+
+  <script src="js/order.js"></script>
+  <link rel="stylesheet" href="css/header.css">
+  <script src="js/header.js" defer></script>
+  <script src="js/dark_toogle.js" defer></script>
+
+  <style>
+    .lang-select {
+      margin: 10px;
+      padding: 5px;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="logo">
+    <a href="index.html"><img src="images/logo.png" alt="Logo"></a>
+  </div>
+
+  <div class="header-right">
+    <nav>
+      <ul class="nav-links" id="navLinks">
+        <li class="dropdown">
+          <a href="index.html" id="navHome">Home ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="index.html" id="navHome1">Home 1</a></li>
+            <li><a href="home2.html" id="navHome2">Home 2</a></li>
+          </ul>
+        </li>
+        <li><a href="about.html" id="navAbout">About</a></li>
+        <li><a href="blog.html" id="navBlog">Blog</a></li>
+        <li class="dropdown">
+          <a href="services.html" id="navServices">Services ▾</a>
+          <ul class="dropdown-menu">
+            <li class="mobile-only"><a href="services.html" id="navAllServices">All Services</a></li>
+            <li><a href="service1.html" id="navService1">Food Delivery</a></li>
+            <li><a href="service2.html" id="navService2">Table Booking</a></li>
+            <li><a href="service3.html" id="navService3">Catering</a></li>
+            <li><a href="service4.html" id="navService4">Personal Chef</a></li>
+            <li><a href="service5.html" id="navService5">Event Dining</a></li>
+            <li><a href="service6.html" id="navService6">Cooking Classes</a></li>
+          </ul>
+        </li>
+        <li><a href="contact.html" id="navContact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- 🌍 Language Dropdown -->
+    <select id="languageSelect" class="lang-select">
+      <option value="en">English</option>
+      <option value="ar">العربية</option>
+      <option value="he">עברית</option>
+    </select>
+
+    <div class="profile-container">
+      <div class="profile" id="profile-dropdown-toggle">
+        <span id="profile-initials"></span>
+      </div>
+      <ul class="profile-dropdown" id="profile-dropdown">
+        <li><a href="#" id="logout-btn">Logout</a></li>
+      </ul>
+    </div>
+
+    <button id="toggle-dark">🌙</button>
+    <button id="mobile-menu-toggle" class="hamburger">☰</button>
+  </div>
+</header>
+
+<div class="admin-container">
+  <!-- Summary Cards -->
+  <div class="summary-cards">
+    <div class="card">
+      <h3 id="mostActiveUserTitle">Most Active User</h3>
+      <p id="mostActiveUser">-</p>
+    </div>
+    <div class="card">
+      <h3 id="topSignupsDayTitle">Top Signups Day</h3>
+      <p id="topSignupsDay">-</p>
+    </div>
+    <div class="card">
+      <h3 id="totalUsersTitle">Total Users</h3>
+      <p id="totalUsers">0</p>
+    </div>
+  </div>
+
+  <!-- Users Table -->
+  <h2 id="usersTableTitle">Users</h2>
+  <div class="table-container">
+    <table class="user-table">
+      <thead>
+        <tr>
+          <th id="thFullName">Full Name</th>
+          <th id="thUsername">Username</th>
+          <th id="thDate">Date</th>
+          <th id="thActions">Actions</th>
+        </tr>
+      </thead>
+      <tbody id="userTableBody"></tbody>
+    </table>
+  </div>
+
+  <!-- Orders Table -->
+  <section class="orders-section">
+    <h2 id="ordersTitle">Customer Orders</h2>
+    <div class="table-container">
+      <table id="ordersTable" class="orders-table">
+        <thead>
+          <tr>
+            <th id="thOrderUser">User</th>
+            <th id="thOrderItems">Items</th>
+            <th id="thOrderTotal">Total</th>
+            <th id="thOrderDate">Date</th>
+            <th id="thOrderStatus">Status</th>
+            <th id="thOrderAction">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Orders will be injected here -->
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 📊 Signup & User Charts -->
+  <section class="charts-section">
+    <h2 id="usersSignupsTitle">Users & Signups</h2>
+    <div class="charts-grid">
+      <div class="chart-card">
+        <h3 id="signupsTodayTitle">Signups Today</h3>
+        <canvas id="signupsTodayChart"></canvas>
+      </div>
+      <div class="chart-card">
+        <h3 id="weeklySignupsTitle">Weekly Signups</h3>
+        <canvas id="weeklySignupsChart"></canvas>
+      </div>
+      <div class="chart-card">
+        <h3 id="totalUsersChartTitle">Total Users</h3>
+        <canvas id="totalUsersChart"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <!-- 📊 Orders Charts -->
+  <section class="charts-section">
+    <h2 id="ordersOverviewTitle">Orders Overview</h2>
+    <div class="charts-grid">
+      <div class="chart-card">
+        <h3 id="ordersByStatusTitle">Orders by Status</h3>
+        <canvas id="ordersStatusChart"></canvas>
+      </div>
+      <div class="chart-card">
+        <h3 id="ordersPerDayTitle">Orders per Day</h3>
+        <canvas id="ordersDailyChart"></canvas>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script src="js/dashboard2.js"></script>
+
+<script>
+  const translations = {
+    en: {
+      nav: { home: "Home ▾", home1: "Home 1", home2: "Home 2", about: "About", blog: "Blog",
+             services: "Services ▾", allServices: "All Services", s1: "Food Delivery", s2: "Table Booking",
+             s3: "Catering", s4: "Personal Chef", s5: "Event Dining", s6: "Cooking Classes", contact: "Contact" },
+      logout: "Logout",
+      mostActiveUser: "Most Active User",
+      topSignupsDay: "Top Signups Day",
+      totalUsers: "Total Users",
+      users: "Users",
+      th: { fullName: "Full Name", username: "Username", date: "Date", actions: "Actions" },
+      orders: "Customer Orders",
+      thOrders: { user: "User", items: "Items", total: "Total", date: "Date", status: "Status", action: "Action" },
+      usersSignups: "Users & Signups",
+      signupsToday: "Signups Today",
+      weeklySignups: "Weekly Signups",
+      totalUsersChart: "Total Users",
+      ordersOverview: "Orders Overview",
+      ordersByStatus: "Orders by Status",
+      ordersPerDay: "Orders per Day"
+    },
+    ar: {
+      nav: { home: "الرئيسية ▾", home1: "الرئيسية 1", home2: "الرئيسية 2", about: "معلومات عنا", blog: "مدونة",
+             services: "الخدمات ▾", allServices: "كل الخدمات", s1: "توصيل الطعام", s2: "حجز الطاولة",
+             s3: "التموين", s4: "طاهٍ خاص", s5: "الفعاليات", s6: "دروس الطبخ", contact: "اتصل بنا" },
+      logout: "تسجيل الخروج",
+      mostActiveUser: "أكثر المستخدمين نشاطًا",
+      topSignupsDay: "أعلى يوم للتسجيل",
+      totalUsers: "إجمالي المستخدمين",
+      users: "المستخدمون",
+      th: { fullName: "الاسم الكامل", username: "اسم المستخدم", date: "التاريخ", actions: "الإجراءات" },
+      orders: "طلبات العملاء",
+      thOrders: { user: "المستخدم", items: "العناصر", total: "الإجمالي", date: "التاريخ", status: "الحالة", action: "إجراء" },
+      usersSignups: "المستخدمون والتسجيلات",
+      signupsToday: "تسجيلات اليوم",
+      weeklySignups: "التسجيلات الأسبوعية",
+      totalUsersChart: "إجمالي المستخدمين",
+      ordersOverview: "نظرة عامة على الطلبات",
+      ordersByStatus: "الطلبات حسب الحالة",
+      ordersPerDay: "الطلبات اليومية"
+    },
+    he: {
+      nav: { home: "בית ▾", home1: "בית 1", home2: "בית 2", about: "אודות", blog: "בלוג",
+             services: "שירותים ▾", allServices: "כל השירותים", s1: "משלוח אוכל", s2: "הזמנת שולחן",
+             s3: "קייטרינג", s4: "שף אישי", s5: "אירועים", s6: "שיעורי בישול", contact: "צור קשר" },
+      logout: "התנתק",
+      mostActiveUser: "המשתמש הפעיל ביותר",
+      topSignupsDay: "יום ההרשמות המוביל",
+      totalUsers: "סה\"כ משתמשים",
+      users: "משתמשים",
+      th: { fullName: "שם מלא", username: "שם משתמש", date: "תאריך", actions: "פעולות" },
+      orders: "הזמנות לקוחות",
+      thOrders: { user: "משתמש", items: "פריטים", total: "סה\"כ", date: "תאריך", status: "סטטוס", action: "פעולה" },
+      usersSignups: "משתמשים והרשמות",
+      signupsToday: "הרשמות היום",
+      weeklySignups: "הרשמות שבועיות",
+      totalUsersChart: "סה\"כ משתמשים",
+      ordersOverview: "סקירת הזמנות",
+      ordersByStatus: "הזמנות לפי סטטוס",
+      ordersPerDay: "הזמנות לפי יום"
+    }
+  };
+
+  function applyTranslation(lang) {
+    const t = translations[lang];
+
+    // Nav
+    document.getElementById("navHome").textContent = t.nav.home;
+    document.getElementById("navHome1").textContent = t.nav.home1;
+    document.getElementById("navHome2").textContent = t.nav.home2;
+    document.getElementById("navAbout").textContent = t.nav.about;
+    document.getElementById("navBlog").textContent = t.nav.blog;
+    document.getElementById("navServices").textContent = t.nav.services;
+    document.getElementById("navAllServices").textContent = t.nav.allServices;
+    document.getElementById("navService1").textContent = t.nav.s1;
+    document.getElementById("navService2").textContent = t.nav.s2;
+    document.getElementById("navService3").textContent = t.nav.s3;
+    document.getElementById("navService4").textContent = t.nav.s4;
+    document.getElementById("navService5").textContent = t.nav.s5;
+    document.getElementById("navService6").textContent = t.nav.s6;
+    document.getElementById("navContact").textContent = t.nav.contact;
+
+    // Titles & Cards
+    document.getElementById("logout-btn").textContent = t.logout;
+    document.getElementById("mostActiveUserTitle").textContent = t.mostActiveUser;
+    document.getElementById("topSignupsDayTitle").textContent = t.topSignupsDay;
+    document.getElementById("totalUsersTitle").textContent = t.totalUsers;
+    document.getElementById("usersTableTitle").textContent = t.users;
+
+    // Tables
+    document.getElementById("thFullName").textContent = t.th.fullName;
+    document.getElementById("thUsername").textContent = t.th.username;
+    document.getElementById("thDate").textContent = t.th.date;
+    document.getElementById("thActions").textContent = t.th.actions;
+
+    document.getElementById("ordersTitle").textContent = t.orders;
+    document.getElementById("thOrderUser").textContent = t.thOrders.user;
+    document.getElementById("thOrderItems").textContent = t.thOrders.items;
+    document.getElementById("thOrderTotal").textContent = t.thOrders.total;
+    document.getElementById("thOrderDate").textContent = t.thOrders.date;
+    document.getElementById("thOrderStatus").textContent = t.thOrders.status;
+    document.getElementById("thOrderAction").textContent = t.thOrders.action;
+
+    // Charts
+    document.getElementById("usersSignupsTitle").textContent = t.usersSignups;
+    document.getElementById("signupsTodayTitle").textContent = t.signupsToday;
+    document.getElementById("weeklySignupsTitle").textContent = t.weeklySignups;
+    document.getElementById("totalUsersChartTitle").textContent = t.totalUsersChart;
+    document.getElementById("ordersOverviewTitle").textContent = t.ordersOverview;
+    document.getElementById("ordersByStatusTitle").textContent = t.ordersByStatus;
+    document.getElementById("ordersPerDayTitle").textContent = t.ordersPerDay;
+
+    // RTL
+    if (lang === "ar" || lang === "he") {
+      document.body.setAttribute("dir", "rtl");
+    } else {
+      document.body.setAttribute("dir", "ltr");
+    }
+  }
+
+  document.getElementById("languageSelect").addEventListener("change", (e) => {
+    applyTranslation(e.target.value);
+  });
+
+  // Default: English
+  applyTranslation("en");
+</script>
+</body>
+</html>

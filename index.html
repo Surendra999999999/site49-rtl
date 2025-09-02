@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title data-i18n="site_title">Stackly Food</title>
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/index.css" />
+  <script src="js/header.js" defer></script>
+  <script src="js/dark_toogle.js" defer></script>
+  <script src="js/auth_check.js" defer></script>
+  <script src="js/login_auth.js" defer></script>  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <a href="index.html"><img src="images/logo.png" alt="Logo" data-i18n-attr="alt" data-i18n="header_logo_alt"></a>
+  </div>
+
+  <div class="header-right">
+    <nav>
+      <ul class="nav-links">
+        <li class="dropdown">
+          <a href="index.html" data-i18n="nav_home_dropdown">Home ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="index.html" data-i18n="nav_home1">Home 1</a></li>
+            <li><a href="home2.html" data-i18n="nav_home2">Home 2</a></li>
+          </ul>
+        </li>
+        <li><a href="about.html" data-i18n="nav_about">About</a></li>
+        <li><a href="blog.html" data-i18n="nav_blog">Blog</a></li>
+        <li class="dropdown">
+          <a href="services.html" data-i18n="nav_services_dropdown">Services ▾</a>
+          <ul class="dropdown-menu">
+            <li class="mobile-only"><a href="services.html" data-i18n="nav_all_services">All Services</a></li>
+            <li><a href="service1.html" data-i18n="nav_service1">Food Delivery</a></li>
+            <li><a href="service2.html" data-i18n="nav_service2">Table Booking</a></li>
+            <li><a href="service3.html" data-i18n="nav_service3">Catering</a></li>
+            <li><a href="service4.html" data-i18n="nav_service4">Personal Chef</a></li>
+            <li><a href="service5.html" data-i18n="nav_service5">Event Dining</a></li>
+            <li><a href="service6.html" data-i18n="nav_service6">Cooking Classes</a></li>
+          </ul>
+        </li>
+        <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Language Toggle -->
+    <select id="language-selector" aria-label="Language">
+      <option value="en">English</option>
+      <option value="ar">العربية</option>
+      <option value="he">עברית</option>
+    </select>
+
+    <div class="profile-container">
+      <div class="profile" id="profile-dropdown-toggle">
+        <span id="profile-initials"></span>
+      </div>
+      <ul class="profile-dropdown" id="profile-dropdown">
+        <li><a href="#" id="logout-btn" data-i18n="logout">Logout</a></li>
+      </ul>
+    </div>
+
+    <button id="toggle-dark">🌙</button>
+    <button id="mobile-menu-toggle" class="hamburger">☰</button>
+  </div>
+</header>
+
+<section class="hero">
+  <!-- Background Video -->
+  <video class="hero-video" autoplay muted loop playsinline>
+    <source src="videos/home1-hero.mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay"></div>
+
+  <!-- Content -->
+  <div class="hero-content">
+    <h1 data-i18n="hero_title">Welcome to Our Restaurant</h1>
+    <p data-i18n="hero_subtitle">Delicious food made with love & served with care</p>
+    <div class="hero-buttons">
+      <a href="services.html" class="btn" data-i18n="hero_view_menu">View Menu</a>
+      <a href="reservation.html" class="btn-outline" data-i18n="hero_book_table">Book a Table</a>
+    </div>
+  </div>
+
+  <!-- Hero Image -->
+  <div class="hero-image">
+    <img src="images/download (1).jpeg" alt="Signature Dish" data-i18n-attr="alt" data-i18n="hero_img_alt">
+  </div>
+</section>
+<!-- =======================
+     ABOUT US SECTION
+======================= -->
+<section class="about" id="about">
+  <div class="about-container">
+    <div class="about-image">
+      <img src="images/hero-about.jpg" alt="Restaurant Interior" data-i18n-attr="alt" data-i18n="about_img_alt">
+    </div>
+    <div class="about-content">
+      <h2 data-i18n="about_title">About Our Restaurant</h2>
+      <p data-i18n="about_text" data-i18n-html="true">
+        Welcome to <strong>Taste Haven</strong>, where tradition meets flavor. 
+        We bring you authentic dishes crafted with love, fresh ingredients, 
+        and a touch of innovation. Our chefs carefully design every meal 
+        to give you an unforgettable dining experience. <br><br>
+        
+        At Taste Haven, food is more than just a meal — it’s a journey. 
+        From comforting classics to bold new creations, we believe every 
+        plate tells a story. Our warm ambiance and friendly staff make 
+        sure you feel right at home from the moment you step in. <br><br>
+        
+        Whether you're here for a family dinner, a casual meetup, or a 
+        special celebration, we’re committed to making your time with us 
+        memorable and flavorful. Come hungry, leave happy — that’s the 
+        Taste Haven promise.
+      </p>
+
+      <a href="services.html"><button class="btn-gradient" data-i18n="about_btn">Explore Our Menu</button></a>
+    </div>
+  </div>
+</section>
+<section class="specialties" id="specialties">
+  <h2 class="section-title" data-i18n="specialties_title">Our Specialties</h2>
+  <p class="section-subtitle" data-i18n="specialties_subtitle">Handcrafted dishes made with love and fresh ingredients</p>
+
+  <div class="specialties-grid">
+    <!-- Card 1 -->
+    <div class="specialty-card">
+      <div class="specialty-inner">
+        <img src="images/spicy.jpeg" alt="Dish 1" data-i18n-attr="alt" data-i18n="spec1_img_alt">
+        <h3 data-i18n="spec1_title">Spicy Delight</h3>
+        <p data-i18n="spec1_text">A fiery combination of spices and flavors that will leave you craving more.</p>
+        <a href="services.html" class="card-btn" data-i18n="spec_view_more">View More</a>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="specialty-card">
+      <div class="specialty-inner">
+        <img src="images/Indian Thali.jpeg" alt="Dish 2" data-i18n-attr="alt" data-i18n="spec2_img_alt">
+        <h3 data-i18n="spec2_title">Classic Comfort</h3>
+        <p data-i18n="spec2_text">Traditional recipe reimagined for a modern dining experience.</p>
+        <a href="services.html" class="card-btn" data-i18n="spec_view_more">View More</a>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="specialty-card">
+      <div class="specialty-inner">
+        <img src="images/desert.jpeg" alt="Dish 3" data-i18n-attr="alt" data-i18n="spec3_img_alt">
+        <h3 data-i18n="spec3_title">Sweet Escape</h3>
+        <p data-i18n="spec3_text">A heavenly dessert that melts in your mouth and sweetens your day.</p>
+        <a href="services.html" class="card-btn" data-i18n="spec_view_more">View More</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================
+   SPECIAL OFFERS SECTION
+====================== -->
+<section class="offers" id="offers">
+  <div class="offers-container">
+    <h2 class="section-title" data-i18n="offers_title">🔥 Special Offers</h2>
+    <p class="section-subtitle" data-i18n="offers_subtitle">Swipe through our hottest deals — order before they’re gone!</p>
+
+    <div class="offers-slider">
+      <!-- Offer 1 -->
+      <div class="offer-card">
+        <span class="offer-badge" data-i18n="offer1_badge">50% OFF</span>
+        <img src="images/combo.jpeg" alt="Family Combo" data-i18n-attr="alt" data-i18n="offer1_img_alt">
+        <div class="offer-info">
+          <h3 data-i18n="offer1_title">Family Feast Combo</h3>
+          <p data-i18n="offer1_text">Enjoy a hearty meal for 4 with starters, mains & desserts.</p>
+          <a href="orders.html"><button class="btn-gradient" data-i18n="offer_btn">Grab Deal</button></a>
+        </div>
+      </div>
+
+      <!-- Offer 2 -->
+      <div class="offer-card">
+        <span class="offer-badge" data-i18n="offer2_badge">BUY 1 GET 1</span>
+        <img src="images/pizza.jpeg" alt="Pizza Offer" data-i18n-attr="alt" data-i18n="offer2_img_alt">
+        <div class="offer-info">
+          <h3 data-i18n="offer2_title">Pizza Fiesta</h3>
+          <p data-i18n="offer2_text">Order a large pizza and get another absolutely FREE.</p>
+          <a href="orders.html"><button class="btn-gradient" data-i18n="offer_btn">Grab Deal</button></a>
+        </div>
+      </div>
+
+      <!-- Offer 3 -->
+      <div class="offer-card">
+        <span class="offer-badge" data-i18n="offer3_badge">20% OFF</span>
+        <img src="images/dessert2.jpeg" alt="Dessert Offer" data-i18n-attr="alt" data-i18n="offer3_img_alt">
+        <div class="offer-info">
+          <h3 data-i18n="offer3_title">Sweet Tooth Special</h3>
+          <p data-i18n="offer3_text">Get 20% off on all desserts this weekend only.</p>
+          <a href="orders.html"><button class="btn-gradient" data-i18n="offer_btn">Grab Deal</button></a>
+        </div>
+      </div>
+
+      <!-- Offer 4 -->
+      <div class="offer-card">
+        <span class="offer-badge" data-i18n="offer4_badge">FREE DRINKS</span>
+        <img src="images/crack burgers -.jpeg" alt="Burger Combo" data-i18n-attr="alt" data-i18n="offer4_img_alt">
+        <div class="offer-info">
+          <h3 data-i18n="offer4_title">Burger Blast</h3>
+          <p data-i18n="offer4_text">Buy 2 burgers and get 2 soft drinks absolutely free.</p>
+          <a href="orders.html"><button class="btn-gradient" data-i18n="offer_btn">Grab Deal</button></a>
+        </div>
+      </div>
+
+      <!-- Offer 5 -->
+      <div class="offer-card">
+        <span class="offer-badge" data-i18n="offer5_badge">LIMITED</span>
+        <img src="images/sushi.jpeg" alt="Sushi Platter" data-i18n-attr="alt" data-i18n="offer5_img_alt">
+        <div class="offer-info">
+          <h3 data-i18n="offer5_title">Sushi Delight</h3>
+          <p data-i18n="offer5_text">Try our exclusive sushi platter at a discounted price.</p>
+          <a href="orders.html"><button class="btn-gradient" data-i18n="offer_btn">Grab Deal</button></a>
+        </div>
+      </div>
+
+      <!-- Offer 6 -->
+      <div class="offer-card">
+        <span class="offer-badge" data-i18n="offer6_badge">NEW</span>
+        <img src="images/steak.jpeg" alt="Steak Dinner" data-i18n-attr="alt" data-i18n="offer6_img_alt">
+        <div class="offer-info">
+          <h3 data-i18n="offer6_title">Steak Night</h3>
+          <p data-i18n="offer6_text">Premium steak dinner with wine pairing now at 30% off.</p>
+          <a href="orders.html"><button class="btn-gradient" data-i18n="offer_btn">Grab Deal</button></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dots -->
+    <div class="slider-dots"></div>
+  </div>
+</section>
+
+<section class="testimonials" id="testimonials">
+  <h2 class="section-title" data-i18n="testimonials_title">What Our Customers Say</h2>
+
+  <div class="testimonial-slider">
+    <div class="testimonial-track">
+      <!-- Testimonial 1 -->
+      <div class="testimonial-card">
+        <p data-i18n="test1_text">"The food was absolutely amazing! Will definitely come again."</p>
+        <h4>- Priya S.</h4>
+      </div>
+      <!-- Testimonial 2 -->
+      <div class="testimonial-card">
+        <p data-i18n="test2_text">"Best dining experience I've had in years. Highly recommended."</p>
+        <h4>- Arjun K.</h4>
+      </div>
+      <!-- Testimonial 3 -->
+      <div class="testimonial-card">
+        <p data-i18n="test3_text">"The ambience and taste were both top-notch. Loved it!"</p>
+        <h4>- Meera R.</h4>
+      </div>
+      <!-- Testimonial 4 -->
+      <div class="testimonial-card">
+        <p data-i18n="test4_text">"Excellent service and the staff were super friendly."</p>
+        <h4>- Rohit P.</h4>
+      </div>
+      <!-- Testimonial 5 -->
+      <div class="testimonial-card">
+        <p data-i18n="test5_text">"Authentic flavors and great value for money. A must-visit!"</p>
+        <h4>- Neha M.</h4>
+      </div>
+      <!-- Testimonial 6 -->
+      <div class="testimonial-card">
+        <p data-i18n="test6_text">"Their desserts are to die for! Highly recommend the cheesecake."</p>
+        <h4>- Karan V.</h4>
+      </div>
+      <!-- Testimonial 7 -->
+      <div class="testimonial-card">
+        <p data-i18n="test7_text">"Perfect place for a family dinner. Cozy and welcoming."</p>
+        <h4>- Sneha L.</h4>
+      </div>
+      <!-- Testimonial 8 -->
+      <div class="testimonial-card">
+        <p data-i18n="test8_text">"Loved every dish we tried. Fresh and flavorful."</p>
+        <h4>- Amit J.</h4>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dots -->
+  <div class="testimonial-dots">
+    <span class="dot active"></span>
+    <span class="dot"></span>
+  </div>
+</section>
+<section class="cta" id="cta">
+  <div class="cta-overlay"></div>
+  <div class="cta-content">
+    <h2 data-i18n="cta_title">Ready for a Flavor Adventure?</h2>
+    <p data-i18n="cta_text">
+      Join us today and experience authentic taste, mouth-watering dishes,  
+      and an unforgettable dining experience crafted just for you.
+    </p>
+    <a href="reservation.html"><button class="btn-gradient" data-i18n="cta_btn_reserve">Reserve Your Table</button></a>
+    <a href="contact.html"><button class="btn-gradient" data-i18n="cta_btn_contact">Contact Us</button></a>
+  </div>
+
+  <!-- Floating Decorative Images -->
+  <img src="images/leaf.jpeg" alt="Leaf" class="floating-img img1" data-i18n-attr="alt" data-i18n="cta_leaf_alt">
+  <img src="images/spices.jpeg" alt="Spices" class="floating-img img2" data-i18n-attr="alt" data-i18n="cta_spices_alt">
+  <img src="images/plate.jpeg" alt="Plate" class="floating-img img3" data-i18n-attr="alt" data-i18n="cta_plate_alt">
+</section>
+
+
+
+<footer class="footer">
+  <div class="footer-container">
+
+    <!-- Column 1: Logo + Description -->
+    <div class="footer-col">
+      <a href="index.html"><img src="images/logo.png" alt="Stackly Logo" class="footer-logo" data-i18n-attr="alt" data-i18n="footer_logo_alt"></a>
+      <p data-i18n="footer_desc" data-i18n-html="true">
+        Delicious food delivered to your door.<br>
+        Experience the best of restaurant and food delivery services with us!
+      </p>
+      <div class="social-icons">
+        <a href="https://www.facebook.com" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.twitter.com" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+
+    <!-- Column 2: Quick Links -->
+    <div class="footer-col">
+      <h4 data-i18n="footer_quick_links">Quick Links</h4>
+      <ul>
+        <li><a href="index.html" data-i18n="footer_home1">Home 1</a></li>
+        <li><a href="home2.html" data-i18n="footer_home2">Home 2</a></li>
+        <li><a href="about.html" data-i18n="footer_about_us">About Us</a></li>
+        <li><a href="services.html" data-i18n="footer_services_link">Services</a></li>
+        <li><a href="blog.html" data-i18n="footer_blog">Blog</a></li>
+        <li><a href="contact.html" data-i18n="footer_contact_us_link">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <!-- Column 3: Services -->
+    <div class="footer-col">
+      <h4 data-i18n="footer_services">Services</h4>
+      <ul>
+        <li><a href="service1.html" data-i18n="nav_service1">Food Delivery</a></li>
+        <li><a href="service2.html" data-i18n="nav_service2">Table Booking</a></li>
+        <li><a href="service3.html" data-i18n="nav_service3">Catering</a></li>
+        <li><a href="service4.html" data-i18n="nav_service4">Personal Chef</a></li>
+        <li><a href="service5.html" data-i18n="nav_service5">Event Dining</a></li>
+        <li><a href="service6.html" data-i18n="nav_service6">Cooking Classes</a></li>
+      </ul>
+    </div>
+
+    <!-- Column 4: Contact -->
+    <div class="footer-col">
+      <h4 data-i18n="footer_contact_us">Contact Us</h4>
+      <p data-i18n="footer_address" data-i18n-html="true"><i class="fas fa-map-marker-alt"></i> 123 Main St, Food City</p>
+      <p data-i18n="footer_phone" data-i18n-html="true"><i class="fas fa-phone"></i> +1 234 567 890</p>
+      <p data-i18n="footer_email" data-i18n-html="true"><i class="fas fa-envelope"></i> info@restaurant.com</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p data-i18n="footer_copy">© 2025 Restaurant. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- Your existing sliders JS -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const track = document.querySelector(".testimonial-track");
+    const dots = document.querySelectorAll(".testimonial-dots .dot");
+    let index = 0;
+    const totalSlides = 2; // since 8 testimonials = 2 sets of 4
+
+    function updateSlider() {
+      track.style.transform = `translateX(-${index * 100}%)`;
+      dots.forEach((dot, i) => dot.classList.toggle("active", i === index));
+    }
+
+    setInterval(() => {
+      index = (index + 1) % totalSlides;
+      updateSlider();
+    }, 5000);
+
+    dots.forEach((dot, i) => {
+      dot.addEventListener("click", () => {
+        index = i;
+        updateSlider();
+      });
+    });
+  });
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const slider = document.querySelector(".offers-slider");
+    const dotsContainer = document.querySelector(".slider-dots");
+    const cards = document.querySelectorAll(".offer-card");
+    let index = 0;
+
+    // Create dots
+    cards.forEach((_, i) => {
+      const dot = document.createElement("span");
+      if (i === 0) dot.classList.add("active");
+      dotsContainer.appendChild(dot);
+
+      dot.addEventListener("click", () => {
+        index = i;
+        slider.scrollTo({ left: cards[i].offsetLeft, behavior: "smooth" });
+        updateDots();
+      });
+    });
+
+    function updateDots() {
+      dotsContainer.querySelectorAll("span").forEach((dot, i) => {
+        dot.classList.toggle("active", i === index);
+      });
+    }
+
+    // Auto Slide
+    setInterval(() => {
+      index = (index + 1) % cards.length;
+      slider.scrollTo({ left: cards[index].offsetLeft, behavior: "smooth" });
+      updateDots();
+    }, 4000);
+  });
+</script>
+
+<!-- =========================
+     TRANSLATIONS / I18N JS
+========================= -->
+<script>
+(function(){
+  // Dictionary (English, Arabic, Hebrew)
+  const t = {
+    en: {
+      site_title: "Stackly Food",
+      header_logo_alt: "Logo",
+
+      nav_home_dropdown: "Home ▾",
+      nav_home1: "Home 1",
+      nav_home2: "Home 2",
+      nav_about: "About",
+      nav_blog: "Blog",
+      nav_services_dropdown: "Services ▾",
+      nav_all_services: "All Services",
+      nav_service1: "Food Delivery",
+      nav_service2: "Table Booking",
+      nav_service3: "Catering",
+      nav_service4: "Personal Chef",
+      nav_service5: "Event Dining",
+      nav_service6: "Cooking Classes",
+      nav_contact: "Contact",
+      logout: "Logout",
+
+      hero_title: "Welcome to Our Restaurant",
+      hero_subtitle: "Delicious food made with love & served with care",
+      hero_view_menu: "View Menu",
+      hero_book_table: "Book a Table",
+      hero_img_alt: "Signature Dish",
+
+      about_img_alt: "Restaurant Interior",
+      about_title: "About Our Restaurant",
+      about_text: `Welcome to <strong>Taste Haven</strong>, where tradition meets flavor. 
+We bring you authentic dishes crafted with love, fresh ingredients, 
+and a touch of innovation. Our chefs carefully design every meal 
+to give you an unforgettable dining experience. <br><br>
+At Taste Haven, food is more than just a meal — it’s a journey. 
+From comforting classics to bold new creations, we believe every 
+plate tells a story. Our warm ambiance and friendly staff make 
+sure you feel right at home from the moment you step in. <br><br>
+Whether you're here for a family dinner, a casual meetup, or a 
+special celebration, we’re committed to making your time with us 
+memorable and flavorful. Come hungry, leave happy — that’s the 
+Taste Haven promise.`,
+      about_btn: "Explore Our Menu",
+
+      specialties_title: "Our Specialties",
+      specialties_subtitle: "Handcrafted dishes made with love and fresh ingredients",
+      spec1_img_alt: "Dish 1",
+      spec2_img_alt: "Dish 2",
+      spec3_img_alt: "Dish 3",
+      spec1_title: "Spicy Delight",
+      spec1_text: "A fiery combination of spices and flavors that will leave you craving more.",
+      spec2_title: "Classic Comfort",
+      spec2_text: "Traditional recipe reimagined for a modern dining experience.",
+      spec3_title: "Sweet Escape",
+      spec3_text: "A heavenly dessert that melts in your mouth and sweetens your day.",
+      spec_view_more: "View More",
+
+      offers_title: "🔥 Special Offers",
+      offers_subtitle: "Swipe through our hottest deals — order before they’re gone!",
+      offer_btn: "Grab Deal",
+
+      offer1_badge: "50% OFF",
+      offer1_img_alt: "Family Combo",
+      offer1_title: "Family Feast Combo",
+      offer1_text: "Enjoy a hearty meal for 4 with starters, mains & desserts.",
+
+      offer2_badge: "BUY 1 GET 1",
+      offer2_img_alt: "Pizza Offer",
+      offer2_title: "Pizza Fiesta",
+      offer2_text: "Order a large pizza and get another absolutely FREE.",
+
+      offer3_badge: "20% OFF",
+      offer3_img_alt: "Dessert Offer",
+      offer3_title: "Sweet Tooth Special",
+      offer3_text: "Get 20% off on all desserts this weekend only.",
+
+      offer4_badge: "FREE DRINKS",
+      offer4_img_alt: "Burger Combo",
+      offer4_title: "Burger Blast",
+      offer4_text: "Buy 2 burgers and get 2 soft drinks absolutely free.",
+
+      offer5_badge: "LIMITED",
+      offer5_img_alt: "Sushi Platter",
+      offer5_title: "Sushi Delight",
+      offer5_text: "Try our exclusive sushi platter at a discounted price.",
+
+      offer6_badge: "NEW",
+      offer6_img_alt: "Steak Dinner",
+      offer6_title: "Steak Night",
+      offer6_text: "Premium steak dinner with wine pairing now at 30% off.",
+
+      testimonials_title: "What Our Customers Say",
+      test1_text: "The food was absolutely amazing! Will definitely come again.",
+      test2_text: "Best dining experience I've had in years. Highly recommended.",
+      test3_text: "The ambience and taste were both top-notch. Loved it!",
+      test4_text: "Excellent service and the staff were super friendly.",
+      test5_text: "Authentic flavors and great value for money. A must-visit!",
+      test6_text: "Their desserts are to die for! Highly recommend the cheesecake.",
+      test7_text: "Perfect place for a family dinner. Cozy and welcoming.",
+      test8_text: "Loved every dish we tried. Fresh and flavorful.",
+
+      cta_title: "Ready for a Flavor Adventure?",
+      cta_text: "Join us today and experience authentic taste, mouth-watering dishes,  and an unforgettable dining experience crafted just for you.",
+      cta_btn_reserve: "Reserve Your Table",
+      cta_btn_contact: "Contact Us",
+      cta_leaf_alt: "Leaf",
+      cta_spices_alt: "Spices",
+      cta_plate_alt: "Plate",
+
+      footer_logo_alt: "Stackly Logo",
+      footer_desc: `Delicious food delivered to your door.<br>
+Experience the best of restaurant and food delivery services with us!`,
+      footer_quick_links: "Quick Links",
+      footer_home1: "Home 1",
+      footer_home2: "Home 2",
+      footer_about_us: "About Us",
+      footer_services_link: "Services",
+      footer_blog: "Blog",
+      footer_contact_us_link: "Contact Us",
+
+      footer_services: "Services",
+      footer_contact_us: "Contact Us",
+      footer_address: `<i class="fas fa-map-marker-alt"></i> 123 Main St, Food City`,
+      footer_phone: `<i class="fas fa-phone"></i> +1 234 567 890`,
+      footer_email: `<i class="fas fa-envelope"></i> info@restaurant.com`,
+      footer_copy: "© 2025 Restaurant. All rights reserved."
+    },
+
+    ar: {
+      site_title: "Stackly Food",
+      header_logo_alt: "الشعار",
+
+      nav_home_dropdown: "الرئيسية ▾",
+      nav_home1: "الصفحة الرئيسية 1",
+      nav_home2: "الصفحة الرئيسية 2",
+      nav_about: "معلومات عنا",
+      nav_blog: "مدونة",
+      nav_services_dropdown: "الخدمات ▾",
+      nav_all_services: "جميع الخدمات",
+      nav_service1: "توصيل الطعام",
+      nav_service2: "حجز الطاولات",
+      nav_service3: "التموين",
+      nav_service4: "طاهٍ شخصي",
+      nav_service5: "حفلات ومناسبات",
+      nav_service6: "دروس طبخ",
+      nav_contact: "اتصل بنا",
+      logout: "تسجيل الخروج",
+
+      hero_title: "مرحبًا بكم في مطعمنا",
+      hero_subtitle: "طعام لذيذ مصنوع بحب ويُقدّم بعناية",
+      hero_view_menu: "عرض القائمة",
+      hero_book_table: "احجز طاولة",
+      hero_img_alt: "طبق مميز",
+
+      about_img_alt: "داخل المطعم",
+      about_title: "حول مطعمنا",
+      about_text: `مرحبًا بكم في <strong>Taste Haven</strong>، حيث يلتقي التقليد بالنكهة. 
+نقدم لكم أطباقًا أصيلة مصنوعة بحب وبمكونات طازجة 
+ومسحة من الابتكار. يصمم طهاتنا كل وجبة بعناية 
+لتمنحكم تجربة طعام لا تُنسى. <br><br>
+في Taste Haven، الطعام أكثر من مجرد وجبة — إنه رحلة. 
+من الكلاسيكيات المريحة إلى الإبداعات الجريئة، نؤمن بأن كل طبق 
+يحكي قصة. أجواؤنا الدافئة وطاقمنا الودود يجعلونكم تشعرون 
+وكأنكم في بيتكم منذ اللحظة الأولى. <br><br>
+سواء جئتم لعشاء عائلي، لقاء ودي، أو مناسبة خاصة، فنحن ملتزمون 
+بجعل وقتكم معنا مليئًا بالنكهات والذكريات الجميلة. تعالوا جائعين واغادروا سعداء — 
+هذه هي وعود Taste Haven.`,
+      about_btn: "استكشف قائمتنا",
+
+      specialties_title: "تخصصاتنا",
+      specialties_subtitle: "أطباق مصنوعة يدويًا بحب وبمكونات طازجة",
+      spec1_img_alt: "طبق 1",
+      spec2_img_alt: "طبق 2",
+      spec3_img_alt: "طبق 3",
+      spec1_title: "متعة حارة",
+      spec1_text: "مزيج ناري من التوابل والنكهات سيجعلكم ترغبون بالمزيد.",
+      spec2_title: "راحة كلاسيكية",
+      spec2_text: "وصفة تقليدية برؤية عصرية لتجربة طعام حديثة.",
+      spec3_title: "هروب حلو",
+      spec3_text: "حلوى سماوية تذوب في الفم وتُحلي يومكم.",
+      spec_view_more: "اعرف المزيد",
+
+      offers_title: "🔥 عروض خاصة",
+      offers_subtitle: "تصفّحوا أقوى العروض — اطلبوا قبل نفادها!",
+      offer_btn: "احصل على العرض",
+
+      offer1_badge: "خصم 50%",
+      offer1_img_alt: "وجبة عائلية",
+      offer1_title: "باقة الوليمة العائلية",
+      offer1_text: "استمتعوا بوجبة مشبعة لأربعة أشخاص مع مقبلات وأطباق رئيسية وحلويات.",
+
+      offer2_badge: "اشتري 1 واحصل على 1",
+      offer2_img_alt: "عرض البيتزا",
+      offer2_title: "فييستا البيتزا",
+      offer2_text: "اطلبوا بيتزا كبيرة واحصلوا على أخرى مجانًا.",
+
+      offer3_badge: "خصم 20%",
+      offer3_img_alt: "عرض الحلويات",
+      offer3_title: "عرض عشّاق الحلويات",
+      offer3_text: "خصم 20% على جميع الحلويات خلال عطلة نهاية الأسبوع فقط.",
+
+      offer4_badge: "مشروبات مجانية",
+      offer4_img_alt: "باقة البرغر",
+      offer4_title: "انفجار البرغر",
+      offer4_text: "اشترِ 2 برغر واحصل على مشروبين غازيين مجانًا.",
+
+      offer5_badge: "لفترة محدودة",
+      offer5_img_alt: "طبق السوشي",
+      offer5_title: "متعة السوشي",
+      offer5_text: "جرّبوا طبق السوشي الحصري بسعر مخفّض.",
+
+      offer6_badge: "جديد",
+      offer6_img_alt: "عشاء ستيك",
+      offer6_title: "ليلة الستيك",
+      offer6_text: "عشاء ستيك فاخر مع مواءمة نبيذ بخصم 30% الآن.",
+
+      testimonials_title: "ماذا يقول عملاؤنا",
+      test1_text: "الطعام كان مذهلًا بالفعل! بالتأكيد سنعود مرة أخرى.",
+      test2_text: "أفضل تجربة طعام منذ سنوات. أنصح بها بشدة.",
+      test3_text: "الأجواء والطعم في القمة. أحببته!",
+      test4_text: "خدمة ممتازة وطاقم ودود للغاية.",
+      test5_text: "نكهات أصيلة وقيمة رائعة مقابل المال. أنصح بزيارته!",
+      test6_text: "حلوياتهم لا تُقاوم! أنصح بشدة بتشيز كيك.",
+      test7_text: "مكان مثالي للعائلة. دافئ ومرحّب.",
+      test8_text: "أحببنا كل طبق جرّبناه. طازج ولذيذ.",
+
+      cta_title: "جاهزون لمغامرة نكهات؟",
+      cta_text: "انضموا إلينا اليوم لتجربة أصيلة، أطباق شهية، وتجربة طعام لا تُنسى صُممت لكم خصيصًا.",
+      cta_btn_reserve: "احجز طاولة",
+      cta_btn_contact: "اتصل بنا",
+      cta_leaf_alt: "ورقة",
+      cta_spices_alt: "بهارات",
+      cta_plate_alt: "طبق",
+
+      footer_logo_alt: "شعار ستاكلي",
+      footer_desc: `طعام لذيذ يصل إلى باب منزلكم.<br>
+اختبروا أفضل خدمات المطاعم وتوصيل الطعام معنا!`,
+      footer_quick_links: "روابط سريعة",
+      footer_home1: "الصفحة الرئيسية 1",
+      footer_home2: "الصفحة الرئيسية 2",
+      footer_about_us: "معلومات عنا",
+      footer_services_link: "الخدمات",
+      footer_blog: "مدونة",
+      footer_contact_us_link: "اتصل بنا",
+
+      footer_services: "الخدمات",
+      footer_contact_us: "اتصل بنا",
+      footer_address: `<i class="fas fa-map-marker-alt"></i> 123 شارع الرئيسي، مدينة الطعام`,
+      footer_phone: `<i class="fas fa-phone"></i> +1 234 567 890`,
+      footer_email: `<i class="fas fa-envelope"></i> info@restaurant.com`,
+      footer_copy: "© 2025 المطعم. جميع الحقوق محفوظة."
+    },
+
+    he: {
+      site_title: "Stackly Food",
+      header_logo_alt: "לוגו",
+
+      nav_home_dropdown: "דף הבית ▾",
+      nav_home1: "בית 1",
+      nav_home2: "בית 2",
+      nav_about: "עלינו",
+      nav_blog: "בלוג",
+      nav_services_dropdown: "שירותים ▾",
+      nav_all_services: "כל השירותים",
+      nav_service1: "משלוחי אוכל",
+      nav_service2: "הזמנת שולחן",
+      nav_service3: "קייטרינג",
+      nav_service4: "שף פרטי",
+      nav_service5: "אירועים וסעודה",
+      nav_service6: "שיעורי בישול",
+      nav_contact: "צור קשר",
+      logout: "התנתק",
+
+      hero_title: "ברוכים הבאים למסעדה שלנו",
+      hero_subtitle: "אוכל טעים המוכן באהבה ומוגש באכפתיות",
+      hero_view_menu: "צפה בתפריט",
+      hero_book_table: "הזמן שולחן",
+      hero_img_alt: "מנה חתומה",
+
+      about_img_alt: "פנים המסעדה",
+      about_title: "על המסעדה שלנו",
+      about_text: `ברוכים הבאים ל<strong>Taste Haven</strong>, שם המסורת פוגשת את הטעם. 
+אנו מביאים לכם מנות אותנטיות שנעשות באהבה, מרכיבים טריים 
+ונגיעה של חדשנות. שףינו מעצבים כל מנה בקפידה 
+כדי להעניק לכם חוויית אוכל בלתי נשכחת. <br><br>
+ב-Taste Haven, אוכל הוא יותר מארוחה — זו מסע. 
+מהקלאסיקות המנחמות ועד יצירות נועזות, אנו מאמינים שכל צלחת 
+מספרת סיפור. האווירה החמה והצוות הידידותי שלנו גורמים לכם 
+להרגיש בבית מרגע הכניסה. <br><br>
+בין אם הגעתם לארוחת משפחה, מפגש חברי או חגיגה מיוחדת — 
+אנחנו מחויבים להפוך את זמנכם איתנו לטעים ובלתי נשכח. 
+בואו רעבים, צאו שמחים — זו ההבטחה של Taste Haven.`,
+      about_btn: "גלו את התפריט שלנו",
+
+      specialties_title: "המיוחדים שלנו",
+      specialties_subtitle: "מנות בעבודת יד עם מרכיבים טריים ואהבה",
+      spec1_img_alt: "מנה 1",
+      spec2_img_alt: "מנה 2",
+      spec3_img_alt: "מנה 3",
+      spec1_title: "תענוג חריף",
+      spec1_text: "שילוב עז של תבלינים וטעמים שישאיר אתכם רוצים עוד.",
+      spec2_title: "נוחות קלאסית",
+      spec2_text: "מתכון מסורתי בגרסה מודרנית לחוויית סעודה עדכנית.",
+      spec3_title: "בריחה מתוקה",
+      spec3_text: "קינוח שמימי שנמס בפה וממתיק את היום.",
+      spec_view_more: "מידע נוסף",
+
+      offers_title: "🔥 מבצעים מיוחדים",
+      offers_subtitle: "גללו בין המבצעים החמים — הזמינו לפני שנגמר!",
+      offer_btn: "לקחת את הדיל",
+
+      offer1_badge: "50% הנחה",
+      offer1_img_alt: "ארוחה משפחתית",
+      offer1_title: "ארוחת משפחה חגיגית",
+      offer1_text: "הנאה מארוחה משביעה ל-4 עם פתיחים, עיקריות וקינוחים.",
+
+      offer2_badge: "קנה 1 קבל 1",
+      offer2_img_alt: "מבצע פיצה",
+      offer2_title: "חגיגת פיצה",
+      offer2_text: "הזמינו פיצה גדולה וקבלו נוספת בחינם.",
+
+      offer3_badge: "20% הנחה",
+      offer3_img_alt: "מבצע קינוחים",
+      offer3_title: "מיוחדי המתוקים",
+      offer3_text: "20% הנחה על כל הקינוחים רק בסופ״ש הזה.",
+
+      offer4_badge: "שתייה חינם",
+      offer4_img_alt: "קומבו המבורגר",
+      offer4_title: "בלאסט המבורגר",
+      offer4_text: "קנו 2 המבורגרים וקבלו 2 משקאות קלים בחינם.",
+
+      offer5_badge: "מהדורה מוגבלת",
+      offer5_img_alt: "מגש סושי",
+      offer5_title: "תענוג הסושי",
+      offer5_text: "נסו את מגש הסושי הבלעדי במחיר מיוחד.",
+
+      offer6_badge: "חדש",
+      offer6_img_alt: "ארוחת סטייק",
+      offer6_title: "ליל הסטייק",
+      offer6_text: "ארוחת סטייק פרימיום עם התאמת יין ב-30% הנחה.",
+
+      testimonials_title: "מה הלקוחות שלנו אומרים",
+      test1_text: "האוכל היה פשוט מדהים! בהחלט נחזור שוב.",
+      test2_text: "חוויית האכילה הכי טובה שהייתה לי זה שנים. מומלץ בחום.",
+      test3_text: "האווירה והטעם ברמה הגבוהה ביותר. אהבנו!",
+      test4_text: "שירות מצוין וצוות ידידותי ביותר.",
+      test5_text: "טעמים אותנטיים ותמורה נהדרת למחיר. חובה לבקר!",
+      test6_text: "הקינוחים שלהם ממכרים! ממליץ בחום על עוגת הגבינה.",
+      test7_text: "מקום מושלם לארוחת משפחה. חמים ומזמין.",
+      test8_text: "אהבנו כל מנה שטעמנו. טרי וטעים.",
+
+      cta_title: "מוכנים להרפתקת טעמים?",
+      cta_text: "הצטרפו אלינו עוד היום לחוויה אותנטית, מנות מגרות וחוויית סעודה בלתי נשכחת שנוצרה במיוחד בשבילכם.",
+      cta_btn_reserve: "הזמן שולחן",
+      cta_btn_contact: "צור קשר",
+      cta_leaf_alt: "עלה",
+      cta_spices_alt: "תבלינים",
+      cta_plate_alt: "צלחת",
+
+      footer_logo_alt: "לוגו סטאקלי",
+      footer_desc: `אוכל טעים עד הבית שלכם.<br>
+חוו את הטוב ביותר של מסעדה ומשלוחי אוכל איתנו!`,
+      footer_quick_links: "קישורים מהירים",
+      footer_home1: "בית 1",
+      footer_home2: "בית 2",
+      footer_about_us: "עלינו",
+      footer_services_link: "שירותים",
+      footer_blog: "בלוג",
+      footer_contact_us_link: "צור קשר",
+
+      footer_services: "שירותים",
+      footer_contact_us: "צור קשר",
+      footer_address: `<i class="fas fa-map-marker-alt"></i> רח׳ מיין 123, עיר האוכל`,
+      footer_phone: `<i class="fas fa-phone"></i> +1 234 567 890`,
+      footer_email: `<i class="fas fa-envelope"></i> info@restaurant.com`,
+      footer_copy: "© 2025 מסעדה. כל הזכויות שמורות."
+    }
+  };
+
+  // Apply translations to elements:
+  function applyTranslations(lang) {
+    const dict = t[lang] || t.en;
+
+    // Set html lang + dir
+    document.documentElement.lang = lang;
+    const isRTL = (lang === 'ar' || lang === 'he');
+    document.documentElement.dir = isRTL ? 'rtl' : 'ltr';
+
+    // Iterate all nodes with data-i18n
+    document.querySelectorAll("[data-i18n]").forEach(el => {
+      const key = el.getAttribute("data-i18n");
+      if (!key || !(key in dict)) return;
+
+      // Attribute translation?
+      const attr = el.getAttribute("data-i18n-attr");
+      if (attr) {
+        // one or multiple attributes separated by commas
+        attr.split(",").map(a => a.trim()).forEach(a => {
+          el.setAttribute(a, dict[key]);
+        });
+        return;
+      }
+
+      // HTML or text?
+      const forceHTML = el.hasAttribute("data-i18n-html");
+      const val = dict[key];
+
+      if (forceHTML || /<[^>]+>/.test(val)) {
+        el.innerHTML = val;
+      } else {
+        el.textContent = val;
+      }
+    });
+
+    // Update <title> if present (already has data-i18n)
+    const titleEl = document.querySelector("title[data-i18n]");
+    if (titleEl) {
+      titleEl.textContent = dict[ titleEl.getAttribute("data-i18n") ] || titleEl.textContent;
+    }
+  }
+
+  // Init from localStorage or browser language
+  function initLanguage() {
+    const sel = document.getElementById("language-selector");
+    const saved = localStorage.getItem("lang");
+    const browserLang = (navigator.language || 'en').slice(0,2);
+    const startLang = saved || (['en','ar','he'].includes(browserLang) ? browserLang : 'en');
+    sel.value = startLang;
+    applyTranslations(startLang);
+    localStorage.setItem("lang", startLang);
+
+    sel.addEventListener("change", () => {
+      const lang = sel.value;
+      localStorage.setItem("lang", lang);
+      applyTranslations(lang);
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", initLanguage);
+})();
+</script>
+<!-- Rest of page content -->
+</body>
+</html>

@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title data-i18n="title">Stackly Food</title>
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/contact.css" />
+  <script src="js/header.js" defer></script>
+  <script src="js/dark_toogle.js" defer></script>
+  <script src="js/auth_check.js" defer></script>
+  <script src="js/login_auth.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <header>
+  <div class="logo">
+    <a href="index.html"><img src="images/logo.png" alt="Logo" data-i18n-attr="alt" data-i18n="logo_alt"></a>
+  </div>
+
+  <div class="header-right">
+    <nav>
+      <ul class="nav-links">
+        <li class="dropdown">
+          <a href="index.html" data-i18n="nav_home">Home ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="index.html" data-i18n="nav_home1">Home 1</a></li>
+            <li><a href="home2.html" data-i18n="nav_home2">Home 2</a></li>
+          </ul>
+        </li>
+        <li><a href="about.html" data-i18n="nav_about">About</a></li>
+        <li><a href="blog.html" data-i18n="nav_blog">Blog</a></li>
+        <li class="dropdown">
+          <a href="services.html" data-i18n="nav_services">Services ▾</a>
+          <ul class="dropdown-menu">
+            <li class="mobile-only"><a href="services.html" data-i18n="nav_all_services">All Services</a></li>
+            <li><a href="service1.html" data-i18n="nav_service1">Food Delivery</a></li>
+            <li><a href="service2.html" data-i18n="nav_service2">Table Booking</a></li>
+            <li><a href="service3.html" data-i18n="nav_service3">Catering</a></li>
+            <li><a href="service4.html" data-i18n="nav_service4">Personal Chef</a></li>
+            <li><a href="service5.html" data-i18n="nav_service5">Event Dining</a></li>
+            <li><a href="service6.html" data-i18n="nav_service6">Cooking Classes</a></li>
+          </ul>
+        </li>
+        <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Language selector -->
+    <select id="language-selector" aria-label="Language selector">
+      <option value="en">English</option>
+      <option value="ar">العربية</option>
+      <option value="he">עברית</option>
+    </select>
+
+    <div class="profile-container">
+      <div class="profile" id="profile-dropdown-toggle">
+        <span id="profile-initials"></span>
+      </div>
+      <ul class="profile-dropdown" id="profile-dropdown">
+        <li><a href="#" id="logout-btn" data-i18n="logout">Logout</a></li>
+      </ul>
+    </div>
+
+    <button id="toggle-dark">🌙</button>
+    <button id="mobile-menu-toggle" class="hamburger">☰</button>
+  </div>
+</header>
+
+
+<section class="hero contact-hero">
+  <!-- Background Video -->
+  <video class="hero-video" autoplay muted loop playsinline>
+    <source src="videos/contact.mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay"></div>
+
+  <!-- Content -->
+  <div class="hero-content">
+    <h1 data-i18n="hero_title">Get in Touch</h1>
+    <p data-i18n="hero_desc">We’re here to answer your questions and take your reservations</p>
+    <div class="hero-buttons">
+      <a href="tel:+911234567890" class="btn" data-i18n="hero_call">Call Us</a>
+      <a href="#form-section" class="btn-outline" data-i18n="hero_message">Send a Message</a>
+    </div>
+  </div>
+
+  <!-- Hero Image -->
+  <div class="hero-image">
+    <img src="images/contact.jpeg" alt="Contact Us" data-i18n-attr="alt" data-i18n="hero_image_alt">
+  </div>
+</section>
+<section class="order-online" id="order-online">
+  <div class="order-container">
+    <h2 class="section-title" data-i18n="order_title">Order Online</h2>
+    <p class="section-subtitle" data-i18n="order_sub">Enjoy our delicious meals from the comfort of your home</p>
+    <a href="orders.html" class="order-btn" data-i18n="order_btn">Start Your Order</a>
+  </div>
+</section>
+
+
+
+<section class="contact-info" id="contact-info">
+  <h2 class="section-title" data-i18n="contact_title">Contact Information</h2>
+  <p class="section-subtitle" data-i18n="contact_sub">We’d love to hear from you — reach out anytime</p>
+
+  <div class="contact-info-grid">
+    <!-- Address -->
+    <div class="info-card">
+      <div class="icon">📍</div>
+      <h3 data-i18n="info_location_title">Our Location</h3>
+      <p data-i18n="info_location_text">123 Flavor Street, Food City, India</p>
+    </div>
+
+    <!-- Phone -->
+    <div class="info-card">
+      <div class="icon">📞</div>
+      <h3 data-i18n="info_phone_title">Call Us</h3>
+      <p><a href="tel:+911234567890" data-i18n-attr="href" data-i18n="info_phone_link">+91 12345 67890</a></p>
+    </div>
+
+    <!-- Email -->
+    <div class="info-card">
+      <div class="icon">✉️</div>
+      <h3 data-i18n="info_email_title">Email Us</h3>
+      <p><a href="mailto:info@restaurant.com" data-i18n-attr="href" data-i18n="info_email_link">info@restaurant.com</a></p>
+    </div>
+  </div>
+</section>
+<section class="form-section" id="form-section">
+  <div class="form-container">
+    <h2 data-i18n="form_title">Get in Touch</h2>
+    <p data-i18n="form_sub">We’d love to hear from you! Fill out the form below and we’ll get back soon.</p>
+
+    <form id="contactForm" class="colorful-form">
+      <div class="form-group">
+        <label for="name" data-i18n="label_name">Your Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" data-i18n-attr="placeholder" data-i18n="ph_name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email" data-i18n="label_email">Your Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" data-i18n-attr="placeholder" data-i18n="ph_email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="subject" data-i18n="label_subject">Subject</label>
+        <input type="text" id="subject" name="subject" placeholder="Enter subject" data-i18n-attr="placeholder" data-i18n="ph_subject" required>
+      </div>
+
+      <div class="form-group">
+        <label for="message" data-i18n="label_message">Your Message</label>
+        <textarea id="message" name="message" rows="5" placeholder="Write your message" data-i18n-attr="placeholder" data-i18n="ph_message" required></textarea>
+      </div>
+
+      <button type="submit" class="btn" data-i18n="form_submit">Send Message</button>
+    </form>
+
+    <!-- Thank You Message -->
+    <div id="thankYouMessage" class="thank-you" style="display:none;">
+      <h3 data-i18n="thank_title">✅ Thank You!</h3>
+      <p data-i18n="thank_text">Your message has been sent successfully. We’ll contact you soon.</p>
+    </div>
+  </div>
+</section>
+<section class="delivery-partners" id="delivery-partners">
+  <div class="partners-container">
+    <h2 class="section-title" data-i18n="partners_title">Our Delivery Partners</h2>
+    <p class="section-subtitle" data-i18n="partners_sub">We’re proudly associated with leading food delivery platforms</p>
+
+    <div class="partners-grid">
+      <!-- Partner 1 -->
+      <div class="partner-card">
+        <img src="images/Swiggy .jpeg" alt="Swiggy" data-i18n-attr="alt" data-i18n="partner_swiggy">
+      </div>
+      <!-- Partner 2 -->
+      <div class="partner-card">
+        <img src="images/zomato.jpeg" alt="Zomato" data-i18n-attr="alt" data-i18n="partner_zomato">
+      </div>
+      <!-- Partner 3 -->
+      <div class="partner-card">
+        <img src="images/uber.jpeg" alt="Uber Eats" data-i18n-attr="alt" data-i18n="partner_uber">
+      </div>
+      <!-- Partner 4 -->
+      <div class="partner-card">
+        <img src="images/dunzo.jpeg" alt="Dunzo" data-i18n-attr="alt" data-i18n="partner_dunzo">
+      </div>
+    </div>
+  </div>
+</section>
+<section class="faq" id="faq">
+  <div class="faq-container">
+    <h2 class="section-title" data-i18n="faq_title">Frequently Asked Questions</h2>
+    <p class="section-subtitle" data-i18n="faq_sub">Find answers to common queries</p>
+
+    <!-- Accordion -->
+    <div class="faq-items">
+      <div class="faq-item">
+        <button class="faq-question" data-i18n="faq_q1">Do you offer home delivery?</button>
+        <div class="faq-answer">
+          <p data-i18n="faq_a1">Yes, we deliver through Swiggy, Zomato, Uber Eats, and Dunzo.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" data-i18n="faq_q2">What are your opening hours?</button>
+        <div class="faq-answer">
+          <p data-i18n="faq_a2">We’re open every day from 10:00 AM to 11:00 PM.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" data-i18n="faq_q3">Do you provide catering services?</button>
+        <div class="faq-answer">
+          <p data-i18n="faq_a3">Yes, we offer catering for events and parties. Contact us for details.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Custom Question Form -->
+    <div class="faq-form">
+      <h3 data-i18n="faq_form_title">Didn’t find your question?</h3>
+      <form id="faqForm">
+        <input type="text" id="customQuestion" placeholder="Type your question here..." data-i18n-attr="placeholder" data-i18n="faq_ph" required>
+        <button type="submit" data-i18n="faq_submit">Submit</button>
+      </form>
+      <p id="faqMessage" class="hidden" data-i18n="faq_thank">✅ Thank you! We’ll get back to you soon.</p>
+    </div>
+  </div>
+</section>
+
+
+  <footer class="footer">
+  <div class="footer-container">
+
+    <!-- Column 1: Logo + Description -->
+    <div class="footer-col">
+      <a href="index.html"><img src="images/logo.png" alt="Stackly Logo" class="footer-logo" data-i18n-attr="alt" data-i18n="footer_logo_alt"></a>
+      <p data-i18n-html="true" data-i18n="footer_text">Delicious food delivered to your door.<br>
+        Experience the best of restaurant and food delivery services with us!</p>
+      <div class="social-icons">
+        <a href="https://www.facebook.com" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.twitter.com" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+
+    <!-- Column 2: Quick Links -->
+    <div class="footer-col">
+      <h4 data-i18n="footer_quick">Quick Links</h4>
+      <ul>
+        <li><a href="index.html" data-i18n="footer_home1">Home 1</a></li>
+        <li><a href="home2.html" data-i18n="footer_home2">Home 2</a></li>
+        <li><a href="about.html" data-i18n="footer_about">About Us</a></li>
+        <li><a href="services.html" data-i18n="footer_services">Services</a></li>
+        <li><a href="blog.html" data-i18n="footer_blog">Blog</a></li>
+        <li><a href="contact.html" data-i18n="footer_contact">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <!-- Column 3: Services -->
+    <div class="footer-col">
+      <h4 data-i18n="footer_services_title">Services</h4>
+      <ul>
+         <li><a href="service1.html" data-i18n="nav_service1">Food Delivery</a></li>
+        <li><a href="service2.html" data-i18n="nav_service2">Table Booking</a></li>
+        <li><a href="service3.html" data-i18n="nav_service3">Catering</a></li>
+        <li><a href="service4.html" data-i18n="nav_service4">Personal Chef</a></li>
+        <li><a href="service5.html" data-i18n="nav_service5">Event Dining</a></li>
+        <li><a href="service6.html" data-i18n="nav_service6">Cooking Classes</a></li>
+      </ul>
+    </div>
+
+    <!-- Column 4: Contact -->
+    <div class="footer-col">
+      <h4 data-i18n="footer_contact_title">Contact Us</h4>
+      <p><i class="fas fa-map-marker-alt"></i> <span data-i18n="footer_address">123 Main St, Food City</span></p>
+      <p><i class="fas fa-phone"></i> <span data-i18n="footer_phone">+1 234 567 890</span></p>
+      <p><i class="fas fa-envelope"></i> <span data-i18n="footer_email">info@restaurant.com</span></p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p data-i18n="footer_rights">© 2025 Restaurant. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  const form = document.getElementById("contactForm");
+  const thankYouMessage = document.getElementById("thankYouMessage");
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault(); // stop page reload
+    form.style.display = "none";
+    thankYouMessage.style.display = "block";
+  });
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Accordion Toggle
+  const faqQuestions = document.querySelectorAll(".faq-question");
+  faqQuestions.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const answer = btn.nextElementSibling;
+      const isOpen = answer.style.maxHeight;
+
+      document.querySelectorAll(".faq-answer").forEach(a => {
+        a.style.maxHeight = null;
+        a.style.padding = "0 20px";
+      });
+
+      if (!isOpen || isOpen === "0px") {
+        answer.style.maxHeight = answer.scrollHeight + "px";
+        answer.style.padding = "15px 20px";
+      }
+    });
+  });
+
+  // Custom Question Form
+  const faqForm = document.getElementById("faqForm");
+  const faqMessage = document.getElementById("faqMessage");
+
+  faqForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    faqMessage.classList.remove("hidden");
+    faqForm.reset();
+  });
+});
+</script>
+
+<!-- Consolidated translations + i18n handler -->
+<script>
+(function(){
+  const translations = {
+    en: {
+      title: "Stackly Food",
+      logo_alt: "Stackly Logo",
+      nav_home: "Home ▾",
+      nav_home1: "Home 1",
+      nav_home2: "Home 2",
+      nav_about: "About",
+      nav_blog: "Blog",
+      nav_services: "Services ▾",
+      nav_all_services: "All Services",
+      nav_service1: "Food Delivery",
+      nav_service2: "Table Booking",
+      nav_service3: "Catering",
+      nav_service4: "Personal Chef",
+      nav_service5: "Event Dining",
+      nav_service6: "Cooking Classes",
+      nav_contact: "Contact",
+      logout: "Logout",
+
+      hero_title: "Get in Touch",
+      hero_desc: "We’re here to answer your questions and take your reservations",
+      hero_call: "Call Us",
+      hero_message: "Send a Message",
+      hero_image_alt: "Contact Us",
+
+      order_title: "Order Online",
+      order_sub: "Enjoy our delicious meals from the comfort of your home",
+      order_btn: "Start Your Order",
+
+      contact_title: "Contact Information",
+      contact_sub: "We’d love to hear from you — reach out anytime",
+      info_location_title: "Our Location",
+      info_location_text: "123 Flavor Street, Food City, India",
+      info_phone_title: "Call Us",
+      info_phone_link: "tel:+911234567890",
+      info_email_title: "Email Us",
+      info_email_link: "mailto:info@restaurant.com",
+
+      form_title: "Get in Touch",
+      form_sub: "We’d love to hear from you! Fill out the form below and we’ll get back soon.",
+      label_name: "Your Name",
+      ph_name: "Enter your name",
+      label_email: "Your Email",
+      ph_email: "Enter your email",
+      label_subject: "Subject",
+      ph_subject: "Enter subject",
+      label_message: "Your Message",
+      ph_message: "Write your message",
+      form_submit: "Send Message",
+      thank_title: "✅ Thank You!",
+      thank_text: "Your message has been sent successfully. We’ll contact you soon.",
+
+      partners_title: "Our Delivery Partners",
+      partners_sub: "We’re proudly associated with leading food delivery platforms",
+      partner_swiggy: "Swiggy",
+      partner_zomato: "Zomato",
+      partner_uber: "Uber Eats",
+      partner_dunzo: "Dunzo",
+
+      faq_title: "Frequently Asked Questions",
+      faq_sub: "Find answers to common queries",
+      faq_q1: "Do you offer home delivery?",
+      faq_a1: "Yes, we deliver through Swiggy, Zomato, Uber Eats, and Dunzo.",
+      faq_q2: "What are your opening hours?",
+      faq_a2: "We’re open every day from 10:00 AM to 11:00 PM.",
+      faq_q3: "Do you provide catering services?",
+      faq_a3: "Yes, we offer catering for events and parties. Contact us for details.",
+      faq_form_title: "Didn’t find your question?",
+      faq_ph: "Type your question here...",
+      faq_submit: "Submit",
+      faq_thank: "✅ Thank you! We’ll get back to you soon.",
+
+      footer_logo_alt: "Stackly Logo",
+      footer_text: "Delicious food delivered to your door.<br>Experience the best of restaurant and food delivery services with us!",
+      footer_quick: "Quick Links",
+      footer_home1: "Home 1",
+      footer_home2: "Home 2",
+      footer_about: "About Us",
+      footer_services: "Services",
+      footer_blog: "Blog",
+      footer_contact: "Contact Us",
+      footer_services_title: "Services",
+      footer_contact_title: "Contact Us",
+      footer_address: "123 Main St, Food City",
+      footer_phone: "+1 234 567 890",
+      footer_email: "info@restaurant.com",
+      footer_rights: "© 2025 Restaurant. All rights reserved."
+    },
+
+    ar: {
+      title: "ستاكلي فود",
+      logo_alt: "شعار ستاكلي",
+      nav_home: "الرئيسية ▾",
+      nav_home1: "الصفحة الرئيسية 1",
+      nav_home2: "الصفحة الرئيسية 2",
+      nav_about: "من نحن",
+      nav_blog: "المدونة",
+      nav_services: "الخدمات ▾",
+      nav_all_services: "كل الخدمات",
+      nav_service1: "توصيل الطعام",
+      nav_service2: "حجز الطاولة",
+      nav_service3: "التموين",
+      nav_service4: "شيف شخصي",
+      nav_service5: "عشاء المناسبات",
+      nav_service6: "دروس الطبخ",
+      nav_contact: "اتصل بنا",
+      logout: "تسجيل الخروج",
+
+      hero_title: "تواصل معنا",
+      hero_desc: "نحن هنا للإجابة على أسئلتك وحجز طلباتك",
+      hero_call: "اتصل بنا",
+      hero_message: "أرسل رسالة",
+      hero_image_alt: "تواصل معنا",
+
+      order_title: "اطلب عبر الإنترنت",
+      order_sub: "استمتع بوجباتنا الشهية من راحة منزلك",
+      order_btn: "ابدأ الطلب",
+
+      contact_title: "معلومات الاتصال",
+      contact_sub: "نحب أن نسمع منك — تواصل معنا في أي وقت",
+      info_location_title: "موقعنا",
+      info_location_text: "123 شارع نكهة، مدينة الطعام، الهند",
+      info_phone_title: "اتصل بنا",
+      info_phone_link: "tel:+911234567890",
+      info_email_title: "راسلنا",
+      info_email_link: "mailto:info@restaurant.com",
+
+      form_title: "تواصل معنا",
+      form_sub: "نحب أن نسمع منك! املأ النموذج وسنعاود الاتصال قريباً.",
+      label_name: "اسمك",
+      ph_name: "أدخل اسمك",
+      label_email: "بريدك الإلكتروني",
+      ph_email: "أدخل بريدك الإلكتروني",
+      label_subject: "الموضوع",
+      ph_subject: "أدخل الموضوع",
+      label_message: "رسالتك",
+      ph_message: "اكتب رسالتك",
+      form_submit: "أرسل الرسالة",
+      thank_title: "✅ شكراً لك!",
+      thank_text: "تم إرسال رسالتك بنجاح. سوف نتواصل معك قريباً.",
+
+      partners_title: "شركاء التوصيل",
+      partners_sub: "نفخر بالشراكة مع منصات توصيل رائدة",
+      partner_swiggy: "سويجي",
+      partner_zomato: "زوماتو",
+      partner_uber: "يوبر إيتس",
+      partner_dunzo: "دونزو",
+
+      faq_title: "الأسئلة المتكررة",
+      faq_sub: "اكتشف إجابات للأسئلة الشائعة",
+      faq_q1: "هل تقدمون خدمة التوصيل للمنازل؟",
+      faq_a1: "نعم، نقوم بالتوصيل عبر Swiggy وZomato وUber Eats وDunzo.",
+      faq_q2: "ما هي ساعات العمل؟",
+      faq_a2: "نحن مفتوحون يومياً من الساعة 10:00 صباحاً حتى 11:00 مساءً.",
+      faq_q3: "هل تقدمون خدمات تموين؟",
+      faq_a3: "نعم، نقدم خدمات تموين للفعاليات والحفلات. اتصل بنا للتفاصيل.",
+      faq_form_title: "هل لم تجد سؤالك؟",
+      faq_ph: "اكتب سؤالك هنا...",
+      faq_submit: "إرسال",
+      faq_thank: "✅ شكراً! سنعود إليك قريباً.",
+
+      footer_logo_alt: "شعار ستاكلي",
+      footer_text: "طعام لذيذ يصل إلى بابك.<br>اختبر أفضل خدمات المطاعم وتوصيل الطعام معنا!",
+      footer_quick: "روابط سريعة",
+      footer_home1: "الصفحة الرئيسية 1",
+      footer_home2: "الصفحة الرئيسية 2",
+      footer_about: "معلومات عنا",
+      footer_services: "الخدمات",
+      footer_blog: "المدونة",
+      footer_contact: "اتصل بنا",
+      footer_services_title: "الخدمات",
+      footer_contact_title: "اتصل بنا",
+      footer_address: "123 Main St, Food City",
+      footer_phone: "+1 234 567 890",
+      footer_email: "info@restaurant.com",
+      footer_rights: "© 2025 المطعم. جميع الحقوق محفوظة."
+    },
+
+    he: {
+      title: "סטאקלי פוד",
+      logo_alt: "לוגו סטאקלי",
+      nav_home: "בית ▾",
+      nav_home1: "בית 1",
+      nav_home2: "בית 2",
+      nav_about: "אודות",
+      nav_blog: "בלוג",
+      nav_services: "שירותים ▾",
+      nav_all_services: "כל השירותים",
+      nav_service1: "משלוח אוכל",
+      nav_service2: "הזמנת שולחן",
+      nav_service3: "קייטרינג",
+      nav_service4: "שף פרטי",
+      nav_service5: "ארוחות לאירועים",
+      nav_service6: "שיעורי בישול",
+      nav_contact: "צור קשר",
+      logout: "התנתק",
+
+      hero_title: "צור קשר",
+      hero_desc: "אנחנו כאן לענות על שאלותיכם ולקבוע הזמנות",
+      hero_call: "התקשר אלינו",
+      hero_message: "שלח הודעה",
+      hero_image_alt: "צור קשר",
+
+      order_title: "הזמן אונליין",
+      order_sub: "תהנה מהארוחות שלנו בנוחות הבית",
+      order_btn: "התחל להזמין",
+
+      contact_title: "פרטי יצירת קשר",
+      contact_sub: "נשמח לשמוע ממך — צרו קשר בכל עת",
+      info_location_title: "המיקום שלנו",
+      info_location_text: "123 רחוב פלייבר, עיר האוכל, הודו",
+      info_phone_title: "התקשר אלינו",
+      info_phone_link: "tel:+911234567890",
+      info_email_title: "שלח דוא\"ל",
+      info_email_link: "mailto:info@restaurant.com",
+
+      form_title: "צור קשר",
+      form_sub: "נשמח לשמוע ממך! מלא את הטופס ונחזור אליך בקרוב.",
+      label_name: "השם שלך",
+      ph_name: "הכנס את שמך",
+      label_email: "המייל שלך",
+      ph_email: "הכנס את המייל שלך",
+      label_subject: "נושא",
+      ph_subject: "הכנס נושא",
+      label_message: "ההודעה שלך",
+      ph_message: "כתוב את הודעתך",
+      form_submit: "שלח הודעה",
+      thank_title: "✅ תודה!",
+      thank_text: "ההודעה נשלחה בהצלחה. נחזור אליך בקרוב.",
+
+      partners_title: "שירותי משלוח",
+      partners_sub: "אנו משתפים פעולה עם פלטפורמות משלוח מובילות",
+      partner_swiggy: "Swiggy",
+      partner_zomato: "Zomato",
+      partner_uber: "Uber Eats",
+      partner_dunzo: "Dunzo",
+
+      faq_title: "שאלות נפוצות",
+      faq_sub: "מצא תשובות לשאלות נפוצות",
+      faq_q1: "האם יש משלוחים לבית?",
+      faq_a1: "כן, אנו מספקים משלוח דרך Swiggy, Zomato, Uber Eats ו-Dunzo.",
+      faq_q2: "מה שעות הפעילות?",
+      faq_a2: "פתוחים כל יום מ-10:00 עד 23:00.",
+      faq_q3: "האם אתם מספקים קייטרינג?",
+      faq_a3: "כן, אנו מספקים שירותי קייטרינג לאירועים. צרו קשר לפרטים.",
+      faq_form_title: "לא מצאת את שאלתך?",
+      faq_ph: "הקלד כאן את שאלתך...",
+      faq_submit: "שלח",
+      faq_thank: "✅ תודה! נחזור אליך בקרוב.",
+
+      footer_logo_alt: "לוגו סטאקלי",
+      footer_text: "אוכל טעים עד לפתח הבית.<br>חווה את מיטב שירותי המסעדות והמשלוחים איתנו!",
+      footer_quick: "קישורים מהירים",
+      footer_home1: "בית 1",
+      footer_home2: "בית 2",
+      footer_about: "אודות",
+      footer_services: "שירותים",
+      footer_blog: "בלוג",
+      footer_contact: "צור קשר",
+      footer_services_title: "שירותים",
+      footer_contact_title: "צור קשר",
+      footer_address: "123 Main St, Food City",
+      footer_phone: "+1 234 567 890",
+      footer_email: "info@restaurant.com",
+      footer_rights: "© 2025 מסעדה. כל הזכויות שמורות."
+    }
+  };
+
+  function getInitialLang(){
+    const saved = localStorage.getItem('lang');
+    if(saved && ['en','ar','he'].includes(saved)) return saved;
+    const nav = (navigator.language || navigator.userLanguage || 'en').slice(0,2);
+    if(['en','ar','he'].includes(nav)) return nav;
+    return 'en';
+  }
+
+  window.translations = translations;
+  let currentLang = getInitialLang();
+
+  function applyTranslations(lang){
+    const map = translations[lang] || translations.en;
+
+    // html lang + dir
+    document.documentElement.lang = lang;
+    document.documentElement.dir = (lang === 'ar' || lang === 'he') ? 'rtl' : 'ltr';
+
+    // data-i18n-attr (attributes e.g., alt, placeholder, href)
+    document.querySelectorAll('[data-i18n-attr]').forEach(el=>{
+      const key = el.getAttribute('data-i18n');
+      const attrNames = el.getAttribute('data-i18n-attr').split(',').map(s=>s.trim());
+      attrNames.forEach(attr=>{
+        if(map[key] !== undefined){
+          // special case: if attr is href and value is a link (we used link keys for email/phone)
+          el.setAttribute(attr, map[key]);
+        }
+      });
+    });
+
+    // data-i18n-html (innerHTML)
+    document.querySelectorAll('[data-i18n-html]').forEach(el=>{
+      const key = el.getAttribute('data-i18n');
+      if(map[key] !== undefined) el.innerHTML = map[key];
+    });
+
+    // data-i18n textContent (skip those handled above)
+    document.querySelectorAll('[data-i18n]').forEach(el=>{
+      // Skip elements that were handled by data-i18n-attr or data-i18n-html earlier
+      if(el.hasAttribute('data-i18n-attr') || el.hasAttribute('data-i18n-html')) return;
+      const key = el.getAttribute('data-i18n');
+      if(map[key] !== undefined) el.textContent = map[key];
+    });
+
+    // title tag
+    const titleEl = document.querySelector('title[data-i18n]');
+    if(titleEl){
+      const k = titleEl.getAttribute('data-i18n');
+      if(map[k] !== undefined) titleEl.textContent = map[k];
+    } else if(map.title !== undefined){
+      document.title = map.title;
+    }
+
+    localStorage.setItem('lang', lang);
+    currentLang = lang;
+  }
+
+  // init UI after DOM loaded
+  document.addEventListener('DOMContentLoaded', () => {
+    // language selector
+    const sel = document.getElementById('language-selector');
+    if(sel){
+      sel.value = currentLang;
+      sel.addEventListener('change', (e) => {
+        applyTranslations(e.target.value);
+      });
+    }
+
+    // apply initial translations
+    applyTranslations(currentLang);
+  });
+
+})();
+</script>
+
+  <!-- Rest of page content -->
+</body>
+</html>

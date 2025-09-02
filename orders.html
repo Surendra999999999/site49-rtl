@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Online</title>
+  <link rel="stylesheet" href="css/orders.css">
+</head>
+<body>
+  <!-- Hero -->
+  <section class="order-hero">
+    <h1>Order Your Favorite Food</h1>
+    <p>Fresh, Hot & Delivered with Love ❤️</p>
+  </section>
+
+  <!-- Filters -->
+  <div class="filters">
+    <input type="text" id="searchBar" placeholder="Search food...">
+    <select id="categoryFilter">
+      <option value="all">All</option>
+      <option value="biryani">Biryani</option>
+      <option value="pizza">Pizza</option>
+      <option value="burger">Burger</option>
+      <option value="drinks">Drinks</option>
+    </select>
+  </div>
+
+  <!-- Menu -->
+  <section class="order-menu">
+    <div class="menu-grid" id="menuGrid"></div>
+  </section>
+
+  <!-- Cart -->
+  <section class="cart">
+    <h2>Your Cart 🛒</h2>
+    <ul class="cart-items" id="cartItems"></ul>
+    <p class="cart-total" id="cartTotal">Total: ₹0</p>
+    <button class="checkout-btn" id="checkoutBtn">Checkout</button>
+  </section>
+
+  <!-- ✅ Popup -->
+  <div class="checkout-popup" id="checkoutPopup">
+    <div class="popup-content">
+      <h2>Order Confirmed 🎉</h2>
+      <div class="delivery-animation">
+        <span class="restaurant">🏬</span>
+        <div class="road">
+          <span class="bike">🏍️</span>
+        </div>
+        <span class="house">🏠</span>
+      </div>
+      <p class="thankyou-msg">Thank you for your order!</p>
+    </div>
+  </div>
+
+  <script src="js/order.js"></script>
+</body>
+</html>

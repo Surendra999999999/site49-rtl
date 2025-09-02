@@ -1,0 +1,132 @@
+/* 🌟 Base Styles */
+body {
+  font-family: Arial, sans-serif;
+  background: url("../images/log-sign.jpg") no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column; /* ✅ allow logo on top */
+  justify-content: center;
+  align-items: center;
+  transition: background 0.4s, color 0.4s;
+}
+
+/* ✅ Overlay */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: linear-gradient(135deg, rgba(255,236,210,0.85), rgba(252,182,159,0.85));
+  z-index: 0;
+  transition: background 0.4s;
+}
+
+/* ✅ Logo */
+.logo-container {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 15px;
+  text-align: center;
+}
+.logo {
+  width: 140px;
+  height: auto;
+}
+
+/* ✅ Login Box */
+.form-box {
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  border-radius: 14px;
+  width: 360px;
+  max-width: 90%;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+  animation: fadeIn 0.6s ease-in-out;
+  transition: background 0.4s, color 0.4s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ff5200;
+  font-size: 24px;
+  transition: color 0.4s;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 15px;
+  transition: background 0.4s, color 0.4s, border 0.4s;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background: #ff5200;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+button:hover { background: #e64a00; }
+
+p {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 12px;
+}
+a { color: #ff5200; text-decoration: none; transition: color 0.4s; }
+a:hover { text-decoration: underline; }
+
+/* 🌙 Dark Theme */
+body.dark {
+  background: url("../images/log-sign.jpg") no-repeat center center fixed;
+  background-size: cover;
+  color: #eaeaea;
+}
+body.dark::before {
+  background: linear-gradient(135deg, rgba(20,20,20,0.5), rgba(0,0,0,0.5));
+}
+body.dark .form-box {
+  background: rgba(34, 34, 34, 0.95);
+  color: #eaeaea;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+}
+body.dark h2 { color: #ffa366; }
+body.dark input {
+  background: #333;
+  border: 1px solid #555;
+  color: #fff;
+}
+body.dark input::placeholder { color: #aaa; }
+body.dark button {
+  background: #ffa366;
+  color: #000;
+}
+body.dark button:hover { background: #ff944d; }
+body.dark a { color: #ffa366; }
+
+/* 📱 Responsive */
+@media (max-width: 480px) {
+  .form-box { padding: 20px; width: 90%; }
+  h2 { font-size: 20px; }
+  input, button { font-size: 14px; padding: 10px; }
+  .logo { width: 100px; }
+}

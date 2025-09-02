@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forgot Password - Foodie</title>
+  <link rel="stylesheet" href="css/forgot.css">
+</head>
+<body>
+
+  <div class="form-box">
+    <h2>Forgot Password</h2>
+    
+    <!-- Step 1: Verify Email -->
+    <form id="verifyForm">
+      <input type="email" id="forgotEmail" placeholder="Enter your registered email" required>
+      <button type="submit">Verify</button>
+    </form>
+
+    <!-- Step 2: Reset Password (hidden initially) -->
+    <form id="resetForm" style="display:none;">
+      <input type="password" id="newPassword" placeholder="New Password" required>
+      <input type="password" id="confirmNewPassword" placeholder="Confirm Password" required>
+      <button type="submit">Reset Password</button>
+    </form>
+
+    <!-- Step 3: Success Message -->
+    <p id="successMsg" style="display:none; color:green; font-weight:bold;">
+      ✅ Password reset successful! <a href="login.html">Login</a>
+    </p>
+
+  </div>
+
+  <script src="js/forgot.js"></script>
+</body>
+</html>

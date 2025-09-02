@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signup - Foodie</title>
+  <link rel="stylesheet" href="css/signup.css">
+  <style>
+    .lang-select {
+      margin: 10px 0;
+      padding: 5px;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="form-box">
+    <h2 id="signupTitle">Signup</h2>
+
+    <!-- 🌍 Language Toggle -->
+    <select id="languageSelect" class="lang-select">
+      <option value="en">English</option>
+      <option value="ar">العربية</option>
+      <option value="he">עברית</option>
+    </select>
+
+    <form id="signupForm">
+      <input type="text" id="firstName" placeholder="First Name" required>
+      <input type="text" id="lastName" placeholder="Last Name" required>
+      <input type="email" id="email" placeholder="Email" required>
+      <input type="password" id="password" placeholder="Password" required>
+      <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+      <button type="submit" id="signupBtn">Signup</button>
+    </form>
+
+    <p id="loginText">Already have an account? <a href="login.html" id="loginLink">Login</a></p>
+
+    <button id="toggle-dark" class="theme-btn">🌙</button>
+  </div>
+
+  <script src="js/signup.js"></script>
+  <script src="js/dark_toogle.js"></script>
+
+  <script>
+    // ✅ Dictionary for translations
+    const translations = {
+      en: {
+        title: "Signup",
+        firstName: "First Name",
+        lastName: "Last Name",
+        email: "Email",
+        password: "Password",
+        confirmPassword: "Confirm Password",
+        signup: "Signup",
+        loginText: "Already have an account? ",
+        login: "Login"
+      },
+      ar: {
+        title: "إنشاء حساب",
+        firstName: "الاسم الأول",
+        lastName: "اسم العائلة",
+        email: "البريد الإلكتروني",
+        password: "كلمة المرور",
+        confirmPassword: "تأكيد كلمة المرور",
+        signup: "إنشاء حساب",
+        loginText: "هل لديك حساب؟ ",
+        login: "تسجيل الدخول"
+      },
+      he: {
+        title: "הרשמה",
+        firstName: "שם פרטי",
+        lastName: "שם משפחה",
+        email: "אימייל",
+        password: "סיסמה",
+        confirmPassword: "אשר סיסמה",
+        signup: "הירשם",
+        loginText: "כבר יש לך חשבון? ",
+        login: "התחבר"
+      }
+    };
+
+    // ✅ Apply translation
+    function applyTranslation(lang) {
+      document.getElementById("signupTitle").textContent = translations[lang].title;
+      document.getElementById("firstName").placeholder = translations[lang].firstName;
+      document.getElementById("lastName").placeholder = translations[lang].lastName;
+      document.getElementById("email").placeholder = translations[lang].email;
+      document.getElementById("password").placeholder = translations[lang].password;
+      document.getElementById("confirmPassword").placeholder = translations[lang].confirmPassword;
+      document.getElementById("signupBtn").textContent = translations[lang].signup;
+      document.getElementById("loginText").innerHTML = 
+        translations[lang].loginText + `<a href="login.html" id="loginLink">${translations[lang].login}</a>`;
+
+      // RTL handling
+      if (lang === "ar" || lang === "he") {
+        document.body.setAttribute("dir", "rtl");
+      } else {
+        document.body.setAttribute("dir", "ltr");
+      }
+    }
+
+    // ✅ Event Listener
+    document.getElementById("languageSelect").addEventListener("change", (e) => {
+      applyTranslation(e.target.value);
+    });
+
+    // Default to English
+    applyTranslation("en");
+  </script>
+</body>
+</html>

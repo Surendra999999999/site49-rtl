@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Foodie</title>
+  <link rel="stylesheet" href="css/login.css">
+  <script src="js/login_auth.js" defer></script>
+  <style>
+    .lang-select {
+      margin: 10px 0;
+      padding: 5px;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- ✅ Login Box -->
+  <div class="form-box">
+    <div class="logo-container">
+      <img src="images/logo.png" alt="Foodie Logo" class="logo">
+    </div>
+
+    <h2 id="loginTitle">Login</h2>
+
+    <!-- 🔥 Language Toggle -->
+    <select id="languageSelect" class="lang-select">
+      <option value="en">English</option>
+      <option value="ar">العربية</option>
+      <option value="he">עברית</option>
+    </select>
+
+    <form id="loginForm">
+      <input type="email" id="loginEmail" placeholder="Email" required>
+      <input type="password" id="loginPassword" placeholder="Password" required>
+      <button type="submit" id="loginBtn">Login</button>
+    </form>
+
+    <!-- Links -->
+    <p id="signupText">Don't have an account? <a href="signup.html" id="signupLink">Signup</a></p>
+    <p><a href="forgot.html" class="forgot-link" id="forgotLink">Forgot Password?</a></p>
+
+    <!-- Dark Theme Toggle -->
+    <button id="toggle-dark" class="theme-btn">🌙</button>
+  </div>
+
+  <script src="js/login.js"></script>
+  <script src="js/dark_toogle.js"></script>
+
+  <script>
+    // ✅ Dictionary for translations
+    const translations = {
+      en: {
+        title: "Login",
+        email: "Email",
+        password: "Password",
+        login: "Login",
+        signupText: "Don't have an account? ",
+        signup: "Signup",
+        forgot: "Forgot Password?"
+      },
+      ar: {
+        title: "تسجيل الدخول",
+        email: "البريد الإلكتروني",
+        password: "كلمة المرور",
+        login: "تسجيل الدخول",
+        signupText: "ليس لديك حساب؟ ",
+        signup: "إنشاء حساب",
+        forgot: "نسيت كلمة المرور؟"
+      },
+      he: {
+        title: "התחברות",
+        email: "אימייל",
+        password: "סיסמה",
+        login: "התחבר",
+        signupText: "אין לך חשבון? ",
+        signup: "הירשם",
+        forgot: "שכחת סיסמה?"
+      }
+    };
+
+    // ✅ Apply translation
+    function applyTranslation(lang) {
+      document.getElementById("loginTitle").textContent = translations[lang].title;
+      document.getElementById("loginEmail").placeholder = translations[lang].email;
+      document.getElementById("loginPassword").placeholder = translations[lang].password;
+      document.getElementById("loginBtn").textContent = translations[lang].login;
+      document.getElementById("signupText").innerHTML = 
+        translations[lang].signupText + `<a href="signup.html" id="signupLink">${translations[lang].signup}</a>`;
+      document.getElementById("forgotLink").textContent = translations[lang].forgot;
+
+      // RTL support
+      if (lang === "ar" || lang === "he") {
+        document.body.setAttribute("dir", "rtl");
+      } else {
+        document.body.setAttribute("dir", "ltr");
+      }
+    }
+
+    // ✅ Event Listener
+    document.getElementById("languageSelect").addEventListener("change", (e) => {
+      applyTranslation(e.target.value);
+    });
+
+    // Default English
+    applyTranslation("en");
+  </script>
+</body>
+</html>

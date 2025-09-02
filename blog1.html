@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Stackly Food</title>
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/blog1.css" />
+  <script src="js/header.js" defer></script>
+  <script src="js/dark_toogle.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+
+  <header>
+  <div class="logo">
+    <a href="index.html"><img src="images/logo.png" alt="Logo"></a>
+  </div>
+
+  <div class="header-right">
+    <nav>
+      <ul class="nav-links">
+        <li class="dropdown">
+          <a href="index.html">Home ▾</a>
+          <ul class="dropdown-menu">
+            <li><a href="index.html">Home 1</a></li>
+            <li><a href="home2.html">Home 2</a></li>
+          </ul>
+        </li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li class="dropdown">
+          <a href="services.html">Services ▾</a>
+          <ul class="dropdown-menu">
+                        <li class="mobile-only"><a href="services.html">All Services</a></li>
+           <li><a href="service1.html">Education</a></li>
+        <li><a href="service2.html">Healthcare</a></li>
+        <li><a href="service3.html">Skill Training</a></li>
+        <li><a href="service4.html">Empowerment</a></li>
+        <li><a href="service5.html">Disaster Relief</a></li>
+        <li><a href="service6.html">Environmental Care</a></li>
+          </ul>
+        </li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="profile-container">
+      <div class="profile" id="profile-dropdown-toggle">
+        <span id="profile-initials"></span>
+      </div>
+      <ul class="profile-dropdown" id="profile-dropdown">
+        <li><a href="#" id="logout-btn">Logout</a></li>
+      </ul>
+    </div>
+
+    <button id="toggle-dark">🌙</button>
+    <button id="mobile-menu-toggle" class="hamburger">☰</button>
+  </div>
+</header>
+
+<!-- ================= SINGLE BLOG HERO ================= -->
+<section class="single-blog-hero">
+  <div class="single-blog-hero-container">
+    <img src="images/secret.jpeg" alt="Perfect Pasta">
+    <div class="single-blog-hero-content">
+      <h1>5 Secrets to Perfect Pasta</h1>
+      <p class="blog-meta">By Chef Antonio • August 23, 2025 • 5 min read</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BLOG CONTENT ================= -->
+<section class="single-blog-content">
+  <div class="blog-container">
+    
+    <p>Making the perfect pasta is more than just boiling noodles—it’s an art passed down through generations. Our chefs use tried-and-tested techniques to ensure every dish is rich in flavor, texture, and authenticity.</p>
+
+    <h2>1. Always Salt the Water</h2>
+    <p>Your pasta water should taste like the sea. This simple trick enhances the flavor of the pasta itself, not just the sauce.</p>
+
+    <h2>2. Use Fresh Ingredients</h2>
+    <p>Authentic Italian pasta relies on fresh tomatoes, basil, garlic, and olive oil. The quality of ingredients makes all the difference.</p>
+
+    <h2>3. Don’t Overcook</h2>
+    <p>Al dente is the key! Slightly firm pasta holds sauces better and provides the perfect bite.</p>
+
+    <h2>4. Save the Pasta Water</h2>
+    <p>A splash of starchy pasta water creates a silky sauce that clings beautifully to the pasta.</p>
+
+    <h2>5. Finish in the Pan</h2>
+    <p>Combine pasta and sauce in the pan for the final minute. This allows the flavors to marry perfectly.</p>
+
+    <blockquote>“Cooking pasta is like life—timing is everything.” – Chef Antonio</blockquote>
+
+    <p>By following these secrets, you’ll never look at pasta the same way again. Try them at home or come taste our signature pasta dishes, crafted with love at our restaurant.</p>
+
+    <!-- CTA inside post -->
+    <div class="blog-cta">
+      <a href="reservation.html" class="btn">Book a Table</a>
+      <a href="menu.html" class="btn-outline">Explore Our Menu</a>
+    </div>
+  </div>
+</section>
+
+  <footer class="footer">
+  <div class="footer-container">
+
+    <!-- Column 1: Logo + Description -->
+    <div class="footer-col">
+      <img src="images/logo.png" alt="Stackly Logo" class="footer-logo">
+      <p>Delicious food delivered to your door.<br>
+        Experience the best of restaurant and food delivery services with us!</p>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+
+    <!-- Column 2: Quick Links -->
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#">Home 1</a></li>
+        <li><a href="#">Home 2</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </div>
+
+    <!-- Column 3: Services -->
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#">Food Delivery</a></li>
+        <li><a href="#">Table Booking</a></li>
+        <li><a href="#">Catering</a></li>
+        <li><a href="#">Online Menu</a></li>
+        <li><a href="#">Party Orders</a></li>
+        <li><a href="#">Reservation Management</a></li>
+      </ul>
+    </div>
+
+    <!-- Column 4: Contact -->
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <p><i class="fas fa-map-marker-alt"></i> 123 Main St, Food City</p>
+      <p><i class="fas fa-phone"></i> +1 234 567 890</p>
+      <p><i class="fas fa-envelope"></i> info@restaurant.com</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 Restaurant. All rights reserved.</p>
+  </div>
+</footer>
+<script>
+  
+</script>
+  <!-- Rest of page content -->
+</body>
+</html>

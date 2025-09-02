@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="title">Book a Table | Our Restaurant</title>
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/booktable.css">
+  <script src="js/header.js" defer></script>
+  <script src="js/dark_toogle.js" defer></script>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <a href="index.html"><img src="images/logo.png" alt="Logo"></a>
+    </div>
+    <div class="header-right">
+      <nav>
+        <ul class="nav-links">
+          <li><a href="service1.html" data-i18n="nav.foodDelivery">Food Delivery</a></li>
+          <li><a href="service2.html" data-i18n="nav.tableBooking">Table Booking</a></li>
+          <li><a href="service3.html" data-i18n="nav.catering">Catering</a></li>
+          <li><a href="service4.html" data-i18n="nav.personalChef">Personal Chef</a></li>
+          <li><a href="service5.html" data-i18n="nav.eventDining">Event Dining</a></li>
+          <li><a href="service6.html" data-i18n="nav.cookingClasses">Cooking Classes</a></li>
+        </ul>
+      </nav>
+      <select id="languageSwitcher">
+        <option value="en">English</option>
+        <option value="ar">العربية</option>
+        <option value="he">עברית</option>
+      </select>
+      <button id="toggle-dark">🌙</button>
+      <button id="mobile-menu-toggle" class="hamburger">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="book-hero">
+    <div class="overlay">
+      <h1 data-i18n="hero.title">Reserve Your Table</h1>
+      <p data-i18n="hero.subtitle">Book online and enjoy your dining experience with us</p>
+    </div>
+  </section>
+
+  <!-- Booking Form -->
+  <section class="booking-section">
+    <div class="booking-container">
+      <h2 data-i18n="form.title">Book a Table</h2>
+      <form id="bookingForm">
+        <div class="form-group">
+          <label for="fullName" data-i18n="form.fullName">Full Name</label>
+          <input type="text" id="fullName" required>
+        </div>
+
+        <div class="form-group">
+          <label for="phone" data-i18n="form.phone">Phone</label>
+          <input type="tel" id="phone" required>
+        </div>
+
+        <div class="form-group">
+          <label for="guests" data-i18n="form.guests">No. of Guests</label>
+          <input type="number" id="guests" min="1" max="20" required>
+        </div>
+
+        <div class="form-group">
+          <label for="date" data-i18n="form.date">Date</label>
+          <input type="date" id="date" required>
+        </div>
+
+        <div class="form-group">
+          <label for="time" data-i18n="form.time">Time</label>
+          <input type="time" id="time" required>
+        </div>
+
+        <div class="form-group">
+          <label for="message" data-i18n="form.message">Special Request</label>
+          <textarea id="message" rows="3" placeholder="Optional"></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit" data-i18n="form.submit">Reserve Now</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Confirmation -->
+  <section id="confirmation" class="confirmation hidden">
+    <h2 data-i18n="confirmation.title">🎉 Thank you!</h2>
+    <p data-i18n="confirmation.message">Your table has been booked successfully. We look forward to serving you.</p>
+  </section>
+
+  <script src="js/booktable.js"></script>
+
+  <script>
+    const translations = {
+      en: {
+        title: "Book a Table | Our Restaurant",
+        nav: {
+          foodDelivery: "Food Delivery",
+          tableBooking: "Table Booking",
+          catering: "Catering",
+          personalChef: "Personal Chef",
+          eventDining: "Event Dining",
+          cookingClasses: "Cooking Classes"
+        },
+        hero: {
+          title: "Reserve Your Table",
+          subtitle: "Book online and enjoy your dining experience with us"
+        },
+        form: {
+          title: "Book a Table",
+          fullName: "Full Name",
+          phone: "Phone",
+          guests: "No. of Guests",
+          date: "Date",
+          time: "Time",
+          message: "Special Request",
+          submit: "Reserve Now"
+        },
+        confirmation: {
+          title: "🎉 Thank you!",
+          message: "Your table has been booked successfully. We look forward to serving you."
+        }
+      },
+      ar: {
+        title: "احجز طاولة | مطعمنا",
+        nav: {
+          foodDelivery: "توصيل الطعام",
+          tableBooking: "حجز طاولة",
+          catering: "التموين",
+          personalChef: "الطاهي الشخصي",
+          eventDining: "عشاء المناسبات",
+          cookingClasses: "دروس الطهي"
+        },
+        hero: {
+          title: "احجز طاولتك",
+          subtitle: "احجز عبر الإنترنت واستمتع بتجربة تناول الطعام معنا"
+        },
+        form: {
+          title: "احجز طاولة",
+          fullName: "الاسم الكامل",
+          phone: "الهاتف",
+          guests: "عدد الضيوف",
+          date: "التاريخ",
+          time: "الوقت",
+          message: "طلب خاص",
+          submit: "احجز الآن"
+        },
+        confirmation: {
+          title: "🎉 شكراً لك!",
+          message: "تم حجز طاولتك بنجاح. نتطلع إلى خدمتك."
+        }
+      },
+      he: {
+        title: "הזמן שולחן | המסעדה שלנו",
+        nav: {
+          foodDelivery: "משלוח אוכל",
+          tableBooking: "הזמנת שולחן",
+          catering: "קייטרינג",
+          personalChef: "שף פרטי",
+          eventDining: "ארוחות אירועים",
+          cookingClasses: "שיעורי בישול"
+        },
+        hero: {
+          title: "הזמן שולחן",
+          subtitle: "הזמן אונליין ותהנה מחווית האכילה איתנו"
+        },
+        form: {
+          title: "הזמן שולחן",
+          fullName: "שם מלא",
+          phone: "טלפון",
+          guests: "מספר אורחים",
+          date: "תאריך",
+          time: "שעה",
+          message: "בקשה מיוחדת",
+          submit: "הזמן עכשיו"
+        },
+        confirmation: {
+          title: "🎉 תודה!",
+          message: "השולחן שלך הוזמן בהצלחה. נשמח לשרת אותך."
+        }
+      }
+    };
+
+    function updateLanguage(lang) {
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+        const keys = el.getAttribute("data-i18n").split(".");
+        let text = translations[lang];
+        keys.forEach(k => text = text[k]);
+        if (text) el.textContent = text;
+      });
+      localStorage.setItem("language", lang); // save choice
+      document.getElementById("languageSwitcher").value = lang;
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const savedLang = localStorage.getItem("language") || "en";
+      updateLanguage(savedLang);
+
+      document.getElementById("languageSwitcher").addEventListener("change", (e) => {
+        updateLanguage(e.target.value);
+      });
+    });
+  </script>
+</body>
+</html>

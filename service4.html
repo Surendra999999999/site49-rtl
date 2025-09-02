@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title data-i18n="title">Stackly Food</title>
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/service1.css" />
+  <link rel="stylesheet" href="css/service2.css" />
+  <script src="js/header.js" defer></script>
+  <script src="js/dark_toogle.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <a href="index.html">
+        <img src="images/logo.png" alt="Logo"
+             data-i18n="logo_alt" data-i18n-attr="alt">
+      </a>
+    </div>
+
+    <div class="header-right">
+      <nav>
+        <ul class="nav-links">
+          <li class="dropdown">
+            <a href="index.html" data-i18n="nav_home">Home ▾</a>
+            <ul class="dropdown-menu">
+              <li><a href="index.html" data-i18n="nav_home1">Home 1</a></li>
+              <li><a href="home2.html" data-i18n="nav_home2">Home 2</a></li>
+            </ul>
+          </li>
+          <li><a href="about.html" data-i18n="nav_about">About</a></li>
+          <li><a href="blog.html" data-i18n="nav_blog">Blog</a></li>
+          <li class="dropdown">
+            <a href="services.html" data-i18n="nav_services">Services ▾</a>
+            <ul class="dropdown-menu">
+              <li class="mobile-only"><a href="services.html" data-i18n="nav_all_services">All Services</a></li>
+              <li><a href="service1.html" data-i18n="nav_service1">Food Delivery</a></li>
+              <li><a href="service2.html" data-i18n="nav_service2">Table Booking</a></li>
+              <li><a href="service3.html" data-i18n="nav_service3">Catering</a></li>
+              <li><a href="service4.html" data-i18n="nav_service4">Personal Chef</a></li>
+              <li><a href="service5.html" data-i18n="nav_service5">Event Dining</a></li>
+              <li><a href="service6.html" data-i18n="nav_service6">Cooking Classes</a></li>
+            </ul>
+          </li>
+          <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Language selector -->
+      <select id="language-selector" aria-label="Language selector">
+        <option value="en">English</option>
+        <option value="ar">العربية</option>
+        <option value="he">עברית</option>
+      </select>
+
+      <div class="profile-container">
+        <div class="profile" id="profile-dropdown-toggle">
+          <span id="profile-initials"></span>
+        </div>
+        <ul class="profile-dropdown" id="profile-dropdown">
+          <li><a href="#" id="logout-btn" data-i18n="logout">Logout</a></li>
+        </ul>
+      </div>
+
+      <button id="toggle-dark">🌙</button>
+      <button id="mobile-menu-toggle" class="hamburger">☰</button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <!-- Background Video -->
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="videos/service1.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+
+    <!-- Content -->
+    <div class="hero-content">
+      <h1 data-i18n="hero_title">Personal Chef Services</h1>
+      <p data-i18n="hero_desc">Experience gourmet dining in the comfort of your home with our dedicated personal chef service, tailored to your taste.</p>
+      <div class="hero-buttons">
+        <a href="chef-booking.html" class="btn" data-i18n="btn_book">Book a Chef</a>
+        <a href="services.html" class="btn-outline" data-i18n="btn_back">Back to Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Orbit Section -->
+  <section class="booking-orbit" id="chef-orbit">
+    <h2 class="section-title" data-i18n="orbit_title">How Personal Chef Service Works</h2>
+
+    <div class="circle-container">
+      <!-- Center -->
+      <div class="circle-center">
+        <h3 data-i18n="orbit_center">Personal Chef</h3>
+      </div>
+
+      <!-- Items -->
+      <div class="circle-item item1">
+        <div class="circle-icon">
+          <img src="images/inquiry.jpeg" alt="Inquiry"
+               data-i18n="orbit_inquiry" data-i18n-attr="alt" />
+        </div>
+        <p data-i18n="orbit_inquiry_label">Consultation</p>
+      </div>
+
+      <div class="circle-item item2">
+        <div class="circle-icon">
+          <img src="images/menu.jpeg" alt="Menu Planning"
+               data-i18n="orbit_menu" data-i18n-attr="alt" />
+        </div>
+        <p data-i18n="orbit_menu_label">Custom Menu</p>
+      </div>
+
+      <div class="circle-item item3">
+        <div class="circle-icon">
+          <img src="images/grociries.jpeg" alt="Grocery Shopping"
+               data-i18n="orbit_grocery" data-i18n-attr="alt" />
+        </div>
+        <p data-i18n="orbit_grocery_label">Grocery Shopping</p>
+      </div>
+
+      <div class="circle-item item4">
+        <div class="circle-icon">
+          <img src="images/home_menu.jpeg" alt="Home Dining"
+               data-i18n="orbit_home" data-i18n-attr="alt" />
+        </div>
+        <p data-i18n="orbit_home_label">Home Dining</p>
+      </div>
+    </div>
+
+    <!-- Step Texts -->
+    <div class="orbit-steps">
+      <div class="step">
+        <h4>
+          <img src="images/inquiry.jpeg" alt="Consultation" width="22"
+               data-i18n="step1_img" data-i18n-attr="alt" />
+          <span data-i18n="step1_title">Consultation</span>
+        </h4>
+        <p data-i18n="step1_text">Discuss your preferences, dietary needs, and occasion with our chef.</p>
+      </div>
+      <div class="step">
+        <h4>
+          <img src="images/menu.jpeg" alt="Menu Planning" width="22"
+               data-i18n="step2_img" data-i18n-attr="alt" />
+          <span data-i18n="step2_title">Custom Menu</span>
+        </h4>
+        <p data-i18n="step2_text">Get a tailored menu crafted to your unique taste and requirements.</p>
+      </div>
+      <div class="step">
+        <h4>
+          <img src="images/grociries.jpeg" alt="Grocery Shopping" width="22"
+               data-i18n="step3_img" data-i18n-attr="alt" />
+          <span data-i18n="step3_title">Grocery Shopping</span>
+        </h4>
+        <p data-i18n="step3_text">The chef sources the freshest ingredients for personalized dishes.</p>
+      </div>
+      <div class="step">
+        <h4>
+          <img src="images/home_menu.jpeg" alt="Home Dining" width="22"
+               data-i18n="step4_img" data-i18n-attr="alt" />
+          <span data-i18n="step4_title">Home Dining</span>
+        </h4>
+        <p data-i18n="step4_text">Enjoy a fine dining experience right at home, served by your chef.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="table-showcase">
+    <h2 class="section-title" data-i18n="showcase_title">Personal Chef Experiences</h2>
+    <p class="section-subtitle" data-i18n="showcase_subtitle">Enjoy restaurant-quality dining in the comfort of your home with our dedicated chef services.</p>
+
+    <div class="table-slider">
+      <div class="slide active">
+        <img src="images/private-chef.jpeg" alt="Romantic Dinner" data-i18n="slide1_img" data-i18n-attr="alt">
+        <h3 data-i18n="slide1_title">Romantic Dinners</h3>
+      </div>
+      <div class="slide">
+        <img src="images/family-gath.jpeg" alt="Family Gatherings" data-i18n="slide2_img" data-i18n-attr="alt">
+        <h3 data-i18n="slide2_title">Family Gatherings</h3>
+      </div>
+      <div class="slide">
+        <img src="images/special-gath.jpeg" alt="Special Occasions" data-i18n="slide3_img" data-i18n-attr="alt">
+        <h3 data-i18n="slide3_title">Special Occasions</h3>
+      </div>
+      <div class="slide">
+        <img src="images/private-chef.jpeg" alt="Private Chef Dining" data-i18n="slide4_img" data-i18n-attr="alt">
+        <h3 data-i18n="slide4_title">Exclusive Private Chef Dining</h3>
+      </div>
+    </div>
+
+    <!-- Slider Controls -->
+    <div class="slider-nav">
+      <button class="prev" aria-label="previous">⟨</button>
+      <button class="next" aria-label="next">⟩</button>
+    </div>
+  </section>
+
+  <!-- =======================
+       Personal Chef Section
+  ======================= -->
+  <section class="table-booking" id="personal-chef">
+    <h2 class="section-title" data-i18n="booking_title">Personal Chef Services</h2>
+    <p class="section-subtitle" data-i18n="booking_subtitle">Fine dining experiences tailored to your taste, prepared right in your home</p>
+
+    <div class="booking-wrapper">
+      <!-- Left: Chef Slider -->
+      <div class="booking-slider">
+        <div class="booking-card active" data-index="0">
+          <div class="booking-content">
+            <h3 data-i18n="card1_title">Romantic Dinners</h3>
+            <p data-i18n="card1_text">Surprise your loved one with an intimate, chef-prepared multi-course meal at home.</p>
+            <a href="contact.html"><button class="btn-book" data-i18n="booking_btn">Book a Chef</button></a>
+          </div>
+        </div>
+
+        <div class="booking-card" data-index="1">
+          <div class="booking-content">
+            <h3 data-i18n="card2_title">Family Gatherings</h3>
+            <p data-i18n="card2_text">Enjoy delicious, home-cooked style dishes without the stress of cooking or cleanup.</p>
+            <a href="contact.html"><button class="btn-book" data-i18n="booking_btn">Book a Chef</button></a>
+          </div>
+        </div>
+
+        <div class="booking-card" data-index="2">
+          <div class="booking-content">
+            <h3 data-i18n="card3_title">Special Occasions</h3>
+            <p data-i18n="card3_text">Celebrate birthdays, anniversaries, or festive nights with a curated fine-dining experience.</p>
+            <a href="contact.html"><button class="btn-book" data-i18n="booking_btn">Book a Chef</button></a>
+          </div>
+        </div>
+
+        <!-- Navigation Arrows -->
+        <div class="slider-controls">
+          <button class="arrow prev" aria-label="previous">⬅</button>
+          <button class="arrow next" aria-label="next">➡</button>
+        </div>
+      </div>
+
+      <!-- Right: Highlights -->
+      <div class="booking-highlights">
+        <h3 data-i18n="highlights_title">Highlights</h3>
+        <ul id="booking-highlight-list">
+          <!-- Will be populated by JS from translations -->
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="booking-tracking">
+    <h2 class="section-title" data-i18n="tracking_title">Personal Chef Service Progress</h2>
+    <p class="section-subtitle" data-i18n="tracking_sub">Track your private dining experience step by step</p>
+
+    <div class="progress-container">
+      <div class="progress-bar"></div>
+
+      <div class="progress-step active">
+        <p data-i18n="tracking_step1">Requested</p>
+      </div>
+
+      <div class="progress-step">
+        <p data-i18n="tracking_step2">Menu Planned</p>
+      </div>
+
+      <div class="progress-step">
+        <p data-i18n="tracking_step3">Chef Arrives</p>
+      </div>
+
+      <div class="progress-step">
+        <p data-i18n="tracking_step4">Dine & Enjoy</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =======================
+       Customer Reviews Section
+  ======================= -->
+  <section class="customer-reviews">
+    <h2 class="section-title" data-i18n="reviews_title">Customer Reviews</h2>
+    <p class="section-subtitle" data-i18n="reviews_sub">See what our happy customers are saying about their food delivery experience.</p>
+
+    <div class="reviews-grid">
+      <!-- Review 1 -->
+      <div class="review-card">
+        <img src="images/ser2_t1.jpeg" alt="Priya S." class="review-img" data-i18n="review1_img" data-i18n-attr="alt">
+        <p class="review-text" data-i18n="review1_text">"Amazing service and delicious food!"</p>
+        <h4 class="review-name" data-i18n="review1_name">Priya S.</h4>
+      </div>
+
+      <!-- Review 2 -->
+      <div class="review-card">
+        <img src="images/ser4_t3.jpeg" alt="Rahul M." class="review-img" data-i18n="review2_img" data-i18n-attr="alt">
+        <p class="review-text" data-i18n="review2_text">"Amazing service and delicious food!"</p>
+        <h4 class="review-name" data-i18n="review2_name">Rahul M.</h4>
+      </div>
+
+      <!-- Review 3 -->
+      <div class="review-card">
+        <img src="images/ser4_t2.jpeg" alt="Anjali T." class="review-img" data-i18n="review3_img" data-i18n-attr="alt">
+        <p class="review-text" data-i18n="review3_text">"Amazing service and delicious food!"</p>
+        <h4 class="review-name" data-i18n="review3_name">Anjali T.</h4>
+      </div>
+
+      <!-- Review 4 -->
+      <div class="review-card">
+        <img src="images/1.jpg" alt="Arjun D." class="review-img" data-i18n="review4_img" data-i18n-attr="alt">
+        <p class="review-text" data-i18n="review4_text">"Amazing service and delicious food!"</p>
+        <h4 class="review-name" data-i18n="review4_name">Arjun D.</h4>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="cta-content">
+      <h2 data-i18n="cta_title">Ready for a Private Dining Experience?</h2>
+      <p data-i18n="cta_text">Hire your own personal chef and enjoy a customized menu at home.</p>
+      <a href="personal-chef.html" class="cta-btn" data-i18n="cta_btn">Book Your Chef Now</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- Column 1: Logo + Description -->
+      <div class="footer-col">
+        <a href="index.html">
+          <img src="images/logo.png" alt="Stackly Logo" class="footer-logo" data-i18n="footer_logo_alt" data-i18n-attr="alt">
+        </a>
+        <p data-i18n-html="true" data-i18n="footer_text">Delicious food delivered to your door.<br>Experience the best of restaurant and food delivery services with us!</p>
+        <div class="social-icons">
+          <a href="https://www.facebook.com" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="https://www.twitter.com" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.instagram.com" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+
+      <!-- Column 2: Quick Links -->
+      <div class="footer-col">
+        <h4 data-i18n="footer_quick">Quick Links</h4>
+        <ul>
+          <li><a href="index.html" data-i18n="footer_home1">Home 1</a></li>
+          <li><a href="home2.html" data-i18n="footer_home2">Home 2</a></li>
+          <li><a href="about.html" data-i18n="footer_about">About Us</a></li>
+          <li><a href="services.html" data-i18n="footer_services">Services</a></li>
+          <li><a href="blog.html" data-i18n="footer_blog">Blog</a></li>
+          <li><a href="contact.html" data-i18n="footer_contact">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Services -->
+      <div class="footer-col">
+        <h4 data-i18n="footer_services_title">Services</h4>
+        <ul>
+          <li><a href="service1.html" data-i18n="nav_service1">Food Delivery</a></li>
+          <li><a href="service2.html" data-i18n="nav_service2">Table Booking</a></li>
+          <li><a href="service3.html" data-i18n="nav_service3">Catering</a></li>
+          <li><a href="service4.html" data-i18n="nav_service4">Personal Chef</a></li>
+          <li><a href="service5.html" data-i18n="nav_service5">Event Dining</a></li>
+          <li><a href="service6.html" data-i18n="nav_service6">Cooking Classes</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 4: Contact -->
+      <div class="footer-col">
+        <h4 data-i18n="footer_contact_title">Contact Us</h4>
+        <p><i class="fas fa-map-marker-alt"></i> <span data-i18n="footer_address">123 Main St, Food City</span></p>
+        <p><i class="fas fa-phone"></i> <span data-i18n="footer_phone">+1 234 567 890</span></p>
+        <p><i class="fas fa-envelope"></i> <span data-i18n="footer_email">info@restaurant.com</span></p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p data-i18n="footer_rights">© 2025 Restaurant. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ========== TRANSLATIONS & UI SCRIPT ========== -->
+  <script>
+  (function(){
+    // Translation dictionary (en / ar / he)
+    const translations = {
+      en: {
+        title: "Stackly Food",
+        logo_alt: "Logo",
+        nav_home: "Home ▾",
+        nav_home1: "Home 1",
+        nav_home2: "Home 2",
+        nav_about: "About",
+        nav_blog: "Blog",
+        nav_services: "Services ▾",
+        nav_all_services: "All Services",
+        nav_service1: "Food Delivery",
+        nav_service2: "Table Booking",
+        nav_service3: "Catering",
+        nav_service4: "Personal Chef",
+        nav_service5: "Event Dining",
+        nav_service6: "Cooking Classes",
+        nav_contact: "Contact",
+        logout: "Logout",
+
+        hero_title: "Personal Chef Services",
+        hero_desc: "Experience gourmet dining in the comfort of your home with our dedicated personal chef service, tailored to your taste.",
+        btn_book: "Book a Chef",
+        btn_back: "Back to Services",
+
+        orbit_title: "How Personal Chef Service Works",
+        orbit_center: "Personal Chef",
+        orbit_inquiry: "Inquiry",
+        orbit_inquiry_label: "Consultation",
+        orbit_menu: "Menu Planning",
+        orbit_menu_label: "Custom Menu",
+        orbit_grocery: "Grocery Shopping",
+        orbit_grocery_label: "Grocery Shopping",
+        orbit_home: "Home Dining",
+        orbit_home_label: "Home Dining",
+
+        step1_img: "Consultation",
+        step1_title: "Consultation",
+        step1_text: "Discuss your preferences, dietary needs, and occasion with our chef.",
+        step2_img: "Menu Planning",
+        step2_title: "Custom Menu",
+        step2_text: "Get a tailored menu crafted to your unique taste and requirements.",
+        step3_img: "Grocery Shopping",
+        step3_title: "Grocery Shopping",
+        step3_text: "The chef sources the freshest ingredients for personalized dishes.",
+        step4_img: "Home Dining",
+        step4_title: "Home Dining",
+        step4_text: "Enjoy a fine dining experience right at home, served by your chef.",
+
+        showcase_title: "Personal Chef Experiences",
+        showcase_subtitle: "Enjoy restaurant-quality dining in the comfort of your home with our dedicated chef services.",
+        slide1_img: "Romantic Dinner",
+        slide1_title: "Romantic Dinners",
+        slide2_img: "Family Gatherings",
+        slide2_title: "Family Gatherings",
+        slide3_img: "Special Occasions",
+        slide3_title: "Special Occasions",
+        slide4_img: "Private Chef Dining",
+        slide4_title: "Exclusive Private Chef Dining",
+
+        booking_title: "Personal Chef Services",
+        booking_subtitle: "Fine dining experiences tailored to your taste, prepared right in your home",
+        card1_title: "Romantic Dinners",
+        card1_text: "Surprise your loved one with an intimate, chef-prepared multi-course meal at home.",
+        card2_title: "Family Gatherings",
+        card2_text: "Enjoy delicious, home-cooked style dishes without the stress of cooking or cleanup.",
+        card3_title: "Special Occasions",
+        card3_text: "Celebrate birthdays, anniversaries, or festive nights with a curated fine-dining experience.",
+        booking_btn: "Book a Chef",
+        highlights_title: "Highlights",
+        booking_highlights: [
+          [
+            "Tailored gourmet menus for any occasion",
+            "Chef-prepared multi-course dining at home",
+            "Fine plating and presentation"
+          ],
+          [
+            "Exclusive dining for anniversaries & milestones",
+            "Custom wine & food pairings",
+            "Memorable private celebrations"
+          ],
+          [
+            "Cozy at-home family-style meals",
+            "Kid-friendly and dietary options available",
+            "Bringing restaurant-quality food to your table"
+          ]
+        ],
+
+        tracking_title: "Personal Chef Service Progress",
+        tracking_sub: "Track your private dining experience step by step",
+        tracking_step1: "Requested",
+        tracking_step2: "Menu Planned",
+        tracking_step3: "Chef Arrives",
+        tracking_step4: "Dine & Enjoy",
+
+        reviews_title: "Customer Reviews",
+        reviews_sub: "See what our happy customers are saying about their food delivery experience.",
+        review1_img: "Priya S.",
+        review1_text: "\"Amazing service and delicious food!\"",
+        review1_name: "Priya S.",
+        review2_img: "Rahul M.",
+        review2_text: "\"Amazing service and delicious food!\"",
+        review2_name: "Rahul M.",
+        review3_img: "Anjali T.",
+        review3_text: "\"Amazing service and delicious food!\"",
+        review3_name: "Anjali T.",
+        review4_img: "Arjun D.",
+        review4_text: "\"Amazing service and delicious food!\"",
+        review4_name: "Arjun D.",
+
+        cta_title: "Ready for a Private Dining Experience?",
+        cta_text: "Hire your own personal chef and enjoy a customized menu at home.",
+        cta_btn: "Book Your Chef Now",
+
+        footer_logo_alt: "Stackly Logo",
+        footer_text: "Delicious food delivered to your door.<br>Experience the best of restaurant and food delivery services with us!",
+        footer_quick: "Quick Links",
+        footer_home1: "Home 1",
+        footer_home2: "Home 2",
+        footer_about: "About Us",
+        footer_services: "Services",
+        footer_blog: "Blog",
+        footer_contact: "Contact Us",
+        footer_services_title: "Services",
+        footer_contact_title: "Contact Us",
+        footer_address: "123 Main St, Food City",
+        footer_phone: "+1 234 567 890",
+        footer_email: "info@restaurant.com",
+        footer_rights: "© 2025 Restaurant. All rights reserved."
+      },
+
+      ar: {
+        title: "ستاكلي فود",
+        logo_alt: "الشعار",
+        nav_home: "الرئيسية ▾",
+        nav_home1: "الصفحة الرئيسية 1",
+        nav_home2: "الصفحة الرئيسية 2",
+        nav_about: "حول",
+        nav_blog: "المدونة",
+        nav_services: "الخدمات ▾",
+        nav_all_services: "كل الخدمات",
+        nav_service1: "توصيل الطعام",
+        nav_service2: "حجز الطاولة",
+        nav_service3: "التموين",
+        nav_service4: "شيف شخصي",
+        nav_service5: "الطعام للمناسبات",
+        nav_service6: "دروس الطبخ",
+        nav_contact: "اتصل بنا",
+        logout: "تسجيل الخروج",
+
+        hero_title: "خدمات الشيف الشخصي",
+        hero_desc: "استمتع بتجربة طعام فاخرة في راحة منزلك مع خدمة الشيف الشخصي المخصصة وفق ذوقك.",
+        btn_book: "احجز شيف",
+        btn_back: "العودة إلى الخدمات",
+
+        orbit_title: "كيفية عمل خدمة الشيف الشخصي",
+        orbit_center: "شيف شخصي",
+        orbit_inquiry: "الاستفسار",
+        orbit_inquiry_label: "استشارة",
+        orbit_menu: "تخطيط القائمة",
+        orbit_menu_label: "قائمة مخصصة",
+        orbit_grocery: "التسوق للمكونات",
+        orbit_grocery_label: "التسوق للمكونات",
+        orbit_home: "الطعام في المنزل",
+        orbit_home_label: "الطعام في المنزل",
+
+        step1_img: "استشارة",
+        step1_title: "استشارة",
+        step1_text: "ناقش تفضيلاتك والقيود الغذائية والمناسبة مع طهاتنا.",
+        step2_img: "تخطيط القائمة",
+        step2_title: "قائمة مخصصة",
+        step2_text: "احصل على قائمة مصممة وفق ذوقك واحتياجاتك.",
+        step3_img: "التسوق للمكونات",
+        step3_title: "التسوق للمكونات",
+        step3_text: "يقوم الشيف بالحصول على المكونات الطازجة لإعداد أطباق مخصصة.",
+        step4_img: "الطعام في المنزل",
+        step4_title: "الطعام في المنزل",
+        step4_text: "استمتع بعشاء راقٍ في منزلك مع خدمة الشيف.",
+
+        showcase_title: "تجارب الشيف الشخصي",
+        showcase_subtitle: "استمتع بتجربة طعام بجودة المطاعم في راحة منزلك مع خدمات شيفنا المخصصة.",
+        slide1_img: "عشاء رومانسي",
+        slide1_title: "عشاء رومانسي",
+        slide2_img: "تجمعات عائلية",
+        slide2_title: "تجمعات عائلية",
+        slide3_img: "مناسبات خاصة",
+        slide3_title: "مناسبات خاصة",
+        slide4_img: "شيف خاص",
+        slide4_title: "عشاء خاص مع الشيف",
+
+        booking_title: "خدمات الشيف الشخصي",
+        booking_subtitle: "تجارب طعام راقية مخصصة لذوقك، محضرة في منزلك",
+        card1_title: "عشاء رومانسي",
+        card1_text: "فاجئ من تحب بعشاء مكون من عدة أطباق محضّر بواسطة الشيف في منزلك.",
+        card2_title: "تجمعات عائلية",
+        card2_text: "استمتع بأطباق منزلية شهية بدون عناء الطبخ والتنظيف.",
+        card3_title: "مناسبات خاصة",
+        card3_text: "احتفل بأعياد الميلاد أو المناسبات بباقة من الأطباق الفاخرة.",
+        booking_btn: "احجز شيف",
+        highlights_title: "أهم المزايا",
+        booking_highlights: [
+          [
+            "قوائم فاخرة مخصصة لأي مناسبة",
+            "تحضير من قبل الشيف متعدد الأطباق في المنزل",
+            "تقديم راقٍ وجميل"
+          ],
+          [
+            "عشاء خاص للمناسبات والذكرى",
+            "توليفات طعام ومشروبات حسب الطلب",
+            "تجارب احتفالية لا تُنسى"
+          ],
+          [
+            "وجبات عائلية مريحة في المنزل",
+            "خيارات للأطفال والنباتيين والأنظمة الغذائية",
+            "تجربة طعام بمستوى المطعم داخل المنزل"
+          ]
+        ],
+
+        tracking_title: "تقدم طلب الشيف الشخصي",
+        tracking_sub: "تابع تجربة العشاء الخاصة بك خطوة بخطوة",
+        tracking_step1: "تم الطلب",
+        tracking_step2: "تم التخطيط للقائمة",
+        tracking_step3: "وصول الشيف",
+        tracking_step4: "استمتع بالعشاء",
+
+        reviews_title: "آراء العملاء",
+        reviews_sub: "اطلع على آراء عملائنا حول تجربتهم.",
+        review1_img: "بريا س.",
+        review1_text: "\"خدمة رائعة وطعام لذيذ!\"",
+        review1_name: "بريا س.",
+        review2_img: "راهول م.",
+        review2_text: "\"خدمة رائعة وطعام لذيذ!\"",
+        review2_name: "راهول م.",
+        review3_img: "أنجالي ت.",
+        review3_text: "\"خدمة رائعة وطعام لذيذ!\"",
+        review3_name: "أنجالي ت.",
+        review4_img: "أرجون د.",
+        review4_text: "\"خدمة رائعة وطعام لذيذ!\"",
+        review4_name: "أرجون د.",
+
+        cta_title: "هل أنت جاهز لتجربة عشاء خاصة؟",
+        cta_text: "استعن بشيف خاص واستمتع بقائمة مخصصة في منزلك.",
+        cta_btn: "احجز الآن",
+
+        footer_logo_alt: "شعار ستاكلي",
+        footer_text: "طعام لذيذ حتى باب منزلك.<br>اختبر أفضل خدمات المطاعم والتوصيل معنا!",
+        footer_quick: "روابط سريعة",
+        footer_home1: "الصفحة الرئيسية 1",
+        footer_home2: "الصفحة الرئيسية 2",
+        footer_about: "من نحن",
+        footer_services: "الخدمات",
+        footer_blog: "المدونة",
+        footer_contact: "اتصل بنا",
+        footer_services_title: "الخدمات",
+        footer_contact_title: "اتصل بنا",
+        footer_address: "123 شارع الرئيسي، مدينة الطعام",
+        footer_phone: "+1 234 567 890",
+        footer_email: "info@restaurant.com",
+        footer_rights: "© 2025 المطعم. جميع الحقوق محفوظة."
+      },
+
+      he: {
+        title: "סטאקלי פוד",
+        logo_alt: "לוגו",
+        nav_home: "בית ▾",
+        nav_home1: "בית 1",
+        nav_home2: "בית 2",
+        nav_about: "אודות",
+        nav_blog: "בלוג",
+        nav_services: "שירותים ▾",
+        nav_all_services: "כל השירותים",
+        nav_service1: "משלוח אוכל",
+        nav_service2: "הזמנת שולחן",
+        nav_service3: "קייטרינג",
+        nav_service4: "שף פרטי",
+        nav_service5: "ארוחות לאירועים",
+        nav_service6: "שיעורי בישול",
+        nav_contact: "צור קשר",
+        logout: "התנתק",
+
+        hero_title: "שירותי שף פרטי",
+        hero_desc: "חווית אוכל גורמה בנוחות של ביתכם עם שף פרטי המותאם לטעמכם.",
+        btn_book: "הזמן שף",
+        btn_back: "חזור לשירותים",
+
+        orbit_title: "כיצד פועל שירות השף הפרטי",
+        orbit_center: "שף פרטי",
+        orbit_inquiry: "פנייה",
+        orbit_inquiry_label: "התייעצות",
+        orbit_menu: "תכנון תפריט",
+        orbit_menu_label: "תפריט מותאם",
+        orbit_grocery: "קניות מצרכים",
+        orbit_grocery_label: "קניות מצרכים",
+        orbit_home: "ארוחה ביתית",
+        orbit_home_label: "ארוחה ביתית",
+
+        step1_img: "התייעצות",
+        step1_title: "התייעצות",
+        step1_text: "דונו בהעדפותיכם, צרכים תזונתיים והאירוע עם השף שלנו.",
+        step2_img: "תכנון תפריט",
+        step2_title: "תפריט מותאם",
+        step2_text: "קבלו תפריט מותאם לטעמכם ולדרישותיכם.",
+        step3_img: "קניות מצרכים",
+        step3_title: "קניות מצרכים",
+        step3_text: "השף דואג לרכישת מרכיבים טריים ומותאמים.",
+        step4_img: "ארוחה ביתית",
+        step4_title: "ארוחה ביתית",
+        step4_text: "תהנו מסעודת גורמה בביתכם, מוגשת על ידי השף.",
+
+        showcase_title: "חוויות שף פרטי",
+        showcase_subtitle: "תהנו מאוכל ברמת מסעדה בנוחות ביתכם עם שירותי השף שלנו.",
+        slide1_img: "ארוחה רומנטית",
+        slide1_title: "ארוחות רומנטיות",
+        slide2_img: "מפגשים משפחתיים",
+        slide2_title: "מפגשים משפחתיים",
+        slide3_img: "אירועים מיוחדים",
+        slide3_title: "אירועים מיוחדים",
+        slide4_img: "שף פרטי",
+        slide4_title: "ארוחה פרטית עם שף",
+
+        booking_title: "שירותי שף פרטי",
+        booking_subtitle: "חוויות אוכל מותאמות אישית, מוכנות בביתכם",
+        card1_title: "ארוחה רומנטית",
+        card1_text: "הפתיעו את אהוביכם בארוחה בת מספר מנות בהכנת שף בבית.",
+        card2_title: "מפגשים משפחתיים",
+        card2_text: "ארוחות ביתיות טעימות ללא לחץ של בישול וניקיון.",
+        card3_title: "אירועים מיוחדים",
+        card3_text: "חגגו ימי הולדת או אירועים עם תפריטים מעוצבים.",
+        booking_btn: "הזמן שף",
+        highlights_title: "הדגשים",
+        booking_highlights: [
+          [
+            "תפריטים גורמה מותאמים לכל אירוע",
+            "הכנה על ידי שף רב-מנת בבית",
+            "הצגה והגשה ברמה גבוהה"
+          ],
+          [
+            "ארוחות פרטיות לאירועים וחגיגות",
+            "התאמות יין ואוכל בהתאמה אישית",
+            "חוויות חגיגיות בלתי נשכחות"
+          ],
+          [
+            "ארוחות משפחתיות נוחות בבית",
+            "אפשרויות לילדים וצמחונים",
+            "חוויה ברמת מסעדה בביתכם"
+          ]
+        ],
+
+        tracking_title: "התקדמות שירות השף",
+        tracking_sub: "עקבו אחרי חוויית הארוחה שלכם שלב אחר שלב",
+        tracking_step1: "נדרש",
+        tracking_step2: "התפריט תוזמן",
+        tracking_step3: "השף מגיע",
+        tracking_step4: "תהנו מהארוחה",
+
+        reviews_title: "ביקורות לקוחות",
+        reviews_sub: "קראו מה הלקוחות שלנו אומרים על החוויה שלהם.",
+        review1_img: "פריה ס.",
+        review1_text: "\"שירות מדהים ואוכל טעים!\"",
+        review1_name: "פריה ס.",
+        review2_img: "רהול מ.",
+        review2_text: "\"שירות מדהים ואוכל טעים!\"",
+        review2_name: "רהול מ.",
+        review3_img: "אנג'לי ת.",
+        review3_text: "\"שירות מדהים ואוכל טעים!\"",
+        review3_name: "אנג'לי ת.",
+        review4_img: "ארג'ון ד.",
+        review4_text: "\"שירות מדהים ואוכל טעים!\"",
+        review4_name: "ארג'ון ד.",
+
+        cta_title: "מוכנים לחוויית ארוחה פרטית?",
+        cta_text: "שכרו שף פרטי ותיהנו מתפריט מותאם אישית בביתכם.",
+        cta_btn: "הזמן עכשיו",
+
+        footer_logo_alt: "לוגו סטאקלי",
+        footer_text: "אוכל טעים עד סף ביתכם.<br>חוו את מיטב שירותי המסעדות והמשלוחים איתנו!",
+        footer_quick: "קישורים מהירים",
+        footer_home1: "בית 1",
+        footer_home2: "בית 2",
+        footer_about: "אודות",
+        footer_services: "שירותים",
+        footer_blog: "בלוג",
+        footer_contact: "צור קשר",
+        footer_services_title: "שירותים",
+        footer_contact_title: "צור קשר",
+        footer_address: "123 רח' הראשי, עיר האוכל",
+        footer_phone: "+1 234 567 890",
+        footer_email: "info@restaurant.com",
+        footer_rights: "© 2025 מסעדה. כל הזכויות שמורות."
+      }
+    }; // end translations
+
+    // determine initial language
+    function getInitialLang(){
+      const saved = localStorage.getItem('lang');
+      if(saved && ['en','ar','he'].includes(saved)) return saved;
+      const nav = (navigator.language || navigator.userLanguage || 'en').slice(0,2);
+      if(['en','ar','he'].includes(nav)) return nav;
+      return 'en';
+    }
+
+    let currentLang = getInitialLang();
+
+    // Apply translations across the page
+    function applyTranslations(lang){
+      const map = translations[lang] || translations.en;
+      document.documentElement.lang = lang;
+      document.documentElement.dir = (lang === 'ar' || lang === 'he') ? 'rtl' : 'ltr';
+
+      // data-i18n-attr (like alt)
+      document.querySelectorAll('[data-i18n-attr]').forEach(el=>{
+        const key = el.getAttribute('data-i18n');
+        const attrs = el.getAttribute('data-i18n-attr').split(',').map(s=>s.trim());
+        attrs.forEach(attr=>{
+          if(map[key] !== undefined) el.setAttribute(attr, map[key]);
+        });
+      });
+
+      // data-i18n-html -> innerHTML (used for footer with <br>)
+      document.querySelectorAll('[data-i18n-html]').forEach(el=>{
+        const key = el.getAttribute('data-i18n');
+        if(map[key] !== undefined) el.innerHTML = map[key];
+      });
+
+      // data-i18n (textContent)
+      document.querySelectorAll('[data-i18n]').forEach(el=>{
+        // skip those handled by data-i18n-attr or data-i18n-html
+        if(el.hasAttribute('data-i18n-attr') || el.hasAttribute('data-i18n-html')) return;
+        const key = el.getAttribute('data-i18n');
+        if(map[key] !== undefined) el.textContent = map[key];
+      });
+
+      // set <title>
+      const titleEl = document.querySelector('title[data-i18n]');
+      if(titleEl){
+        const k = titleEl.getAttribute('data-i18n');
+        if(map[k] !== undefined) titleEl.textContent = map[k];
+      } else if(map.title !== undefined){
+        document.title = map.title;
+      }
+
+      currentLang = lang;
+      localStorage.setItem('lang', lang);
+    }
+
+    // Initialize all behaviors after DOM ready
+    document.addEventListener('DOMContentLoaded', () => {
+      const sel = document.getElementById('language-selector');
+      if(sel){
+        sel.value = currentLang;
+        sel.addEventListener('change', (e) => {
+          applyTranslations(e.target.value);
+          // update dynamic highlights in booking section
+          updateBookingHighlights();
+        });
+      }
+
+      // apply initial translations
+      applyTranslations(currentLang);
+
+      // Orbit: pause animation when in view
+      (function initOrbit(){
+        const orbit = document.querySelector(".circle-container");
+        if (!orbit) return;
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) orbit.classList.add("paused");
+            else orbit.classList.remove("paused");
+          });
+        }, { threshold: 0.6 });
+        observer.observe(orbit);
+      })();
+
+      // Booking slider + Highlights (dynamic)
+      (function initBookingSlider(){
+        const cards = document.querySelectorAll(".booking-card");
+        const prevBtn = document.querySelector(".arrow.prev");
+        const nextBtn = document.querySelector(".arrow.next");
+        const highlightsList = document.getElementById("booking-highlight-list");
+        let currentIndex = 0;
+
+        function showCard(index){
+          cards.forEach((c,i)=> c.classList.toggle('active', i===index));
+          updateBookingHighlights(index);
+        }
+
+        function updateBookingHighlights(index = currentIndex){
+          const map = translations[currentLang] || translations.en;
+          const arr = map.booking_highlights || [[],[],[]];
+          highlightsList.innerHTML = '';
+          const list = arr[index] || [];
+          list.forEach(item=>{
+            const li = document.createElement('li');
+            li.textContent = item;
+            highlightsList.appendChild(li);
+          });
+        }
+
+        if(nextBtn) nextBtn.addEventListener('click', ()=>{
+          currentIndex = (currentIndex + 1) % cards.length;
+          showCard(currentIndex);
+        });
+
+        if(prevBtn) prevBtn.addEventListener('click', ()=>{
+          currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+          showCard(currentIndex);
+        });
+
+        // init
+        showCard(currentIndex);
+
+        // expose for language change if needed elsewhere
+        window.updateBookingHighlights = updateBookingHighlights;
+      })();
+
+      // Booking progress animation using IntersectionObserver
+      (function initBookingProgress(){
+        const progressBar = document.querySelector(".progress-bar");
+        const steps = document.querySelectorAll(".progress-step");
+
+        if(!progressBar || steps.length === 0) return;
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if(entry.isIntersecting){
+              steps.forEach((step, index) => {
+                setTimeout(() => {
+                  step.classList.add('active');
+                  const percent = (index / (steps.length - 1)) * 100;
+                  progressBar.style.width = percent + '%';
+                }, index * 800);
+              });
+            } else {
+              steps.forEach(step => step.classList.remove('active'));
+              progressBar.style.width = '0%';
+            }
+          });
+        }, { threshold: 0.5 });
+
+        const toObserve = document.querySelector(".booking-tracking");
+        if(toObserve) observer.observe(toObserve);
+      })();
+
+      // Table showcase slider
+      (function initTableShowcase(){
+        const slides = document.querySelectorAll(".table-slider .slide");
+        const prevBtn = document.querySelector(".table-showcase .prev") || document.querySelector(".table-slider .prev");
+        const nextBtn = document.querySelector(".table-showcase .next") || document.querySelector(".table-slider .next");
+        let currentSlide = 0;
+        if(!slides || slides.length === 0) return;
+
+        function showSlide(index){
+          slides.forEach((s,i)=> s.classList.toggle('active', i===index));
+        }
+
+        if(nextBtn) nextBtn.addEventListener('click', () => {
+          currentSlide = (currentSlide + 1) % slides.length;
+          showSlide(currentSlide);
+        });
+        if(prevBtn) prevBtn.addEventListener('click', () => {
+          currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+          showSlide(currentSlide);
+        });
+
+        setInterval(() => {
+          currentSlide = (currentSlide + 1) % slides.length;
+          showSlide(currentSlide);
+        }, 5000);
+      })();
+
+      // Ensure highlights show correct language initially
+      if(typeof window.updateBookingHighlights === 'function') window.updateBookingHighlights();
+    }); // DOMContentLoaded
+  })();
+  </script>
+
+  <!-- ========== Keep original inline scripts if any (your animations were included above) ========== -->
+  <script>
+  // If you had additional script blocks in your previous file for header interactions,
+  // mobile menu toggle, profile dropdown etc., keep them in js/header.js referenced above.
+  </script>
+
+</body>
+</html>
